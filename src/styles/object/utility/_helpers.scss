@@ -1,0 +1,58 @@
+@use "../global" as global;
+
+// 表示切り替え
+.u-hidden {
+
+  &-md {
+    display: none;
+
+    @include global.mq("md") {
+      display: block;
+    }
+  }
+
+  &-lg {
+    display: none;
+
+    @include global.mq("lg") {
+      display: block;
+    }
+  }
+
+  &-xl {
+    display: none;
+
+    @include global.mq("xl") {
+      display: block;
+    }
+  }
+}
+
+// 非表示切り替え
+.u-visible {
+
+  &-md {
+
+    @include global.mq("md") {
+      display: none;
+    }
+  }
+
+  &-lg {
+
+    @include global.mq("lg") {
+      display: none;
+    }
+  }
+
+  &-xl {
+
+    @include global.mq("xl") {
+      display: none;
+    }
+  }
+}
+
+/* ちょい足しユーティリティ */
+.u-mt-0 { margin-top: 0 !important; }
+.u-mb-0 { margin-bottom: 0 !important; }

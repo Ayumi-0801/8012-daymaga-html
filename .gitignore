@@ -1,0 +1,26 @@
+# node_modules（npmで入るライブラリ）
+node_modules/
+
+# Sassやビルドで生成されるキャッシュ類
+.sass-cache/
+.cache/
+
+# Macの不要ファイル
+.DS_Store
+
+# ログファイル
+*.log
+
+# 環境設定ファイル（人によって異なる）
+.env
+
+# エディタやOS依存の設定ファイル
+*.swp
+*.swo
+Thumbs.db
+
+# ピクセルパーフェクト確認用画像
+PixelPerfect/
+
+# build outputs
+public/

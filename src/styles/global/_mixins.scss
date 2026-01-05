@@ -1,0 +1,56 @@
+@use "sass:map";
+@use "./variables" as vars;
+
+// ブレークポイントのmixin
+@mixin mq($breakpoint: sm) {
+  $query: map.get(vars.$breakpoints, $breakpoint);
+
+  @if $query {
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error "指定されたブレークポイント `#{$breakpoint}` は定義されていません。";
+  }
+}
+
+// z-indexのmixin
+@mixin z($key) {
+  z-index: map.get(vars.$layer, $key);
+}
+
+// 背景プロパティmixin
+@mixin bg-color($key) {
+  font-family: map.get(vars.$bg-color, $key)
+}
+
+// テキストプロパティmixin
+@mixin font-family($key) {
+  font-family: map.get(vars.$font-family, $key)
+}
+
+@mixin font-color($key) {
+  color: map.get(vars.$font-color, $key)
+}
+
+@mixin font-weight($key) {
+  color: map.get(vars.$font-weight, $key)
+}
+
+@mixin line-height($key) {
+  color: map.get(vars.$line-height, $key)
+}
+
+// テキストスタイルのmixin（呼び出し：@include vars.catch-jp(sm);）
+@mixin base-jp($size) {
+  $style: map.get(vars.$base-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}

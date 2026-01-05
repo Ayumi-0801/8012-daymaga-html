@@ -1,0 +1,33 @@
+{
+  "name": "static-html-template",
+  "version": "1.0.0",
+  "description": "Static HTML + Sass + Gulp (FLOCSS+BEM, global separation)",
+  "scripts": {
+    "dev": "NODE_ENV=development gulp dev",
+    "build": "NODE_ENV=production gulp build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "browser-sync": "^3.0.4",
+    "css-declaration-sorter": "^7.2.0",
+    "del": "^6.1.1",
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-html-replace": "^1.6.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^3.0.0",
+    "gulp-merge-media-queries": "^0.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-rename": "^2.1.0",
+    "gulp-rev": "^11.0.0",
+    "gulp-rev-delete-original": "^0.2.3",
+    "gulp-rev-rewrite": "^6.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.1.0",
+    "postcss": "^8.5.6",
+    "sass": "^1.90.0"
+  }
+}

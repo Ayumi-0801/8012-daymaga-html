@@ -1,0 +1,96 @@
+@use "sass:map";
+
+// フォント
+$font-family: (
+  jp: ("Noto Sans JP", sans-serif),
+  en: ("Roboto", sans-serif)
+);
+
+$font-color: (
+  base: #202020
+);
+
+$font-weight: (
+  regular: 400,
+  medium: 500,
+  bold: 700,
+  black: 900
+);
+
+$line-height: (
+  sp: 1.8,
+  pc: 1.5
+);
+
+// 各テキストスタイルの定義
+$base-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 16px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 16px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, sp)
+  )
+) !default;
+
+// 色
+$bg-color: (
+  base: #FDFDFD
+);
+
+// ブレークポイント
+$breakpoints: (
+  xs: "screen and (min-width: 376px)",
+  sm: "screen and (min-width: 601px)",
+  md: "screen and (min-width: 769px)",
+  lg: "screen and (min-width: 901px)",
+  xl: "screen and (min-width: 1201px)",
+) !default;
+
+// サイズ
+$max-width: 1280px;
+$header-height-sp: 60px;
+$header-height-pc: 80px;
+
+// 画像ディレクトリパス（記述例：background: url("#{global.$asset-img-path}/contact/check.png") no-repeat top center/cover;）
+$asset-img-path: "../img";
+
+// transition
+$transition-fast: 0.2s;
+$transition-base: 0.3s;
+$transition-slow: 0.5s;
+$transition-ease: ease;
+$transition-emphasize: cubic-bezier(0.4, 0, 0.2, 1);
+
+// 重なり順の定義
+$layer: (
+  // ローディング
+  loading: 300,
+  // モーダル
+  modal: 100,
+  // ドロワー
+  drawer: 40,
+  // トップへ戻るボタン
+  to-top: 35,
+  // フローティング
+  floating: 30,
+  // スマホ画面下部バナー
+  fixed-banner: 25,
+  // ヘッダー
+  header: 20,
+  // ヘッダーナビ（スマホ表示時）
+  header-nav: 15,
+  // フッター
+  footer: 10,
+  // 基本より1段前
+  default-front: 2,
+  // 基本
+  default: 1,
+  // 親要素の背景に回す要
+  behind: -1
+);

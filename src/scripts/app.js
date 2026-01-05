@@ -1,0 +1,85 @@
+// JavaScriptテンプレート
+(() => {
+  // 年の自動更新
+  const y = document.getElementById('js-year');
+  if (y) y.textContent = String(new Date().getFullYear());
+
+  /* ==============================================
+  ヘッダー開閉
+  ============================================== */
+  const btn  = document.querySelector('.js-btn-drawer');   // <button>
+  const nav  = document.getElementById('global-nav');      // <nav>
+  if (!btn || !nav) return;
+
+  let isLock = false; // 二重連打防止
+
+  // transition（transform）の完了を待ってisLockを解除する
+  const onTransitionEnd = (e) => {
+    if (e.propertyName !== 'transform') return; // transform の終了だけ見る
+    nav.removeEventListener('transitionend', onTransitionEnd);
+    isLock = false; // アニメーション完了後にfalseに戻す
+
+    // 「閉じ切った後」に hidden を付ける
+    if (btn.getAttribute('aria-expanded') !== 'true') {
+      nav.setAttribute('hidden', '');
+    }
+  };
+
+  const open = () => {
+    if (isLock) return;
+    isLock = true; // クリック無効化
+
+    // 先に表示可能にして 1フレーム待つ（トランジション発火のため）
+    nav.removeAttribute('hidden');
+    // リフロー強制（初期 transform を確定させる）
+    void nav.offsetWidth;
+
+    btn.setAttribute('aria-expanded', 'true');
+    nav.classList.add('is-open');
+
+    btn.classList.add('is-active');
+
+    // クリック無効化を解除
+    nav.addEventListener('transitionend', onTransitionEnd);
+  };
+
+  const close = () => {
+    if (isLock) return;
+    isLock = true; // クリック無効化
+
+    btn.setAttribute('aria-expanded', 'false');
+    nav.classList.remove('is-open');
+
+    btn.classList.remove('is-active');
+
+    // クリック無効化を解除
+    nav.addEventListener('transitionend', onTransitionEnd);
+  };
+
+  const toggle = () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    expanded ? close() : open();
+  };
+
+  // トグル
+  btn.addEventListener('click', toggle);
+
+  // ドロワー内のページ内リンクをクリックしたら閉じる（モバイルで便利）
+  nav.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', close);
+  });
+
+  // 任意：Esc で閉じる（キーボード操作配慮）
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+  });
+
+  /* ==============================================
+  ページ内リンクのクリック時にフォーカスを外す
+  ============================================== */
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function() {
+      this.blur();
+    });
+  });
+})();

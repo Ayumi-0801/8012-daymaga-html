@@ -1,0 +1,69 @@
+@use "../global" as global;
+
+// 表示切り替え
+.u-hidden {
+
+  &-sm {
+    display: none;
+
+    @include global.mq(sm) {
+      display: block;
+    }
+  }
+
+  &-md {
+    display: none;
+
+    @include global.mq(md) {
+      display: block;
+    }
+  }
+
+  &-lg {
+    display: none;
+
+    @include global.mq(lg) {
+      display: block;
+    }
+  }
+
+  &-xl {
+    display: none;
+
+    @include global.mq(xl) {
+      display: block;
+    }
+  }
+}
+
+// 非表示切り替え
+.u-visible {
+
+  &-sm {
+
+    @include global.mq(sm) {
+      display: none;
+    }
+  }
+
+  &-md {
+
+    @include global.mq(md) {
+      display: none;
+    }
+  }
+
+  &-lg {
+
+    @include global.mq(lg) {
+      display: none;
+    }
+  }
+
+  &-xl {
+
+    @include global.mq(xl) {
+      display: none;
+    }
+  }
+}

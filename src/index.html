@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <!-- レスポンシブ表示用 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- サイトアイコン -->
+    <link rel="icon" href="ファビアイコン画像を指定">
+    <!-- 検索除外 -->
+    <meta name="robots" content="noindex">
+
+    <!-- サイトタイトル -->
+    <title>サイトタイトルを入力</title>
+    <meta name="description" content="サイト説明文を入力">
+
+    <!-- OGP基本設定 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ページのタイトル">
+    <meta property="og:description" content="ページの説明文。100文字以内推奨。">
+    <meta property="og:url" content="https://example.com/このページのURL">
+    <meta property="og:image" content="https://example.com/images/ogp.jpg">
+    <meta property="og:site_name" content="サイトの名前">
+
+    <!-- 構造化データ（JSON-LD） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          /* 会社（運営主体） */
+          "@type": "Organization",
+          "@id": "https://{YOUR-DOMAIN}/#org",
+          "name": "{会社名}",
+          "url": "https://{YOUR-DOMAIN}/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://{YOUR-DOMAIN}/assets/img/logo.png",
+            "width": 256,
+            "height": 256
+          },
+          "sameAs": [
+            "https://x.com/{アカウント}",
+            "https://www.linkedin.com/company/{会社スラッグ}"
+          ]
+        },
+        {
+          /* サイト全体 */
+          "@type": "WebSite",
+          "@id": "https://{YOUR-DOMAIN}/#website",
+          "url": "https://{YOUR-DOMAIN}/",
+          "name": "{サイト名}",
+          "publisher": { "@id": "https://{YOUR-DOMAIN}/#org" },
+          "inLanguage": "ja"
+        },
+        {
+          /* このページ */
+          "@type": "WebPage",
+          "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#webpage",
+          "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/",
+          "name": "{ページタイトル（titleと整合）}",
+          "description": "{ページ要約（meta descriptionと整合）}",
+          "isPartOf": { "@id": "https://{YOUR-DOMAIN}/#website" },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://{YOUR-DOMAIN}/assets/img/ogp/{画像ファイル}.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          "datePublished": "{YYYY-MM-DD}",
+          "dateModified": "{YYYY-MM-DD}",
+          "inLanguage": "ja",
+          "breadcrumb": { "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#breadcrumb" }
+        },
+        {
+          /* パンくず（必要な階層（パンくずがあるページだけ）だけ、このページがトップページから何番目の階層か） */
+          "@type": "BreadcrumbList",
+          "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1,
+              "name": "ホーム",
+              "item": "https://{YOUR-DOMAIN}/" },
+            { "@type": "ListItem", "position": 2,
+              "name": "{ページ名（短め）}",
+              "item": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/" }
+          ]
+        },
+        /* サービス情報（明示したい場合のみ） */
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#service",
+        "name": "{サービス名}",
+        "provider": { "@id": "https://{YOUR-DOMAIN}/#org" },
+        "serviceType": "{分類：例 Web制作・運用}",
+        "areaServed": "JP",
+        "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/",
+        "description": "{ひとことで説明}",
+        "offers": {
+          "@type": "Offer",
+          "price": "{価格のみ（数値）}",
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock",
+          "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#plan"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Googleフォント -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="リセットCSSファイルを指定">
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+  </head>
+  <body>
+    <header class="c-header">
+      <div class="c-header__inner">
+        <div class="c-logo">
+          <img src="" alt="ロゴ">
+        </div>
+        <!-- /.c-logo -->
+        <nav id="global-nav" class="c-header__nav">
+          <ul class="c-header__nav-list">
+            <li class="c-header__nav-item">
+              <a href="#">リンク</a>
+            </li>
+            
+          </ul>
+          <!-- /.c-header__nav-list -->
+        </nav>
+        <!-- /.c-header__nav -->
+        <div class="c-header__drawer">
+          <button
+            class="c-header__drawer-btn js-btn-drawer"
+            aria-controls="global-nav"
+            aria-expanded="false"
+          >
+            <span class="c-header__drawer-line c-header__drawer-line-01"></span>
+            <span class="c-header__drawer-line c-header__drawer-line-02"></span>
+            <span class="c-header__drawer-line c-header__drawer-line-03"></span>
+          </button>
+          <!-- /.c-header__drawer-btn -->
+        </div>
+        <!-- /.c-header__drawer -->
+      </div>
+      <!-- /.c-header__inner -->
+    </header>
+    <!-- /.c-header -->
+    <main style="height: 1000px;">
+      
+    </main>
+
+    <footer class="p-footer c-footer">
+      <div class="p-footer__inner">
+
+        <small class="p-footer__copy">&copy; <span class="p-footer__copy-text"></span> Your Company</small>
+        <!-- /.p-footer__copy -->
+      </div>
+      <!-- /.p-footer__inner -->
+    </footer>
+    <!-- /.p-footer c-footer -->
+    
+    <!-- [使用する場合のみ]jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <!-- JavaScript -->
+    <script src="./assets/js/app.min.js" defer></script>
+  </body>
+</html>
