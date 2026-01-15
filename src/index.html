@@ -10,12 +10,12 @@
     <meta name="robots" content="noindex">
 
     <!-- サイトタイトル -->
-    <title>サイトタイトルを入力</title>
+    <title>DayMaga</title>
     <meta name="description" content="サイト説明文を入力">
 
     <!-- OGP基本設定 -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="ページのタイトル">
+    <meta property="og:title" content="DayMaga">
     <meta property="og:description" content="ページの説明文。100文字以内推奨。">
     <meta property="og:url" content="https://example.com/このページのURL">
     <meta property="og:image" content="https://example.com/images/ogp.jpg">
@@ -106,24 +106,60 @@
     </script>
 
     <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="リセットCSSファイルを指定">
     <link rel="stylesheet" href="./assets/css/style.min.css">
   </head>
   <body>
-    <header class="c-header">
+    <header id="header" class="c-header js-header">
       <div class="c-header__inner">
-        <div class="c-logo">
-          <img src="" alt="ロゴ">
+        <div class="c-header__title">
+          <div class="c-header__title-logo c-header__title-logo--default">
+            <p class="c-header__title-lead">ビジネスの未来を切り拓く。</p>
+            <img src="./assets/img/logo-header.png" alt="DayMaga">
+            <p class="c-header__title-text">コンサルティングの専門情報メディア</p>
+          </div>
+          <!-- /.c-header__title-logo c-header__title-logo--default -->
+          <div class="c-header__title-logo c-header__title-logo--scroll">
+            <img src="./assets/img/logo-header-scroll.png" alt="DayMaga">
+          </div>
+          <!-- /.c-header__title-logo c-header__title-logo--scroll -->
         </div>
-        <!-- /.c-logo -->
+        <!-- /.c-header__title -->
         <nav id="global-nav" class="c-header__nav">
           <ul class="c-header__nav-list">
             <li class="c-header__nav-item">
-              <a href="#">リンク</a>
+              <a href="">新着記事</a>
             </li>
-            
+            <li class="c-header__nav-item">
+              <a href="">TIPS</a>
+            </li>
+            <li class="c-header__nav-item">
+              <a href="">インタビュー</a>
+            </li>
+            <li class="c-header__nav-item">
+              <a href="">ニュース</a>
+            </li>
+            <li class="c-header__nav-item c-header__nav-item-btn">
+              <a href="" class="c-header__btn c-header__btn-01">
+                <span class="c-header__btn-lead">コンサルをお探しの企業様</span>
+                <span class="c-header__btn-body">まずは無料相談</span>
+              </a>
+              <a href=""  class="c-header__btn c-header__btn-02">
+                <span class="c-header__btn-lead">コンサルタントの方</span>
+                <span class="c-header__btn-body">案件の紹介登録</span>
+              </a>
+            </li>
+            <li class="c-header__nav-item">
+              <a href="#search" class="c-header__nav-icon">
+                <svg viewBox="0 0 28 28" fill="none">
+                  <path d="M24.5 24.5L17.5 17.5M3.5 11.6667C3.5 12.7391 3.71124 13.8011 4.12165 14.7919C4.53206 15.7827 5.13362 16.683 5.89196 17.4414C6.65031 18.1997 7.55059 18.8013 8.54142 19.2117C9.53224 19.6221 10.5942 19.8333 11.6667 19.8333C12.7391 19.8333 13.8011 19.6221 14.7919 19.2117C15.7827 18.8013 16.683 18.1997 17.4414 17.4414C18.1997 16.683 18.8013 15.7827 19.2117 14.7919C19.6221 13.8011 19.8333 12.7391 19.8333 11.6667C19.8333 10.5942 19.6221 9.53224 19.2117 8.54142C18.8013 7.55059 18.1997 6.65031 17.4414 5.89196C16.683 5.13362 15.7827 4.53206 14.7919 4.12165C13.8011 3.71124 12.7391 3.5 11.6667 3.5C10.5942 3.5 9.53224 3.71124 8.54142 4.12165C7.55059 4.53206 6.65031 5.13362 5.89196 5.89196C5.13362 6.65031 4.53206 7.55059 4.12165 8.54142C3.71124 9.53224 3.5 10.5942 3.5 11.6667Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </li>
           </ul>
           <!-- /.c-header__nav-list -->
         </nav>
@@ -138,26 +174,60 @@
             <span class="c-header__drawer-line c-header__drawer-line-02"></span>
             <span class="c-header__drawer-line c-header__drawer-line-03"></span>
           </button>
-          <!-- /.c-header__drawer-btn -->
         </div>
         <!-- /.c-header__drawer -->
       </div>
       <!-- /.c-header__inner -->
     </header>
     <!-- /.c-header -->
-    <main style="height: 1000px;">
+    
+    <main style="height: 10000px;">
       
+
+      <!-- コンポーネント作成用 -->
+      <!-- <div class="">
+        <div class="l-inner"> -->
+          <!--  -->
+        <!-- </div> -->
+      <!-- </div> -->
     </main>
 
-    <footer class="p-footer c-footer">
-      <div class="p-footer__inner">
+    <footer class="c-footer">
+      <div class="c-footer__inner">
+        <div class="c-footer__contents">
+          <div class="c-footer__img">
+            <picture>
+              <source media="(min-width: 1201px)" srcset="./assets/img/logo-footer.png">
+              <source srcset="./assets/img/logo-footer-sp.png">
+              <img src="./assets/img/logo-footer.png" alt="DayMaga">
+            </picture>
+          </div>
+          <!-- /.c-footer__img -->
+          <nav class="c-footer__nav">
+            <ul class="c-footer__nav-list">
+              <li class="c-footer__nav-item"><a href="">新着記事</a></li>
+              <li class="c-footer__nav-item"><a href="">DayMagaについて</a></li>
+              <li class="c-footer__nav-item"><a href="">TIPS</a></li>
+              <li class="c-footer__nav-item"><a href="">運営会社</a></li>
+              <li class="c-footer__nav-item"><a href="">インタビュー</a></li>
+              <li class="c-footer__nav-item"><a href="">サイト利用規約</a></li>
+              <li class="c-footer__nav-item"><a href="">ニュース</a></li>
+            </ul>
+            <!-- /.c-footer__nav-list -->
+          </nav>
+          <!-- /.c-footer__nav -->
+        </div>
+        <!-- /.c-footer__contents -->
 
-        <small class="p-footer__copy">&copy; <span class="p-footer__copy-text"></span> Your Company</small>
-        <!-- /.p-footer__copy -->
+        <small class="c-footer__copy">&copy;<span class="c-footer__copy-text">2024 Daytra Consul</span></small>
+        <!-- /.c-footer__copy -->
+        <p class="c-footer__info">
+          このサイトはCrown Cat株式会社様のご協力のもと作成したコーディング用の練習課題です。実在の人物・団体とは関係ありません。
+        </p>
       </div>
-      <!-- /.p-footer__inner -->
+      <!-- /.c-footer__inner -->
     </footer>
-    <!-- /.p-footer c-footer -->
+    <!-- /.c-footer-->
     
     <!-- [使用する場合のみ]jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>

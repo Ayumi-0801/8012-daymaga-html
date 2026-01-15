@@ -1,19 +1,2 @@
-/* =========================
-  FLOCSS entry
-  - Global → Foundation → Layout → Object(Component/Project/Utility)
-  - reset.css は Pug の head で外部CDN読み込み
-========================= */
-
-// Global（variables/mixins を最初に）
-@use "./global/index" as *;
-
-// Foundation（初期化・ベース）
-@use "./foundation/index";
-
-// Layout（枠組み）
-@use "./layout/index";
-
-// Object（実体）
-@use "./object/component/index";
-@use "./object/project/index";
-@use "./object/utility/index";
+/* src/styles/style.scss */
+@use "./index";

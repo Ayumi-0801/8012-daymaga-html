@@ -1,16 +1,74 @@
 @use "sass:map";
 
+// 色
+$colors: (
+  blue-50:   #DAEFF8,
+  gray-900:  #343436,
+  blue-300:  #629DE2,
+  blue-700:  #135097,
+  teal-400:  #42A0AD,
+  purple-400:#C88DEC,
+  violet-400:#9C8CFF,
+  gray-500:  #676E87,
+  white:     #FFFFFF,
+  gray-100:  #E6EDF3,
+  brown-900: #241919
+);
+
+@function color($key) {
+  @return map.get($colors, $key);
+}
+
+$bg-color: (
+  base: color(gray-100),
+  blue: color(blue-300),
+  header-nav: color(blue-700),
+  footer: color(brown-900),
+  icon: color(white),
+  category-latest: color(blue-700),
+  category-tips: color(teal-400),
+  category-interview: color(purple-400),
+  category-news: color(violet-400),
+  tag: color(blue-50),
+  btn: color(blue-700),
+  btn-reverse: color(white),
+  pagination-link: color(blue-300),
+  swiper-navigation: color(blue-700)
+);
+
+$border-color-white: color(white);
+$border-color-category-latest: color(blue-700);
+$border-color-category-tips: color(teal-400);
+$border-color-category-interview: color(purple-400);
+$border-color-category-news: color(violet-400);
+$border-color-btn: color(blue-700);
+
 // フォント
 $font-family: (
   jp: ("Noto Sans JP", sans-serif),
-  en: ("Roboto", sans-serif)
+  zen: ("Zen Maru Gothic", sans-serif)
 );
 
 $font-color: (
-  base: #202020
+  base: color(gray-900),
+  gray: color(gray-500),
+  blue: color(blue-700),
+  white: color(white),
+  title: color(blue-700),
+  title-reverse: color(white),
+  btn: color(white),
+  btn-reverse: color(blue-700),
+  sort: color(gray-500),
+  sort-active: color(blue-700),
+  category-latest: color(blue-700),
+  category-tips: color(teal-400),
+  category-interview: color(purple-400),
+  category-news: color(violet-400),
+  pagination-link: color(white)
 );
 
 $font-weight: (
+  light: 300,
   regular: 400,
   medium: 500,
   bold: 700,
@@ -18,30 +76,330 @@ $font-weight: (
 );
 
 $line-height: (
-  sp: 1.8,
-  pc: 1.5
+  sp: 1.4,
+  sp-nav: 1.2,
+  sp-nav-btn: 1.25,
+  footer: 1.2,
+  pc: 1.6
 );
 
 // 各テキストスタイルの定義
 $base-styles-jp: (
   sp: (
     font-family: map.get($font-family, jp),
+    font-color: map.get($font-color, base),
     font-size: 16px,
     font-weight: map.get($font-weight, regular),
     line-height: map.get($line-height, sp)
   ),
   pc: (
     font-family: map.get($font-family, jp),
+    font-color: map.get($font-color, base),
     font-size: 16px,
     font-weight: map.get($font-weight, regular),
-    line-height: map.get($line-height, sp)
+    line-height: map.get($line-height, pc)
   )
 ) !default;
 
-// 色
-$bg-color: (
-  base: #FDFDFD
-);
+$heading-styles-zen: (
+  sp: (
+    font-family: map.get($font-family, zen),
+    font-size: 28px,
+    font-weight: map.get($font-weight, bold),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, zen),
+    font-size: 28px,
+    font-weight: map.get($font-weight, bold),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$btn-styles-zen: (
+  sp: (
+    font-family: map.get($font-family, zen),
+    font-size: 20px,
+    font-weight: map.get($font-weight, bold),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, zen),
+    font-size: 20px,
+    font-weight: map.get($font-weight, bold),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$cta-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 18px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 18px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$cta-styles-zen: (
+  sp: (
+    font-family: map.get($font-family, zen),
+    font-size: 24px,
+    font-weight: map.get($font-weight, bold),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, zen),
+    font-size: 24px,
+    font-weight: map.get($font-weight, bold),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$category-filter-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 18px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 18px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$card-title-fv-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 20px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 20px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$card-category-fv-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 18px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 20px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$card-date-fv-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 14px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 14px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$tag-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 14px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 14px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$card-title-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 15px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 15px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$card-category-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 13px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 13px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$card-tag-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 12px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 12px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$card-date-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 12px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 12px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$single-heading-1-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 20px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 28px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$single-heading-2-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 18px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 24px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$single-heading-3-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 16px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 16px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$single-toc-1-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 15px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 16px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$single-toc-2-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 14px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 15px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$single-date-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 14px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 14px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
+
+$single-base-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 14px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 15px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, pc)
+  )
+) !default;
 
 // ブレークポイント
 $breakpoints: (
@@ -53,9 +411,9 @@ $breakpoints: (
 ) !default;
 
 // サイズ
-$max-width: 1280px;
-$header-height-sp: 60px;
-$header-height-pc: 80px;
+$max-width: 1440px;
+$header-height-sp: 68px;
+$header-height-pc: 99px;
 
 // 画像ディレクトリパス（記述例：background: url("#{global.$asset-img-path}/contact/check.png") no-repeat top center/cover;）
 $asset-img-path: "../img";

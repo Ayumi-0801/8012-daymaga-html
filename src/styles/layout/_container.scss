@@ -1,2 +1,11 @@
 @use "../global" as global;
 
+.l-inner {
+  margin-inline: auto;
+  max-width: global.$max-width;
+  width: 100%;
+}
+
+.l-single {
+
+}
