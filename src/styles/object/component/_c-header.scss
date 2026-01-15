@@ -1,1 +1,434 @@
-@use "../../global/variables" as global;
+@use "../../global" as global;
+
+.c-header {
+  // ドロワーメニューの開閉処理要
+  --nav-item-count: 4; // メニューアイテムのうち、メニュー非表示時に表示されないアイテムの数
+  --nav-item-height: 19px; // メニューアイテムの高さ
+  --nav-gap: clamp(32px, 3.34vw, 48px); // 横並び時の重なり防止のため可変。中間値：48px / 1440px * 100vw
+  // --nav-gap: 32px; // メニュー間のgap
+  --nav-gap-count: 4; //スマホ時のgapが適用されている数
+  --nav-padding-top: calc(24px + 32px);
+  --nav-padding-bottom-offset: calc(32px - 28px); // 非表示時と表示時のnavのpadding-bottom差分
+  --nav-close-offset-default: calc((var(--nav-item-count) * var(--nav-item-height) + var(--nav-gap) * var(--nav-gap-count) - var(--nav-padding-bottom-offset)) * -1);
+  --nav-close-offset-scroll: calc((var(--nav-item-count) * var(--nav-item-height) + var(--nav-gap) * var(--nav-gap-count) + var(--nav-padding-top)) * -1);
+
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  @include global.bg-color(base);
+  @include global.z(header);
+
+  &.is-open,
+  &.is-open.is-scroll {
+
+    & .c-header__nav {
+      padding-block-end: 32px;
+      width: 240px;
+      max-height: 80vh;
+    }
+
+    & .c-header__nav-list {
+      width: 100%;
+      transform: translateY(0);
+    }
+
+    & .c-header__nav-item {
+
+      &:not(:last-child) {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+        transition-delay: 0.08s;
+      }
+
+      &:last-child {
+        margin-top: auto;
+      }
+    }
+
+    & .c-header__drawer {
+      top: 24px;
+
+      & .c-header__drawer-line {
+        
+        &-01 {
+          top: 50%;
+          transform: translateY(-50%) rotate(32.574deg);
+        }
+
+        &-02 {
+          opacity: 0;
+          transform: translateY(-50%) scaleX(0);
+        }
+
+        &-03 {
+          top: 50%;
+          bottom: auto;
+          transform: translateY(-50%) rotate(-32.574deg);
+        }
+      }
+
+      & .c-header__nav-icon {
+        display: none;
+      }
+    }
+  }
+
+  &.is-scroll {
+    height: 68px;
+
+    & .c-header__title {
+      width: calc(160px + 24px);
+      padding-inline-start: 24px;
+    }
+      
+    & .c-header__title-logo--default {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+
+    & .c-header__title-logo--scroll {
+      transform: translateY(-50%);
+      opacity: 1;
+    }
+
+    & .c-header__nav {
+      padding-inline: 40px 32px;
+      padding-block: 20px 20px;
+      width: 184px;
+      max-height: 68px;
+    }
+
+    & .c-header__nav-list {
+      width: 28px;
+
+      // メニューが閉じている時は表示位置を上にずらして、虫眼鏡アイコンのみを表示させる
+      // スクロール時指定
+      transform: translateY(var(--nav-close-offset-scroll));
+    }
+
+    & .c-header__drawer {
+      top: 22px;
+      right: 32px;
+    }
+
+    @include global.mq(lg) {
+
+      & .c-header__title {
+        width: calc(206px + 48px);
+        padding-inline-start: 48px;
+      }
+        
+    }
+
+    @include global.mq(xl) {
+      height: 99px;
+      
+      & .c-header__nav {
+        padding-block: 23px 24px;
+        padding-inline: 65px;
+        width: auto;
+        max-height: 100%;
+      }
+
+      & .c-header__nav-list {
+        width: auto;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__title {
+    position: relative;
+    width: calc(260px + 20px);
+    padding-inline-start: 20px;
+    will-change: width;
+    transition: 
+      width global.$transition-base global.$transition-ease;
+
+    @include global.mq(lg) {
+      width: calc(260px + 48px);
+      padding-inline-start: 48px;
+    }
+
+    &-logo {
+      display: flex;
+      flex-direction: column;
+      white-space: nowrap;
+      transition: 
+        transform global.$transition-base global.$transition-ease,
+        opacity global.$transition-base global.$transition-ease;
+
+      &--default {
+        justify-content: flex-end;
+        align-items: center;
+        gap: 8px;
+        padding-block-start: 32px;
+        transform: translateY(0);
+        opacity: 1;
+
+        & img {
+          width: 165px;
+          height: 42px;
+        }
+      }
+
+      &--scroll {
+        position: absolute;
+        top: 50%;
+        left: 24px;
+        justify-content: center;
+        align-items: flex-end;
+        padding-block: 22px 17px;
+        transform: translateY(100%);
+        opacity: 0;
+
+        @include global.mq(lg) {
+          left: 48px;
+          // padding-block: 29px 27px;
+        }
+      }
+    }
+
+    &-lead {
+      @include global.font-family(zen);
+      font-size: 20px;
+      @include global.font-weight(bold);
+      @include global.line-height(pc);
+      background: linear-gradient(90deg, #C31F1F 18.85%, #132097 67.5%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    &-text {
+      @include global.font-family(zen);
+      font-size: 13px;
+      @include global.font-weight(bold);
+      @include global.line-height(sp);
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    padding-block: 24px 28px;
+    padding-inline: clamp(24px, 4.52vw, 65px); // 画面幅で重なり防止。中間幅：65px / 1440px * 100vw
+    // padding-inline: 24px 24px;
+    width: 84px;
+    height: fit-content;
+    max-height: 140px;
+    overflow: hidden;
+    border-radius: 0 0 0 28px;
+    @include global.bg-color(header-nav);
+    will-change: width, max-height;
+    transition: 
+      width global.$transition-slow global.$transition-ease,
+      max-height global.$transition-slow global.$transition-ease;
+    
+    @include global.mq(xl) {
+      position: static;
+      // flex-direction: row;
+      // gap: 48px;
+      padding-block: 23px 24px;
+      // padding-inline: 65px;
+      width: auto;
+      height: fit-content;
+      max-height: 100%;
+      border-radius: 0 0 0 32px;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: var(--nav-gap);
+      text-align: center;
+      padding-block-start: var(--nav-padding-top);
+      width: 100%;
+      height: 100%;
+      @include global.font-color(white);
+      @include global.font-weight(bold);
+      @include global.line-height(sp-nav);
+
+      // メニューが閉じている時は表示位置を上にずらして、虫眼鏡アイコンのみを表示させる
+      // 画面表示時指定
+      transform: translateY(var(--nav-close-offset-default));
+      will-change: width;
+      transition:
+        width global.$transition-slow global.$transition-ease,
+        transform global.$transition-slow global.$transition-ease;
+
+      @include global.mq(xl) {
+        flex-direction: row;
+        align-items: center;
+        // gap: 48px;
+        padding-block-start: 0;
+        transform: translateY(0);
+      }
+    }
+
+    &-item {
+      // margin-top: auto;
+      white-space: nowrap;
+
+      &:not(:last-child) {
+        opacity: 0;
+        transform: translateY(-8px);
+        pointer-events: none;
+        transition:
+          opacity global.$transition-slow global.$transition-ease,
+          transform global.$transition-slow global.$transition-ease,
+          max-height global.$transition-slow global.$transition-ease;
+        transition-delay: 0s;
+
+        @include global.mq(xl) {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      &:last-child {
+        margin-top: 0;
+      }
+
+      &-btn {
+        display: none;
+        gap: 32px;
+
+        @include global.mq(xl) {
+          display: flex;
+        }
+      }
+    }
+
+    &-icon {
+      display: inline-block;
+      width: 28px;
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    min-width: 144px;
+    border-radius: 8px;
+    border: 1px solid global.$border-color-white;
+    overflow: hidden;
+
+    &-01 {
+
+      & .c-header__btn-lead {
+        @include global.font-color(btn);
+        border-bottom: 1px solid global.$border-color-white;
+      }
+
+      & .c-header__btn-body {
+        @include global.font-color(btn-reverse);
+        @include global.bg-color(btn-reverse);
+      }
+    }
+
+    &-02 {
+
+      & .c-header__btn-lead {
+        @include global.font-color(btn-reverse);
+        @include global.bg-color(btn-reverse);
+        border-bottom: 1px solid global.$border-color-white;
+      }
+
+      & .c-header__btn-body {
+        @include global.font-color(btn);
+      }
+    }
+
+    &-lead {
+      display: block;
+      padding-block: 4px 4px;
+      padding-inline: 3px 2px;
+      width: 100%;
+      font-size: clamp(11px, 0.84vw, 12px); // 横並び時の重なり防止のため可変。中間値：12px / 1440px * 100vw
+      @include global.font-weight(bold);
+    }
+
+    &-body {
+      display: block;
+      padding-block: 2px 5px;
+      width: 100%;
+      @include global.font-weight(bold);
+      @include global.line-height(sp-nav-btn);
+    }
+  }
+
+  &__drawer {
+    position: absolute;
+    top: 28px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    background-color: transparent;
+    transition:
+      top global.$transition-slow global.$transition-ease,
+      right global.$transition-slow global.$transition-ease;
+
+    @include global.mq(xl) {
+      display: none;
+    }
+
+    &-btn {
+      position: relative;
+      display: flex;
+      width: 36px;
+      height: 24px;
+      @include global.z("drawer");
+    }
+
+    &-line {
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      width: 100%;
+      height: 3px;
+      border-radius: 3px;
+      @include global.bg-color(icon);
+      transition:
+        transform global.$transition-slow global.$transition-ease,
+        opacity global.$transition-slow global.$transition-ease,
+        top global.$transition-slow global.$transition-ease,
+        bottom global.$transition-slow global.$transition-ease;
+
+      &-01 {
+        top: 0;
+      }
+
+      &-02 {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      &-03 {
+        bottom: 0;
+      }
+    }
+  }
+}
+

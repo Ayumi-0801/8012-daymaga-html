@@ -9,6 +9,7 @@
   ============================================== */
   const btn  = document.querySelector('.js-btn-drawer');   // <button>
   const nav  = document.getElementById('global-nav');      // <nav>
+  const header = document.getElementById('header');
   if (!btn || !nav) return;
 
   let isLock = false; // 二重連打防止
@@ -35,9 +36,7 @@
     void nav.offsetWidth;
 
     btn.setAttribute('aria-expanded', 'true');
-    nav.classList.add('is-open');
-
-    btn.classList.add('is-active');
+    header.classList.add('is-open');
 
     // クリック無効化を解除
     nav.addEventListener('transitionend', onTransitionEnd);
@@ -48,9 +47,7 @@
     isLock = true; // クリック無効化
 
     btn.setAttribute('aria-expanded', 'false');
-    nav.classList.remove('is-open');
-
-    btn.classList.remove('is-active');
+    header.classList.remove('is-open');
 
     // クリック無効化を解除
     nav.addEventListener('transitionend', onTransitionEnd);
@@ -80,6 +77,21 @@
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function() {
       this.blur();
+    });
+  });
+
+  /* ==============================================
+  スクロールしたらヘッダー表示変更
+  ============================================== */
+  document.addEventListener(`DOMContentLoaded`, () => {
+    const header = document.querySelector('.js-header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        header.classList.add('is-scroll');
+      } else {
+        header.classList.remove('is-scroll');
+      }
     });
   });
 })();

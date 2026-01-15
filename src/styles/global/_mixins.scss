@@ -21,7 +21,7 @@
 
 // 背景プロパティmixin
 @mixin bg-color($key) {
-  font-family: map.get(vars.$bg-color, $key)
+  background-color: map.get(vars.$bg-color, $key)
 }
 
 // テキストプロパティmixin
@@ -34,16 +34,277 @@
 }
 
 @mixin font-weight($key) {
-  color: map.get(vars.$font-weight, $key)
+  font-weight: map.get(vars.$font-weight, $key)
 }
 
 @mixin line-height($key) {
-  color: map.get(vars.$line-height, $key)
+  line-height: map.get(vars.$line-height, $key)
 }
 
 // テキストスタイルのmixin（呼び出し：@include vars.catch-jp(sm);）
 @mixin base-jp($size) {
   $style: map.get(vars.$base-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    color: map.get($style, font-color);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin heading-zen($size) {
+  $style: map.get(vars.$heading-styles-zen, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin btn-zen($size) {
+  $style: map.get(vars.$btn-styles-zen, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin cta-jp($size) {
+  $style: map.get(vars.$cta-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin cta-zen($size) {
+  $style: map.get(vars.$cta-styles-zen, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin category-filter-jp($size) {
+  $style: map.get(vars.$category-filter-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin card-title-fv-jp($size) {
+  $style: map.get(vars.$card-title-fv-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin card-category-fv-jp($size) {
+  $style: map.get(vars.$card-category-fv-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin card-date-fv-jp($size) {
+  $style: map.get(vars.$card-date-fv-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin tag-jp($size) {
+  $style: map.get(vars.$tag-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin card-title-jp($size) {
+  $style: map.get(vars.$card-title-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin card-category-jp($size) {
+  $style: map.get(vars.$card-category-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin card-tag-jp($size) {
+  $style: map.get(vars.$card-tag-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin card-date-jp($size) {
+  $style: map.get(vars.$card-date-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin single-heading-1-jp($size) {
+  $style: map.get(vars.$single-heading-1-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin single-heading-2-jp($size) {
+  $style: map.get(vars.$single-heading-2-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin single-heading-3-jp($size) {
+  $style: map.get(vars.$single-heading-3-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin single-toc-1-jp($size) {
+  $style: map.get(vars.$single-toc-1-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin single-toc-2-jp($size) {
+  $style: map.get(vars.$single-toc-2-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin single-date-jp($size) {
+  $style: map.get(vars.$single-date-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin single-base-jp($size) {
+  $style: map.get(vars.$single-base-styles-jp, $size);
 
   @if $style == null {
     @warn "Undefined heading size: #{$size}";

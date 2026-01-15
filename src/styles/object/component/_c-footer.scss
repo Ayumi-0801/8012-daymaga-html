@@ -1,0 +1,100 @@
+@use "../../global" as global;
+
+.c-footer {
+  padding-block: 40px 20px;
+  @include global.font-color(white);
+  @include global.line-height(footer);
+  @include global.bg-color(footer);
+
+  @include global.mq(lg) {
+    padding-block: 48px 28px;
+  }
+
+  &__inner {
+    padding-inline: 17px 17px;
+
+    @include global.mq(sm) {
+      padding-inline: clamp(17px, 13.3vw, 192px); // 中間値：(192px / 1440px) + (17px / 390px) / 2 * 100nw
+    }
+  }
+
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+
+    @include global.mq(lg) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__img {
+    margin-inline: auto;
+    width: 234px;
+
+    @include global.mq(lg) {
+      margin-inline: 0;
+    }
+
+    @include global.mq(xl) {
+      width: 334px;
+    }
+  }
+
+  &__nav {
+    padding-inline: 37px 36px;
+
+    @include global.mq(lg) {
+      padding-block: 16px 16px;
+      padding-inline: 0;
+    }
+
+    &-list {
+      display: grid;
+      grid-template-columns: 101px auto;
+      gap: 32px 40px;
+      @include global.font-weight(medium);
+
+      @include global.mq(lg) {
+        gap: 24px 64px;
+      }
+    }
+
+    &-item {
+      letter-spacing: 0.8px;
+    }
+  }
+
+  &__copy {
+    display: block;
+    text-align: center;
+    margin-top: 36px;
+    @include global.font-weight(light);
+
+    @include global.mq(lg) {
+      padding-left: 24px;
+      margin-top: 24px;
+    }
+
+    &-text {
+
+    }
+  }
+
+  &__info {
+    margin-top: 40px;
+    font-size: 12px;
+
+    @include global.mq(lg) {
+      margin-top: 23px;
+    }
+
+    @include global.mq(xl) {
+      text-align: center;
+    }
+  }
+}
+
