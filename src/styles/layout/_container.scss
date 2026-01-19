@@ -1,5 +1,17 @@
 @use "../global" as global;
 
+.l-main {
+  margin-top: global.$header-height;
+
+  &.is-scroll {
+    margin-top: global.$header-height-sp-scroll;
+
+    @include global.mq(lg) {
+      margin-top: global.$header-height-pc-scroll;
+    }
+  }
+}
+
 .l-inner {
   margin-inline: auto;
   max-width: global.$max-width;

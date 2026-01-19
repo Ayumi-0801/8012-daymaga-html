@@ -1,0 +1,151 @@
+@use "../../global" as global;
+
+
+.c-card {
+  padding-block: 16px 16px;
+  border-radius: 12px;
+  @include global.bg-color(card);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.03), 0 5px 30px 0 rgba(20, 43, 78, 0.20);
+  overflow: hidden;
+
+  &__link {
+    transition: opacity global.$transition-base global.$transition-ease;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.7;
+    }
+  }
+
+  &__inner {
+    padding-inline: 16px 16px;
+  }
+
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__img {
+    flex: 0 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+
+    & img {
+      aspect-ratio: 270 / 158;
+      object-fit: cover;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__update {
+    @include global.card-date-jp(sp);
+  }
+
+  &__lead {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp:2; // 最大2行まで表示
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    @include global.card-title-jp(sp);
+    letter-spacing: 0.3px;
+  }
+
+  &__category {
+    @include global.card-category-jp(sp);
+  }
+
+  &__tag {
+    display: flex;
+    gap: 8px;
+  }
+
+  // ファーストビィーのPC時スタイル指定
+  &--fv {
+    
+    @include global.mq(lg) {
+      padding-block: 28px 28px;
+      border-radius: 20px;
+    }
+
+    & .c-card__inner {
+
+      @include global.mq(lg) {
+        padding-inline: 28px 28px;
+      }
+    }
+
+    & .c-card__contents {
+
+      @include global.mq(lg) {
+        gap: 16px;
+      }
+    }
+
+    & .c-card__img {
+
+      & img {
+
+        @include global.mq(lg) {
+          aspect-ratio: 540 / 304;
+        }
+      }
+    }
+
+    & .c-card__body {
+
+      @include global.mq(lg) {
+        padding-inline-start: 8px;
+      }
+    }
+
+    & .c-card__update {
+
+      @include global.mq(lg) {
+        @include global.card-date-jp(pc);
+      }
+    }
+
+    & .c-card__lead {
+
+      @include global.mq(lg) {
+        // margin-top: 8px;
+        @include global.card-title-jp(pc);
+        letter-spacing: 1px;
+      }
+    }
+
+    & .c-category {
+      
+      @include global.mq(lg) {
+        padding-block: 3px;
+        padding-inline: 19px;
+        @include global.card-category-jp(pc);
+      }
+    }
+
+    & .c-card__tag {
+
+      @include global.mq(lg) {
+        gap: 16px;
+      }
+    }
+
+    & .c-tag {
+
+      @include global.mq(lg) {
+        padding-block: 2px 4px;
+        padding-inline: 8px 10px;
+        @include global.tag-jp(pc);
+      }
+      
+    }
+  }
+}

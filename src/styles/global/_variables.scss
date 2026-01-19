@@ -24,6 +24,7 @@ $bg-color: (
   blue: color(blue-300),
   header-nav: color(blue-700),
   footer: color(brown-900),
+  card: color(white),
   icon: color(white),
   category-latest: color(blue-700),
   category-tips: color(teal-400),
@@ -79,6 +80,9 @@ $line-height: (
   sp: 1.4,
   sp-nav: 1.2,
   sp-nav-btn: 1.25,
+  sp-date:1.2,
+  sp-tag: 1.8,
+  pc-tag: 1.5,
   footer: 1.2,
   pc: 1.6
 );
@@ -179,7 +183,7 @@ $category-filter-styles-jp: (
 $card-title-fv-styles-jp: (
   sp: (
     font-family: map.get($font-family, jp),
-    font-size: 20px,
+    font-size: 15px,
     font-weight: map.get($font-weight, medium),
     line-height: map.get($line-height, sp)
   ),
@@ -224,15 +228,15 @@ $card-date-fv-styles-jp: (
 $tag-styles-jp: (
   sp: (
     font-family: map.get($font-family, jp),
-    font-size: 14px,
+    font-size: 12px,
     font-weight: map.get($font-weight, regular),
-    line-height: map.get($line-height, sp)
+    line-height: map.get($line-height, sp-tag)
   ),
   pc: (
     font-family: map.get($font-family, jp),
     font-size: 14px,
     font-weight: map.get($font-weight, regular),
-    line-height: map.get($line-height, pc)
+    line-height: map.get($line-height, pc-tag)
   )
 ) !default;
 
@@ -245,7 +249,7 @@ $card-title-styles-jp: (
   ),
   pc: (
     font-family: map.get($font-family, jp),
-    font-size: 15px,
+    font-size: 20px,
     font-weight: map.get($font-weight, medium),
     line-height: map.get($line-height, pc)
   )
@@ -260,9 +264,9 @@ $card-category-styles-jp: (
   ),
   pc: (
     font-family: map.get($font-family, jp),
-    font-size: 13px,
+    font-size: 18px,
     font-weight: map.get($font-weight, regular),
-    line-height: map.get($line-height, pc)
+    line-height: map.get($line-height, sp)
   )
 ) !default;
 
@@ -275,7 +279,7 @@ $card-tag-styles-jp: (
   ),
   pc: (
     font-family: map.get($font-family, jp),
-    font-size: 12px,
+    font-size: 14px,
     font-weight: map.get($font-weight, regular),
     line-height: map.get($line-height, pc)
   )
@@ -286,13 +290,13 @@ $card-date-styles-jp: (
     font-family: map.get($font-family, jp),
     font-size: 12px,
     font-weight: map.get($font-weight, regular),
-    line-height: map.get($line-height, sp)
+    line-height: map.get($line-height, sp-date)
   ),
   pc: (
     font-family: map.get($font-family, jp),
-    font-size: 12px,
+    font-size: 14px,
     font-weight: map.get($font-weight, regular),
-    line-height: map.get($line-height, pc)
+    line-height: map.get($line-height, sp-date)
   )
 ) !default;
 
@@ -412,8 +416,9 @@ $breakpoints: (
 
 // サイズ
 $max-width: 1440px;
-$header-height-sp: 68px;
-$header-height-pc: 99px;
+$header-height: 140px;
+$header-height-sp-scroll: 68px;
+$header-height-pc-scroll: 99px;
 
 // 画像ディレクトリパス（記述例：background: url("#{global.$asset-img-path}/contact/check.png") no-repeat top center/cover;）
 $asset-img-path: "../img";
