@@ -85,13 +85,42 @@
   ============================================== */
   document.addEventListener(`DOMContentLoaded`, () => {
     const header = document.querySelector('.js-header');
+    const main = document.querySelector('.l-main');
 
     window.addEventListener('scroll', () => {
       if (window.scrollY > 0) {
         header.classList.add('is-scroll');
+        main.classList.add('is-scroll');
       } else {
         header.classList.remove('is-scroll');
+        main.classList.remove('is-scroll');
       }
     });
+  });
+
+  /* ==============================================
+  ファーストビューSwiper
+  ============================================== */
+  const initSwiperAbout = () => {
+    const swiper = new Swiper(".js-swiper-fv", {
+      centeredSlides: true, // 中央寄せ
+      slidesPerView: "auto", // CSSでスライドの幅を管理
+      rewind: true,
+      freeMode: false,
+      initialSlide: 1, // 初期表示は2番目のスライドを中央に表示
+      spaceBetween: 16,
+      breakpoints: {
+        901: {
+          spaceBetween: 64,
+        },
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  };
+  window.addEventListener("load", function () {
+    initSwiperAbout(); // ページ読み込み後に初期化
   });
 })();

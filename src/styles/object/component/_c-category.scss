@@ -1,0 +1,32 @@
+@use "../../global" as global;
+
+.c-category {
+  padding-block: 4px 4px;
+  padding-inline: 16px 16px;
+  width: fit-content;
+  border-radius: 4px;
+  
+
+  &--latest {
+    @include global.font-color(category-latest);
+    border: 1px solid global.$border-color-category-latest;
+  }
+
+  &--tips {
+    @include global.font-color(category-tips);
+    border: 1px solid global.$border-color-category-tips;
+
+  }
+
+  &--interview {
+    @include global.font-color(category-interview);
+    border: 1px solid global.$border-color-category-interview;
+    
+  }
+
+  &--news {
+    @include global.font-color(category-news);
+    border: 1px solid global.$border-color-category-news;
+
+  }
+}

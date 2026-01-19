@@ -1,0 +1,9 @@
+@use "../../global" as global;
+
+.c-tag {
+  padding-block: 3px 2px;
+  padding-inline: 12px 12px;
+  @include global.tag-jp(sp);
+  border-radius: 24px;
+  @include global.bg-color(tag);
+}
