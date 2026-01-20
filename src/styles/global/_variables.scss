@@ -82,9 +82,19 @@ $line-height: (
   sp-nav-btn: 1.25,
   sp-date:1.2,
   sp-tag: 1.8,
-  pc-tag: 1.5,
   footer: 1.2,
-  pc: 1.6
+  pc: 1.6,
+  pc-tag: 1.5,
+  heading: 1.2,
+  tab: 1.5,
+  btn: 1.8
+);
+
+$letter-spacing: (
+  sp-btn: 3.6px,
+  pc-btn: 4px,
+  sp-heading: 4.8px,
+  pc-heading: 6.4px
 );
 
 // 各テキストスタイルの定義
@@ -108,30 +118,35 @@ $base-styles-jp: (
 $heading-styles-zen: (
   sp: (
     font-family: map.get($font-family, zen),
-    font-size: 28px,
+    font-size: 24px,
     font-weight: map.get($font-weight, bold),
-    line-height: map.get($line-height, sp)
+    line-height: map.get($line-height, heading),
+    letter-spacing: map.get($letter-spacing, sp-heading)
   ),
   pc: (
     font-family: map.get($font-family, zen),
-    font-size: 28px,
+    font-size: 32px,
     font-weight: map.get($font-weight, bold),
-    line-height: map.get($line-height, pc)
+    line-height: map.get($line-height, heading),
+    letter-spacing: map.get($letter-spacing, pc-heading)
   )
 ) !default;
+
 
 $btn-styles-zen: (
   sp: (
     font-family: map.get($font-family, zen),
-    font-size: 20px,
+    font-size: 18px,
     font-weight: map.get($font-weight, bold),
-    line-height: map.get($line-height, sp)
+    line-height: map.get($line-height, btn),
+    letter-spacing: map.get($letter-spacing, sp-btn)
   ),
   pc: (
     font-family: map.get($font-family, zen),
     font-size: 20px,
     font-weight: map.get($font-weight, bold),
-    line-height: map.get($line-height, pc)
+    line-height: map.get($line-height, btn),
+    letter-spacing: map.get($letter-spacing, pc-btn)
   )
 ) !default;
 

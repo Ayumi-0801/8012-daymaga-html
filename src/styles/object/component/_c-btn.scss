@@ -1,0 +1,26 @@
+@use "../../global" as global;
+
+.c-btn {
+  display: inline-block;
+  padding-block: 6px;
+  padding-inline: 26px 23px;
+  @include global.font-color(btn);
+  @include global.btn-zen(sp);
+  border-radius: 20px 20px 0 20px;
+  @include global.bg-color(btn);
+  border: 2px solid global.$border-color-btn;
+  box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.10);
+  transition: 
+    color global.$transition-base global.$transition-ease,
+    background-color global.$transition-base global.$transition-ease;
+
+  @include global.mq(lg) {
+    @include global.btn-zen(pc);
+  }
+
+  &:hover,
+  &:focus-visible {
+    @include global.font-color(btn-reverse);
+    @include global.bg-color(btn-reverse);
+  }
+}

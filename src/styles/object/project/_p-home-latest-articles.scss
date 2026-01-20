@@ -1,0 +1,61 @@
+@use "../../global" as global;
+
+.p-home-latest-articles {
+  padding-block: 40px 40px;
+
+  &__inner {
+    padding-inline: 44px;
+
+    @include global.mq(lg) {
+      padding-inline-start: clamp(102px, 15.5vw, 223px); // 中間値：223px / 1440px * 100vw
+      padding-inline-end: clamp(110px, 16.1vw, 231px); // 中間値：231px / 1440px * 100vw
+      // padding-inline: 0;
+    }
+  }
+
+  &__title {
+
+    @include global.mq(lg) {
+      justify-content: center;
+      transform: translateX(3px);
+    }
+  }
+
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 31px;
+    margin-inline: auto;
+    // width: 100%;
+    // max-width: 986px;
+
+    @include global.mq(lg) {
+      margin-top: 46px;
+      gap: 48px;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 19px;
+
+    @include global.mq(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include global.mq(xl) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+  }
+
+  &__btn {
+    text-align: right;
+
+    @include global.mq(lg) {
+      text-align: center;
+    }
+  }
+}

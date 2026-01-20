@@ -66,6 +66,7 @@
     font-size: map.get($style, font-size);
     font-weight: map.get($style, font-weight);
     line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
   }
 }
 
@@ -79,6 +80,7 @@
     font-size: map.get($style, font-size);
     font-weight: map.get($style, font-weight);
     line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
   }
 }
 

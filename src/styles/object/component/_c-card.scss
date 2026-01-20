@@ -2,7 +2,7 @@
 
 
 .c-card {
-  padding-block: 16px 16px;
+  padding-block: 16px;
   border-radius: 12px;
   @include global.bg-color(card);
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.03), 0 5px 30px 0 rgba(20, 43, 78, 0.20);
@@ -13,12 +13,13 @@
 
     &:hover,
     &:focus-visible {
-      opacity: 0.7;
+      opacity: 0.8;
     }
   }
 
   &__inner {
-    padding-inline: 16px 16px;
+    padding-inline: 16px;
+    overflow: hidden;
   }
 
   &__contents {
@@ -71,14 +72,22 @@
   &--fv {
     
     @include global.mq(lg) {
-      padding-block: 28px 28px;
+      padding-block: 28px;
       border-radius: 20px;
+    }
+
+    & .c-card__link {
+
+      &:hover,
+      &:focus-visible {
+        opacity: 0.7;
+      }
     }
 
     & .c-card__inner {
 
       @include global.mq(lg) {
-        padding-inline: 28px 28px;
+        padding-inline: 28px;
       }
     }
 
@@ -116,7 +125,6 @@
     & .c-card__lead {
 
       @include global.mq(lg) {
-        // margin-top: 8px;
         @include global.card-title-jp(pc);
         letter-spacing: 1px;
       }
