@@ -1,0 +1,27 @@
+@use "../../global" as global;
+
+
+.c-title {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 12px;
+
+  &__img {
+    width: 42px;
+
+    @include global.mq(lg) {
+      width: 72px;
+    }
+  }
+
+  &__text {
+    @include global.font-color(title);
+    @include global.heading-zen(sp);
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.05);
+
+    @include global.mq(lg) {
+      @include global.heading-zen(pc);
+    }
+  }
+}
