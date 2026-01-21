@@ -1,0 +1,69 @@
+
+@use "../../global" as global;
+
+.p-home-popular-articles {
+  padding-block: 40px 39px;
+  background: url("#{global.$asset-img-path}/popular-articles.png") no-repeat top center/cover;
+
+  @include global.mq(lg) {
+    padding-block: 64px 53px;
+  }
+
+  &__inner {
+    // max-width: auto;
+  }
+
+  &__lead {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-inline: 32px 38px;
+
+    @include global.mq(sm) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    @include global.mq(lg) {
+      padding-inline-start: clamp(102px, 13.1vw, 188px); // 中間値：188px / 1440px * 100vw
+      padding-inline-end: clamp(110px, 14.8vw, 212px); // 中間値：212px / 1440px * 100vw
+    }
+  }
+
+  &__title {
+
+    .c-title__text {
+      letter-spacing: 2.4px;
+
+      @include global.mq(lg) {
+        letter-spacing: 6.4px;
+      }
+    }
+  }
+
+  &__contents {
+    margin-top: 23px;
+
+    @include global.mq(lg) {
+      margin-top: 36px;
+    }
+  }
+
+  &__swiper {
+    padding-inline: 32px;
+
+    @include global.mq(lg) {
+      padding-inline-start: clamp(102px, 13.1vw, 188px); // 中間値：188px / 1440px * 100vw
+      padding-inline-end: clamp(110px, 14.8vw, 265px); // 中間値：213px / 1440px * 100vw
+    }
+
+    &-navigation {
+
+    }
+
+    &-wrapper {
+      
+    }
+  }
+}

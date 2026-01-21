@@ -3,7 +3,7 @@
 
 html {
   scroll-behavior: smooth;
-  height: 1000%;
+  height: 100%;
   // overflow-x: hidden;
   overflow-x: clip; /* 開発時の拡張機能による横幅オーバーフロー制御用。本番時はhiddenに変更 */
   @include global.base-jp(sp);
@@ -32,7 +32,7 @@ main {
     scroll-margin-top: global.$header-height-sp-scroll;
 
     @include global.mq(lg) {
-      margin-top: global.$header-height-pc-scroll;
+      scroll-margin-top: global.$header-height-pc-scroll;
     }
   }
 }
@@ -68,8 +68,16 @@ small {
   font-size: 100%;
 }
 
-/* Swiperデフォルトのアイコンを配置をリセットする */
+/* Swiperの横幅計算崩れ防止 */
+// .swiper {
+//   width: 100%;
+//   overflow: hidden;
+//   min-width: 0;
+// }
+
+/* Swiperデフォルトのアイコンのdefault設定をリセットする */
 .swiper-button-prev,
 .swiper-button-next {
   position: static;
+  margin-top: 0;
 }
