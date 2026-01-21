@@ -23,5 +23,9 @@
     @include global.mq(lg) {
       @include global.heading-zen(pc);
     }
+
+    &--reverse {
+      @include global.font-color(title-reverse);
+    }
   }
 }

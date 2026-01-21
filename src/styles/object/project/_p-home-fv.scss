@@ -44,8 +44,7 @@
 
     &-navigation {
       position: absolute;
-      // top: 183px;
-      top: 45.5%;
+      top: 40.6%;
       left: 50%;
       transform: translate(-50%);
       display: flex;
@@ -56,15 +55,13 @@
       z-index: 10;
 
       @include global.mq(lg) {
-        top: 46.5%;
+        top: 43.2%;
         padding-inline:0;
       }
     }
 
     &-btn {
       display: block;
-      // padding-block: 7px 6px;
-      // padding-inline: 9px 9px;
       width: 36px;
       height: 36px;
       border-radius: 50%;

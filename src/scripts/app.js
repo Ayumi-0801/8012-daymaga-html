@@ -101,7 +101,7 @@
   /* ==============================================
   ファーストビューSwiper
   ============================================== */
-  const initSwiperAbout = () => {
+  const initSwiperFv = () => {
     const swiper = new Swiper(".js-swiper-fv", {
       centeredSlides: true, // 中央寄せ
       slidesPerView: "auto", // CSSでスライドの幅を管理
@@ -115,12 +115,42 @@
         },
       },
       navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".p-home-fv__swiper-btn-next",
+        prevEl: ".p-home-fv__swiper-btn-prev",
       },
     });
   };
   window.addEventListener("load", function () {
-    initSwiperAbout(); // ページ読み込み後に初期化
+    initSwiperFv(); // ページ読み込み後に初期化
+  });
+
+  /* ==============================================
+  記事Swiper（よく読まれている記事、関連記事）
+  ============================================== */
+  const initSwiperArticles = () => {
+    const swiper = new Swiper(".js-swiper-articles", {
+      centeredSlides: false, // 左寄せ
+      slidesPerView: "auto", // CSSでスライドの幅を管理
+      loop: false, // ループ禁止
+      // rewind: true,
+      freeMode: false,
+      spaceBetween: 24,
+      breakpoints: {
+        901: {
+          spaceBetween: 32,
+        },
+      },
+      navigation: {
+        nextEl: ".c-articles-swiper__btn-next",
+        prevEl: ".c-articles-swiper__btn-prev",
+      },
+      scrollbar: {
+        el: '.c-articles-swiper__scrollbar',
+        draggable: true,
+      },
+    });
+  };
+  window.addEventListener("load", function () {
+    initSwiperArticles(); // ページ読み込み後に初期化
   });
 })();

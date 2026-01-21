@@ -24,6 +24,11 @@
   background-color: map.get(vars.$bg-color, $key)
 }
 
+// fillプロパティmixin
+@mixin fill($key) {
+  fill: map.get(vars.$fill, $key)
+}
+
 // テキストプロパティmixin
 @mixin font-family($key) {
   font-family: map.get(vars.$font-family, $key)

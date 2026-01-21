@@ -1,7 +1,11 @@
 @use "../../global" as global;
 
 .p-home-latest-articles {
-  padding-block: 40px 40px;
+  padding-block: 40px;
+
+  @include global.mq(lg) {
+    padding-block: 38px 39px;
+  }
 
   &__inner {
     padding-inline: 44px;
@@ -9,7 +13,6 @@
     @include global.mq(lg) {
       padding-inline-start: clamp(102px, 15.5vw, 223px); // 中間値：223px / 1440px * 100vw
       padding-inline-end: clamp(110px, 16.1vw, 231px); // 中間値：231px / 1440px * 100vw
-      // padding-inline: 0;
     }
   }
 
@@ -31,8 +34,8 @@
     // max-width: 986px;
 
     @include global.mq(lg) {
-      margin-top: 46px;
-      gap: 48px;
+      margin-top: 48px;
+      gap: 47px;
     }
   }
 

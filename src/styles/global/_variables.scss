@@ -12,7 +12,8 @@ $colors: (
   gray-500:  #676E87,
   white:     #FFFFFF,
   gray-100:  #E6EDF3,
-  brown-900: #241919
+  brown-900: #241919,
+  gray-200: #DDE1F0
 );
 
 @function color($key) {
@@ -34,10 +35,23 @@ $bg-color: (
   btn: color(blue-700),
   btn-reverse: color(white),
   pagination-link: color(blue-300),
-  swiper-navigation: color(blue-700)
+  swiper-navigation-btn-hover: color(white),
+  swiper-navigation-btn-single: color(white),
+  swiper-navigation-btn-single-hover: color(blue-700),
+  swiper-scrollbar: color(gray-200),
+  swiper-scrollbar-drag: color(blue-700)
+);
+
+$fill: (
+  swiper-navigation-icon: color(white),
+  swiper-navigation-icon-hover: color(blue-300),
+  swiper-navigation-icon-single: color(blue-700),
+  swiper-navigation-icon-single-hover: color(white)
 );
 
 $border-color-white: color(white);
+$border-color-swiper-navigation: color(white);
+$border-color-swiper-navigation-single: color(blue-700);
 $border-color-category-latest: color(blue-700);
 $border-color-category-tips: color(teal-400);
 $border-color-category-interview: color(purple-400);
