@@ -1,4 +1,3 @@
-// JavaScriptテンプレート
 (() => {
   // 年の自動更新
   const y = document.getElementById('js-year');
@@ -153,4 +152,74 @@
   window.addEventListener("load", function () {
     initSwiperArticles(); // ページ読み込み後に初期化
   });
+  /* ==============================================
+  すべての記事一覧のカテゴリ判定
+  ============================================== */
+  // タブへのテーマクラス付与先
+  const tabsRoot = document.querySelector('.js-category-tabs');
+  // 記事一覧ブロックへのテーマクラス付与先
+  const listRoot = document.querySelector('.c-article-list');
+  // ラジオ
+  const radios = document.querySelectorAll('.js-category-filter');
+  // 記事カード
+  const items = document.querySelectorAll('.c-article-list__item');
+
+  // タブの各カテゴリテーマクラス対応表
+  const tabsThemeMap = {
+    all: 'c-category-tabs--theme-all',
+    latest: 'c-category-tabs--theme-latest',
+    tips: 'c-category-tabs--theme-tips',
+    interview: 'c-category-tabs--theme-interview',
+    news: 'c-category-tabs--theme-news',
+  };
+
+  // 記事一覧の各カテゴリテーマクラス対応表
+  const listThemeMap = {
+    all: 'c-article-list--theme-all',
+    latest: 'c-article-list--theme-latest',
+    tips: 'c-article-list--theme-tips',
+    interview: 'c-article-list--theme-interview',
+    news: 'c-article-list--theme-news',
+  };
+
+  // テーマ切替（共通：target に map のクラスを付け替える）
+  const setTheme = (targetEl, themeMap, value) => {
+    if (!targetEl) return;
+
+    Object.values(themeMap).forEach((cls) => {
+      targetEl.classList.remove(cls);
+    });
+
+    const themeClass = themeMap[value];
+    if (themeClass) {
+      targetEl.classList.add(themeClass);
+    }
+  };
+
+  // 記事一覧のカード表示制御
+  const updateList = (value) => {
+    items.forEach((item) => {
+      const category = item.dataset.category;
+      const isShow = (value === 'all') || (category === value);
+      item.hidden = !isShow;
+    });
+  };
+
+  // 状態反映（value を受け取って、必要な更新を全部やる）
+  const applyState = (value) => {
+    setTheme(tabsRoot, tabsThemeMap, value); // タブ側テーマ
+    setTheme(listRoot, listThemeMap, value); // 記事一覧側テーマ
+    updateList(value); // 表示フィルタ
+  };
+
+  // ラジオボタンの選択変更時
+  radios.forEach((radio) => {
+    radio.addEventListener('change', (e) => {
+      applyState(e.target.value);
+    });
+  });
+
+  // 初期状態の反映（HTMLで checked にしているものを読む）
+  const checked = document.querySelector('.js-category-filter:checked');
+  applyState(checked ? checked.value : 'all');
 })();

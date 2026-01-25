@@ -1,0 +1,10 @@
+@use "../../global" as global;
+
+.c-all-articles {
+  display: flex;
+  flex-direction: row-reverse;
+
+  @include global.mq(xl) {
+    flex-direction: column;
+  }
+}

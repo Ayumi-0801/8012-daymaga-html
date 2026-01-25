@@ -1,0 +1,27 @@
+@use "../../global" as global;
+
+.c-article-sort {
+  display: flex;
+  justify-content: flex-end;
+
+  &__btn {
+    @include global.sort-jp(sp);
+
+    @include global.mq(lg) {
+      @include global.sort-jp(pc);
+    }
+
+    &.is-active {
+      @include global.font-color(sort-active);
+    }
+
+    &--latest {
+      padding-inline: 8px 12px;
+      border-right: 1px solid global.$border-color-sort;
+    }
+
+    &--popular {
+      padding-inline: 12px 5px;
+    }
+  }
+}

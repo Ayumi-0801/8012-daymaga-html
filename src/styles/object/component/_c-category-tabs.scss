@@ -1,0 +1,130 @@
+@use "../../global" as global;
+
+.c-category-tabs {
+  flex: 0 0 auto;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    // align-self: stretch; // 親の stretch を邪魔しないようにする
+    gap: 6px;
+
+    @include global.mq(xl) {
+      flex-direction: row;
+      gap: 12px;
+    }
+
+  }
+
+  &__item {
+    @include global.category-tabs-jp(sp);
+
+    @include global.mq(lg) {
+      @include global.category-tabs-jp(pc);
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: block;
+  }
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+
+  }
+
+
+  &__btn {
+    display: inline-block;
+    padding-block: 6px 3px;
+    padding-inline: 12px 10px;
+    border-radius: 0 12px 12px 0;
+    @include global.bg-color(category-tabs);
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    transition:
+      color global.$transition-base global.$transition-ease,
+      background-color global.$transition-base global.$transition-ease;
+
+    @include global.mq(xl) {
+      padding-block: 5px 3px;
+      padding-inline: 19px 20px;
+      border-radius: 12px 12px 0 0;
+      writing-mode: horizontal-tb;
+      text-orientation: mixed;
+      letter-spacing: normal;
+      border-width: 1px 1px 0 1px;
+    }
+
+    &--all {
+      @include global.font-color(category-all);
+      border-color: global.$border-color-category-all;
+    }
+
+    &--latest {
+      @include global.font-color(category-latest);
+      border-color: global.$border-color-category-latest;
+    }
+
+    &--tips {
+      @include global.font-color(category-tips);
+      border-color: global.$border-color-category-tips;
+    }
+
+    &--interview {
+      @include global.font-color(category-interview);
+      border-color: global.$border-color-category-interview;
+    }
+
+    &--news {
+      @include global.font-color(category-news);
+      border-color: global.$border-color-category-news;
+    }
+  }
+
+  &--theme-all {
+
+    .c-article-list--sp-hidden {
+      display: none;
+
+      @include global.mq(lg) {
+        display: block;
+      }
+    }
+  }
+
+  & .c-category-tabs__input:checked + .c-category-tabs__btn {
+    @include global.font-color(category-tabs-active);
+
+    &--all {
+      @include global.bg-color(category-all);
+    }
+
+    &--latest {
+      @include global.bg-color(category-latest);
+    }
+
+    &--tips {
+      @include global.bg-color(category-tips);
+    }
+
+    &--interview {
+      @include global.bg-color(category-interview);
+    }
+
+    &--news {
+      @include global.bg-color(category-news);
+    }
+  }
+}

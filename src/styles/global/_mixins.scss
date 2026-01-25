@@ -115,8 +115,8 @@
   }
 }
 
-@mixin category-filter-jp($size) {
-  $style: map.get(vars.$category-filter-styles-jp, $size);
+@mixin category-tabs-jp($size) {
+  $style: map.get(vars.$category-tabs-styles-jp, $size);
 
   @if $style == null {
     @warn "Undefined heading size: #{$size}";
@@ -225,6 +225,20 @@
   @if $style == null {
     @warn "Undefined heading size: #{$size}";
   }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin sort-jp($size) {
+  $style: map.get(vars.$sort-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    color: map.get($style, font-color);
     font-family: map.get($style, font-family);
     font-size: map.get($style, font-size);
     font-weight: map.get($style, font-weight);
