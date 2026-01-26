@@ -246,6 +246,36 @@
   }
 }
 
+@mixin search-tab-zen($size) {
+  $style: map.get(vars.$search-tab-styles-zen, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    color: map.get($style, font-color);
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
+  }
+}
+
+@mixin search-heading-jp($size) {
+  $style: map.get(vars.$search-heading-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    color: map.get($style, font-color);
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
+  }
+}
+
 @mixin single-heading-1-jp($size) {
   $style: map.get(vars.$single-heading-1-styles-jp, $size);
 

@@ -1,0 +1,21 @@
+@use "../../global" as global;
+
+.p-home-search {
+  padding-block: 64px 48px;
+
+  @include global.mq(lg) {
+    padding-block: 48px 64px;
+  }
+
+  &__inner {
+    padding-inline: 25px;
+
+    @include global.mq(lg) {
+      padding-inline: clamp(100px, 21.7vw, 312px); // 中間値：312px / 1440px * 100vw
+    }
+  }
+
+  &__contents {
+
+  }
+}
