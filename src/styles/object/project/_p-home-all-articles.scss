@@ -15,7 +15,7 @@
     }
 
     @include global.mq(lg) {
-      padding-inline: clamp(100px, 14.1vw, 203px); // 中間値：203@x / 1440@x * 100vw
+      padding-inline: clamp(100px, 14.1vw, 203px); // 中間値：203px / 1440px * 100vw
     }
   }
 
