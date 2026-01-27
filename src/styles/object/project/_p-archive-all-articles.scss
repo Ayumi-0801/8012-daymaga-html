@@ -1,0 +1,44 @@
+@use "../../global" as global;
+
+
+.p-archive-all-articles {
+  padding-block-start: 48px;
+
+  &__inner {
+    padding-inline: 18px 18px;
+  }
+
+  &__title {
+
+  }
+
+  &__contents {
+    margin-top: 20px;
+  }
+
+  &__sort {
+
+    @include global.mq(xl) {
+      position: absolute;
+      top: 5px;
+      right: 0;
+      padding-right: 28px;
+    }
+  }
+
+  &__body {
+    min-height: 520px;
+
+    @include global.mq(lg) {
+      min-height: auto;
+    }
+  }
+
+  &__list {
+
+  }
+
+  &__pagenation {
+    margin-top: 32px;
+  }
+}
