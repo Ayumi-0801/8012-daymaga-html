@@ -28,6 +28,9 @@
 @mixin fill($key) {
   fill: map.get(vars.$fill, $key)
 }
+@mixin stroke($key) {
+  stroke: map.get(vars.$stroke, $key)
+}
 
 // テキストプロパティmixin
 @mixin font-family($key) {
@@ -112,6 +115,7 @@
     font-size: map.get($style, font-size);
     font-weight: map.get($style, font-weight);
     line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
   }
 }
 

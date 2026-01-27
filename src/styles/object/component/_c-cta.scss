@@ -1,0 +1,137 @@
+@use "../../global" as global;
+
+.c-cta {
+  padding-block: 50px 49px;
+  background: url("#{global.$asset-img-path}/cta.png") no-repeat top center/cover;
+
+  @include global.mq(lg) {
+    padding-block: 74px 74px;
+  }
+
+  &__inner {
+    padding-inline: 40px;
+
+    @include global.mq(sm) {
+      padding-inline: 100px;
+    }
+
+    @include global.mq(lg) {
+      padding-inline: 0;
+    }
+  }
+
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include global.mq(lg) {
+      flex-direction: row;
+      justify-content: center;
+      gap: clamp(60px, 8.34vw, 120px); // 中間値：120px / 1440px * 100vw;
+    }
+  }
+
+  &__card {
+
+    &-lead {
+      position: relative;
+      padding-block: 4px 6px;
+      padding-inline: 15px;
+      width: fit-content;
+      @include global.font-color(cta);
+      @include global.cta-jp(sp);
+      border-radius: 8px 8px 8px 0;
+      border: 1px solid global.$border-color-cta;
+      @include global.bg-color(cta);
+      @include global.z(default-front);
+
+      @include global.mq(md) {
+        padding-block: 7px 8px;
+        padding-inline: 14px 15px;
+        @include global.cta-jp(pc);
+      }
+    }
+
+    &-body {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding-block: 8px 9px;
+      padding-inline: 18px;
+      margin-top: -10px;
+      width: fit-content;
+      @include global.font-color(cta-reverse);
+      @include global.cta-zen(sp);
+      border-radius: 8px;
+      border: 2px solid global.$border-color-cta;
+      @include global.bg-color(cta-reverse);
+
+      @include global.mq(md) {
+        gap: 16px;
+        margin-top: -10px;
+        padding-block: 13px 14px;
+        padding-inline: 30px 35px;
+        @include global.cta-zen(pc);
+      }
+
+      & svg {
+        width: 9px;
+        height: 14px;
+        @include global.fill(cta-icon);
+        @include global.stroke(cta-icon);
+
+        @include global.mq(md) {
+          width: 12px;
+          height: 19px;
+        }
+      }
+    }
+
+    &--reverse {
+
+      & .c-cta__card-lead {
+        padding-block-end: 3px;
+        @include global.font-color(cta-reverse);
+        @include global.bg-color(cta-reverse);
+
+        @include global.mq(md) {
+          padding-block-end: 8px;
+          padding-inline: 15px 16px;
+        }
+      }
+
+      & .c-cta__card-body {
+        align-items: baseline;
+        gap: 6px;
+        padding-block-start: 9px;
+        padding-inline: 22px 21px;
+        @include global.font-color(cta);
+        letter-spacing: 1.44px;
+        border-radius: 12px;
+        @include global.bg-color(cta);
+
+        @include global.mq(md) {
+          gap: 9px;
+          padding-block-start: 13px;
+          padding-inline: 30px 30px;
+          letter-spacing: 1.92px;
+        }
+
+        & svg {
+          transform: translateY(2px);
+          width: 10px;
+          height: 16px;
+          @include global.fill(cta-icon-reverse);
+          @include global.stroke(cta-icon-reverse);
+
+          @include global.mq(md) {
+            transform: translateY(0);
+            width: 12px;
+            height: 19px;
+          }
+        }
+      }
+    }
+  }
+}
