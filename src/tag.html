@@ -194,475 +194,317 @@
     
     <main class="l-main">
 
-      <!-- すべての記事 -->
+      <!-- タグ一覧 -->
       <section class="p-tag-all-articles">
         <div class="l-inner p-tag-all-articles__inner">
-          <div class="c-title p-tag-all-articles__title">
-            <div class="c-title__img">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 23" fill="none">
-                <path d="M25.0283 22.6154C17.9581 15.7885 -2.45065 2.89667 0.243388 1.04725C7.78646 -4.13095 15.9502 10.9772 25.0283 22.6154Z" fill="#135097"/>
-                <path d="M19.8576 21.4311C25.1429 16.3276 44.082 10.1142 41.8121 8.55601C34.6879 3.66575 26.644 12.7308 19.8576 21.4311Z" fill="#C93A3A"/>
-              </svg>
-            </div>
-            <h2 class="c-title__text">すべての記事</h2>
-          </div>
-          <!-- /.c-title p-tag-all-articles__title -->
           <div class="p-tag-all-articles__contents">
-            <div class="p-tag-all-articles__sort">
-              <div class="c-article-sort">
-                <button class="c-article-sort__btn c-article-sort__btn--latest js-article-sort is-active">新着順</button>
-                <button class="c-article-sort__btn c-article-sort__btn--popular js-article-sort">人気順</button>
-              </div>
-              <!-- /.c-article-sort -->
+            <div class="p-tag-all-articles__lead">
+              <p class="p-tag-all-articles__lead-select">＃クライアント</p>
+              <p class="p-tag-all-articles__lead-text">の検索結果</p>
             </div>
-            <!-- /.p-tag-all-articles__sort -->
-            <div class="c-all-articles p-tag-all-articles__body">
-              <fieldset class="c-category-tabs js-category-tabs" aria-label="記事カテゴリで絞り込み">
-                <ul class="c-category-tabs__list">
-                  <li class="c-category-tabs__item">
-                    <label class="c-category-tabs__label">
-                      <input
-                        type="radio"
-                        class="c-category-tabs__input js-category-filter"
-                        name="article-category"
-                        value="all"
-                        checked>
-                      <span class="c-category-tabs__btn c-category-tabs__btn--all">すべて</span>
-                    </label>
-                  </li>
-                  <li class="c-category-tabs__item">
-                    <label class="c-category-tabs__label">
-                      <input
-                        type="radio"
-                        class="c-category-tabs__input js-category-filter"
-                        name="article-category"
-                        value="latest">
-                      <span class="c-category-tabs__btn c-category-tabs__btn--latest">新着情報</span>
-                    </label>
-                  </li>
-                  <li class="c-category-tabs__item">
-                    <label class="c-category-tabs__label">
-                      <input
-                        type="radio"
-                        class="c-category-tabs__input js-category-filter"
-                        name="article-category"
-                        value="tips">
-                      <span class="c-category-tabs__btn c-category-tabs__btn--tips">TIPS</span>
-                    </label>
-                  </li>
-                  <li class="c-category-tabs__item">
-                    <label class="c-category-tabs__label">
-                      <input
-                        type="radio"
-                        class="c-category-tabs__input js-category-filter"
-                        name="article-category"
-                        value="interview">
-                      <span class="c-category-tabs__btn c-category-tabs__btn--interview">インタビュー</span>
-                    </label>
-                  </li>
-                  <li class="c-category-tabs__item">
-                    <label class="c-category-tabs__label">
-                      <input
-                        type="radio"
-                        class="c-category-tabs__input js-category-filter"
-                        name="article-category"
-                        value="news">
-                      <span class="c-category-tabs__btn c-category-tabs__btn--news">ニュース</span>
-                    </label>
-                  </li>
-                </ul>
-                <!-- /.c-category-tabs__list -->
-              </fieldset>
-              <!-- /.c-category-tabs -->
-              <div class="p-tag-all-articles__list">
-                <ul class="c-article-list">
-                  <li class="c-article-list__item" data-category="news">
-                    <div class="c-card">
-                      <a href="" class="c-card__link">
-                        <div class="c-card__inner">
-                          <div class="c-card__contents">
-                            <div class="c-card__img">
-                              <picture>
-                                <source srcset="./assets/img/single/img12.webp" type="image/webp">
-                                <img src="./assets/img/single/img12.png" alt="金融業界のデジタル化：コンサルファームが解説する課題と解決策">
-                              </picture>
-                            </div>
-                            <!-- /.c-card__img -->
-                            <div class="c-card__body">
-                              <div class="c-card__update">
-                                <data value="2024-03-01">2024.03.XX</data>
-                              </div>
-                              <!-- /.c-card__update -->
-                              <div class="c-card__lead">
-                                <h3>金融業界のデジタル化：コンサルファームが解説する課題と解決策</h3>
-                              </div>
-                              <!-- /.c-card__lead -->
-                              <div class="c-card__category">
-                                <p class="c-category c-category--news">ニュース</p>
-                              </div>
-                              <!-- /.c-card__category -->
-                            </div>
-                            <!-- /.c-card__body -->
-                            <div class="c-card__tag">
-                              <p class="c-tag">＃クライアント</p>
-                              <p class="c-tag">＃IT</p>
-                              <p class="c-tag">＃金融・保険</p>
-                            </div>
-                            <!-- /.c-card__tag -->
+            <!-- /.p-tag-all-articles__lead -->
+            <div class="p-tag-all-articles__body">
+              <ul class="p-tag-all-articles__list">
+                <li class="p-tag-all-articles__item" data-category="news">
+                  <div class="c-card">
+                    <a href="" class="c-card__link">
+                      <div class="c-card__inner">
+                        <div class="c-card__contents">
+                          <div class="c-card__img">
+                            <picture>
+                              <source srcset="./assets/img/single/img16.webp" type="image/webp">
+                              <img src="./assets/img/single/img16.png" alt="Big Fourが新たなデジタルイノベーションラボを設立、業界に変革をもたらす">
+                            </picture>
                           </div>
-                          <!-- /.c-card__contents -->
-                        </div>
-                        <!-- /.c-card__inner -->
-                      </a>
-                      <!-- /.c-card__link -->
-                    </div>
-                    <!-- /.c-card -->
-                  </li>
-                  <!-- /.c-article-list__item -->
-                  <li class="c-article-list__item" data-category="interview">
-                    <div class="c-card">
-                      <a href="" class="c-card__link">
-                        <div class="c-card__inner">
-                          <div class="c-card__contents">
-                            <div class="c-card__img">
-                              <picture>
-                                <source srcset="./assets/img/single/img18.webp" type="image/webp">
-                                <img src="./assets/img/single/img18.png" alt="人材育成の重要性：教育者が語る次世代のリーダーシップの育成法">
-                              </picture>
+                          <!-- /.c-card__img -->
+                          <div class="c-card__body">
+                            <div class="c-card__update">
+                              <data value="2024-03-20">2024.03.XX</data>
                             </div>
-                            <!-- /.c-card__img -->
-                            <div class="c-card__body">
-                              <div class="c-card__update">
-                                <data value="2024-03-02">2024.03.XX</data>
-                              </div>
-                              <!-- /.c-card__update -->
-                              <div class="c-card__lead">
-                                <h3>人材育成の重要性：教育者が語る次世代のリーダーシップの育成法</h3>
-                              </div>
-                              <!-- /.c-card__lead -->
-                              <div class="c-card__category">
-                                <p class="c-category c-category--interview">インタビュー</p>
-                              </div>
-                              <!-- /.c-card__category -->
+                            <!-- /.c-card__update -->
+                            <div class="c-card__lead">
+                              <h3>Big Fourが新たなデジタルイノベーションラボを設立、業界に変革をもたらす</h3>
                             </div>
-                            <!-- /.c-card__body -->
-                            <div class="c-card__tag">
-                              <p class="c-tag">＃HR</p>
-                              <p class="c-tag">＃メーカー</p>
+                            <!-- /.c-card__lead -->
+                            <div class="c-card__category">
+                              <p class="c-category c-category--news">ニュース</p>
                             </div>
-                            <!-- /.c-card__tag -->
+                            <!-- /.c-card__category -->
                           </div>
-                          <!-- /.c-card__contents -->
-                        </div>
-                        <!-- /.c-card__inner -->
-                      </a>
-                      <!-- /.c-card__link -->
-                    </div>
-                    <!-- /.c-card -->
-                  </li>
-                  <!-- /.c-article-list__item -->
-                  <li class="c-article-list__item" data-category="tips">
-                    <div class="c-card">
-                      <a href="" class="c-card__link">
-                        <div class="c-card__inner">
-                          <div class="c-card__contents">
-                            <div class="c-card__img">
-                              <picture>
-                                <source srcset="./assets/img/single/img13.webp" type="image/webp">
-                                <img src="./assets/img/single/img13.png" alt="製造業のデジタル変革：コンサルタントが提案するスマートファクトリー戦略を考える">
-                              </picture>
-                            </div>
-                            <!-- /.c-card__img -->
-                            <div class="c-card__body">
-                              <div class="c-card__update">
-                                <data value="2024-03-03">2024.03.XX</data>
-                              </div>
-                              <!-- /.c-card__update -->
-                              <div class="c-card__lead">
-                                <h3>製造業のデジタル変革：コンサルタントが提案するスマートファクトリー戦略を考える</h3>
-                              </div>
-                              <!-- /.c-card__lead -->
-                              <div class="c-card__category">
-                                <p class="c-category c-category--tips">TIPS</p>
-                              </div>
-                              <!-- /.c-card__category -->
-                            </div>
-                            <!-- /.c-card__body -->
-                            <div class="c-card__tag">
-                              <p class="c-tag">＃業務改善</p>
-                              <p class="c-tag">＃IT</p>
-                              <p class="c-tag">＃メーカー</p>
-                            </div>
-                            <!-- /.c-card__tag -->
+                          <!-- /.c-card__body -->
+                          <div class="c-card__tag">
+                            <p class="c-tag">＃コンサルファーム</p>
+                            <p class="c-tag">＃IT</p>
+                            <p class="c-tag">#共通</p>
                           </div>
-                          <!-- /.c-card__contents -->
+                          <!-- /.c-card__tag -->
                         </div>
-                        <!-- /.c-card__inner -->
-                      </a>
-                      <!-- /.c-card__link -->
-                    </div>
-                    <!-- /.c-card -->
-                  </li>
-                  <!-- /.c-article-list__item -->
-                  <li class="c-article-list__item" data-category="tips">
-                    <div class="c-card">
-                      <a href="" class="c-card__link">
-                        <div class="c-card__inner">
-                          <div class="c-card__contents">
-                            <div class="c-card__img">
-                              <picture>
-                                <source srcset="./assets/img/single/img11.webp" type="image/webp">
-                                <img src="./assets/img/single/img11.png" alt="人材育成の新潮流：コンサルティングがもたらす効果的なトレーニング手法">
-                              </picture>
-                            </div>
-                            <!-- /.c-card__img -->
-                            <div class="c-card__body">
-                              <div class="c-card__update">
-                                <data value="2024-03-10">2024.03.XX</data>
-                              </div>
-                              <!-- /.c-card__update -->
-                              <div class="c-card__lead">
-                                <h3>人材育成の新潮流：コンサルティングがもたらす効果的なトレーニング手法</h3>
-                              </div>
-                              <!-- /.c-card__lead -->
-                              <div class="c-card__category">
-                                <p class="c-category c-category--tips">TIPS</p>
-                              </div>
-                              <!-- /.c-card__category -->
-                            </div>
-                            <!-- /.c-card__body -->
-                            <div class="c-card__tag">
-                              <p class="c-tag">＃コンサルファーム</p>
-                              <p class="c-tag">＃HR</p>
-                              <p class="c-tag">#共通</p>
-                            </div>
-                            <!-- /.c-card__tag -->
+                        <!-- /.c-card__contents -->
+                      </div>
+                      <!-- /.c-card__inner -->
+                    </a>
+                    <!-- /.c-card__link -->
+                  </div>
+                  <!-- /.c-card -->
+                </li>
+                <!-- /.p-tag-all-articles__item -->
+                <li class="p-tag-all-articles__item" data-category="news">
+                  <div class="c-card">
+                    <a href="" class="c-card__link">
+                      <div class="c-card__inner">
+                        <div class="c-card__contents">
+                          <div class="c-card__img">
+                            <picture>
+                              <source srcset="./assets/img/single/img12.webp" type="image/webp">
+                              <img src="./assets/img/single/img12.png" alt="金融業界のデジタル化：コンサルファームが解説する課題と解決策">
+                            </picture>
                           </div>
-                          <!-- /.c-card__contents -->
-                        </div>
-                        <!-- /.c-card__inner -->
-                      </a>
-                      <!-- /.c-card__link -->
-                    </div>
-                    <!-- /.c-card -->
-                  </li>
-                  <!-- /.c-article-list__item -->
-                  <li class="c-article-list__item c-article-list--sp-hidden" data-category="latest">
-                    <div class="c-card">
-                      <a href="" class="c-card__link">
-                        <div class="c-card__inner">
-                          <div class="c-card__contents">
-                            <div class="c-card__img">
-                              <picture>
-                                <source srcset="./assets/img/single/img15.webp" type="image/webp">
-                                <img src="./assets/img/single/img15.png" alt="サプライチェーンの革新：コンサルタントが提案する最新テクノロジーの活用方法">
-                              </picture>
+                          <!-- /.c-card__img -->
+                          <div class="c-card__body">
+                            <div class="c-card__update">
+                              <data value="2024-03-01">2024.03.XX</data>
                             </div>
-                            <!-- /.c-card__img -->
-                            <div class="c-card__body">
-                              <div class="c-card__update">
-                                <data value="2024-03-15">2024.03.XX</data>
-                              </div>
-                              <!-- /.c-card__update -->
-                              <div class="c-card__lead">
-                                <h3>サプライチェーンの革新：コンサルタントが提案する最新テクノロジーの活..</h3>
-                              </div>
-                              <!-- /.c-card__lead -->
-                              <div class="c-card__category">
-                                <p class="c-category c-category--latest">新着情報</p>
-                              </div>
-                              <!-- /.c-card__category -->
+                            <!-- /.c-card__update -->
+                            <div class="c-card__lead">
+                              <h3>金融業界のデジタル化：コンサルファームが解説する課題と解決策</h3>
                             </div>
-                            <!-- /.c-card__body -->
-                            <div class="c-card__tag">
-                              <p class="c-tag">＃業務改善</p>
-                              <p class="c-tag">＃流通</p>
-                              <p class="c-tag">#共通</p>
+                            <!-- /.c-card__lead -->
+                            <div class="c-card__category">
+                              <p class="c-category c-category--news">ニュース</p>
                             </div>
-                            <!-- /.c-card__tag -->
+                            <!-- /.c-card__category -->
                           </div>
-                          <!-- /.c-card__contents -->
-                        </div>
-                        <!-- /.c-card__inner -->
-                      </a>
-                      <!-- /.c-card__link -->
-                    </div>
-                    <!-- /.c-card -->
-                  </li>
-                  <!-- /.c-article-list__item -->
-                  <li class="c-article-list__item c-article-list--sp-hidden" data-category="latest">
-                    <div class="c-card">
-                      <a href="" class="c-card__link">
-                        <div class="c-card__inner">
-                          <div class="c-card__contents">
-                            <div class="c-card__img">
-                              <picture>
-                                <source srcset="./assets/img/single/img17.webp" type="image/webp">
-                                <img src="./assets/img/single/img17.png" alt="顧客体験の向上：コンサルタントが示す顧客満足度向上のアプローチ">
-                              </picture>
-                            </div>
-                            <!-- /.c-card__img -->
-                            <div class="c-card__body">
-                              <div class="c-card__update">
-                                <data value="2024-03-20">2024.03.XX</data>
-                              </div>
-                              <!-- /.c-card__update -->
-                              <div class="c-card__lead">
-                                <h3>顧客体験の向上：コンサルタントが示す顧客満足度向上のアプローチ</h3>
-                              </div>
-                              <!-- /.c-card__lead -->
-                              <div class="c-card__category">
-                                <p class="c-category c-category--latest">新着情報</p>
-                              </div>
-                              <!-- /.c-card__category -->
-                            </div>
-                            <!-- /.c-card__body -->
-                            <div class="c-card__tag">
-                              <p class="c-tag">＃クライアント</p>
-                              <p class="c-tag">＃サービス</p>
-                            </div>
-                            <!-- /.c-card__tag -->
+                          <!-- /.c-card__body -->
+                          <div class="c-card__tag">
+                            <p class="c-tag">＃クライアント</p>
+                            <p class="c-tag">＃IT</p>
+                            <p class="c-tag">＃金融・保険</p>
                           </div>
-                          <!-- /.c-card__contents -->
+                          <!-- /.c-card__tag -->
                         </div>
-                        <!-- /.c-card__inner -->
-                      </a>
-                      <!-- /.c-card__link -->
-                    </div>
-                    <!-- /.c-card -->
-                  </li>
-                  <!-- /.c-article-list__item -->
-                  <li class="c-article-list__item" data-category="news">
-                    <div class="c-card">
-                      <a href="" class="c-card__link">
-                        <div class="c-card__inner">
-                          <div class="c-card__contents">
-                            <div class="c-card__img">
-                              <picture>
-                                <source srcset="./assets/img/single/img16.webp" type="image/webp">
-                                <img src="./assets/img/single/img16.png" alt="Big Fourが新たなデジタルイノベーションラボを設立、業界に変革をもたらす">
-                              </picture>
-                            </div>
-                            <!-- /.c-card__img -->
-                            <div class="c-card__body">
-                              <div class="c-card__update">
-                                <data value="2024-03-20">2024.03.XX</data>
-                              </div>
-                              <!-- /.c-card__update -->
-                              <div class="c-card__lead">
-                                <h3>Big Fourが新たなデジタルイノベーションラボを設立、業界に変革をもたらす</h3>
-                              </div>
-                              <!-- /.c-card__lead -->
-                              <div class="c-card__category">
-                                <p class="c-category c-category--news">ニュース</p>
-                              </div>
-                              <!-- /.c-card__category -->
-                            </div>
-                            <!-- /.c-card__body -->
-                            <div class="c-card__tag">
-                              <p class="c-tag">＃コンサルファーム</p>
-                              <p class="c-tag">＃IT</p>
-                              <p class="c-tag">#共通</p>
-                            </div>
-                            <!-- /.c-card__tag -->
+                        <!-- /.c-card__contents -->
+                      </div>
+                      <!-- /.c-card__inner -->
+                    </a>
+                    <!-- /.c-card__link -->
+                  </div>
+                  <!-- /.c-card -->
+                </li>
+                <!-- /.p-tag-all-articles__item -->
+                <li class="p-tag-all-articles__item" data-category="news">
+                  <div class="c-card">
+                    <a href="" class="c-card__link">
+                      <div class="c-card__inner">
+                        <div class="c-card__contents">
+                          <div class="c-card__img">
+                            <picture>
+                              <source srcset="./assets/img/single/img9.webp" type="image/webp">
+                              <img src="./assets/img/single/img9.png" alt="デジタル時代におけるコンサルタントの役割と価値">
+                            </picture>
                           </div>
-                          <!-- /.c-card__contents -->
-                        </div>
-                        <!-- /.c-card__inner -->
-                      </a>
-                      <!-- /.c-card__link -->
-                    </div>
-                    <!-- /.c-card -->
-                  </li>
-                  <!-- /.c-article-list__item -->
-                  <li class="c-article-list__item c-article-list--sp-hidden" data-category="news">
-                    <div class="c-card">
-                      <a href="" class="c-card__link">
-                        <div class="c-card__inner">
-                          <div class="c-card__contents">
-                            <div class="c-card__img">
-                              <picture>
-                                <source srcset="./assets/img/single/img19.webp" type="image/webp">
-                                <img src="./assets/img/single/img19.png" alt="データ駆動型ビジネスの台頭：コンサルタントが企業の戦略に必要な変化を..">
-                              </picture>
+                          <!-- /.c-card__img -->
+                          <div class="c-card__body">
+                            <div class="c-card__update">
+                              <data value="2024-03-03">2024.03.XX</data>
                             </div>
-                            <!-- /.c-card__img -->
-                            <div class="c-card__body">
-                              <div class="c-card__update">
-                                <data value="2024-03-20">2024.03.XX</data>
-                              </div>
-                              <!-- /.c-card__update -->
-                              <div class="c-card__lead">
-                                <h3>データ駆動型ビジネスの台頭：コンサルタントが企業の戦略に必要な変化を考える</h3>
-                              </div>
-                              <!-- /.c-card__lead -->
-                              <div class="c-card__category">
-                                <p class="c-category c-category--news">ニュース</p>
-                              </div>
-                              <!-- /.c-card__category -->
+                            <!-- /.c-card__update -->
+                            <div class="c-card__lead">
+                              <h3>デジタル時代におけるコンサルタントの役割と価値</h3>
                             </div>
-                            <!-- /.c-card__body -->
-                            <div class="c-card__tag">
-                              <p class="c-tag">＃コンサルファーム</p>
-                              <p class="c-tag">＃IT</p>
-                              <p class="c-tag">#共通</p>
+                            <!-- /.c-card__lead -->
+                            <div class="c-card__category">
+                              <p class="c-category c-category--news">ニュース</p>
                             </div>
-                            <!-- /.c-card__tag -->
+                            <!-- /.c-card__category -->
                           </div>
-                          <!-- /.c-card__contents -->
-                        </div>
-                        <!-- /.c-card__inner -->
-                      </a>
-                      <!-- /.c-card__link -->
-                    </div>
-                    <!-- /.c-card -->
-                  </li>
-                  <!-- /.c-article-list__item -->
-                  <li class="c-article-list__item" data-category="latest">
-                    <div class="c-card">
-                      <a href="" class="c-card__link">
-                        <div class="c-card__inner">
-                          <div class="c-card__contents">
-                            <div class="c-card__img">
-                              <picture>
-                                <source srcset="./assets/img/single/img14.webp" type="image/webp">
-                                <img src="./assets/img/single/img14.png" alt="最新のトレンドとベストプラクティス：コンサルタントのキャリア戦略">
-                              </picture>
-                            </div>
-                            <!-- /.c-card__img -->
-                            <div class="c-card__body">
-                              <div class="c-card__update">
-                                <data value="2024-03-01">2024.03.XX</data>
-                              </div>
-                              <!-- /.c-card__update -->
-                              <div class="c-card__lead">
-                                <h3>最新のトレンドとベストプラクティス：コンサルタントのキャリア戦略</h3>
-                              </div>
-                              <!-- /.c-card__lead -->
-                              <div class="c-card__category">
-                                <p class="c-category c-category--latest">新着情報</p>
-                              </div>
-                              <!-- /.c-card__category -->
-                            </div>
-                            <!-- /.c-card__body -->
-                            <div class="c-card__tag">
-                              <p class="c-tag">＃コンサルファーム</p>
-                              <p class="c-tag">＃その他</p>
-                            </div>
-                            <!-- /.c-card__tag -->
+                          <!-- /.c-card__body -->
+                          <div class="c-card__tag">
+                            <p class="c-tag">＃コンサルファーム</p>
+                            <p class="c-tag">＃IT</p>
+                            <p class="c-tag">＃その他</p>
                           </div>
-                          <!-- /.c-card__contents -->
+                          <!-- /.c-card__tag -->
                         </div>
-                        <!-- /.c-card__inner -->
-                      </a>
-                      <!-- /.c-card__link -->
-                    </div>
-                    <!-- /.c-card -->
-                  </li>
-                  <!-- /.c-article-list__item -->
-                </ul>
-                <!-- /.c-article-list -->
-              </div>
+                        <!-- /.c-card__contents -->
+                      </div>
+                      <!-- /.c-card__inner -->
+                    </a>
+                    <!-- /.c-card__link -->
+                  </div>
+                  <!-- /.c-card -->
+                </li>
+                <!-- /.p-tag-all-articles__item -->
+                <li class="p-tag-all-articles__item" data-category="news">
+                  <div class="c-card">
+                    <a href="" class="c-card__link">
+                      <div class="c-card__inner">
+                        <div class="c-card__contents">
+                          <div class="c-card__img">
+                            <picture>
+                              <source srcset="./assets/img/single/img4.webp" type="image/webp">
+                              <img src="./assets/img/single/img4.png" alt="2024年のコンサル業界トレンド予測：デジタル化が加速する理由">
+                            </picture>
+                          </div>
+                          <!-- /.c-card__img -->
+                          <div class="c-card__body">
+                            <div class="c-card__update">
+                              <data value="2024-03-10">2024.03.XX</data>
+                            </div>
+                            <!-- /.c-card__update -->
+                            <div class="c-card__lead">
+                              <h3>2024年のコンサル業界トレンド予測：デジタル化が加速する理由</h3>
+                            </div>
+                            <!-- /.c-card__lead -->
+                            <div class="c-card__category">
+                              <p class="c-category c-category--news">ニュース</p>
+                            </div>
+                            <!-- /.c-card__category -->
+                          </div>
+                          <!-- /.c-card__body -->
+                          <div class="c-card__tag">
+                            <p class="c-tag">＃コンサルファーム</p>
+                            <p class="c-tag">＃IT</p>
+                          </div>
+                          <!-- /.c-card__tag -->
+                        </div>
+                        <!-- /.c-card__contents -->
+                      </div>
+                      <!-- /.c-card__inner -->
+                    </a>
+                    <!-- /.c-card__link -->
+                  </div>
+                  <!-- /.c-card -->
+                </li>
+                <!-- /.p-tag-all-articles__item -->
+                <li class="p-tag-all-articles__item" data-category="latest">
+                  <div class="c-card">
+                    <a href="" class="c-card__link">
+                      <div class="c-card__inner">
+                        <div class="c-card__contents">
+                          <div class="c-card__img">
+                            <picture>
+                              <source srcset="./assets/img/single/img15.webp" type="image/webp">
+                              <img src="./assets/img/single/img15.png" alt="サプライチェーンの革新：コンサルタントが提案する最新テクノロジーの活用方法">
+                            </picture>
+                          </div>
+                          <!-- /.c-card__img -->
+                          <div class="c-card__body">
+                            <div class="c-card__update">
+                              <data value="2024-03-15">2024.03.XX</data>
+                            </div>
+                            <!-- /.c-card__update -->
+                            <div class="c-card__lead">
+                              <h3>サプライチェーンの革新：コンサルタントが提案する最新テクノロジーの活..</h3>
+                            </div>
+                            <!-- /.c-card__lead -->
+                            <div class="c-card__category">
+                              <p class="c-category c-category--latest">新着情報</p>
+                            </div>
+                            <!-- /.c-card__category -->
+                          </div>
+                          <!-- /.c-card__body -->
+                          <div class="c-card__tag">
+                            <p class="c-tag">＃業務改善</p>
+                            <p class="c-tag">＃流通</p>
+                            <p class="c-tag">#共通</p>
+                          </div>
+                          <!-- /.c-card__tag -->
+                        </div>
+                        <!-- /.c-card__contents -->
+                      </div>
+                      <!-- /.c-card__inner -->
+                    </a>
+                    <!-- /.c-card__link -->
+                  </div>
+                  <!-- /.c-card -->
+                </li>
+                <!-- /.p-tag-all-articles__item -->
+                <li class="p-tag-all-articles__item" data-category="interview">
+                  <div class="c-card">
+                    <a href="" class="c-card__link">
+                      <div class="c-card__inner">
+                        <div class="c-card__contents">
+                          <div class="c-card__img">
+                            <picture>
+                              <source srcset="./assets/img/single/img8.webp" type="image/webp">
+                              <img src="./assets/img/single/img8.png" alt="テクノロジーの進化とコンサルティング業界の未来">
+                            </picture>
+                          </div>
+                          <!-- /.c-card__img -->
+                          <div class="c-card__body">
+                            <div class="c-card__update">
+                              <data value="2024-03-20">2024.03.XX</data>
+                            </div>
+                            <!-- /.c-card__update -->
+                            <div class="c-card__lead">
+                              <h3>テクノロジーの進化とコンサルティング業界の未来</h3>
+                            </div>
+                            <!-- /.c-card__lead -->
+                            <div class="c-card__category">
+                              <p class="c-category c-category--interview">インタビュー</p>
+                            </div>
+                            <!-- /.c-card__category -->
+                          </div>
+                          <!-- /.c-card__body -->
+                          <div class="c-card__tag">
+                            <p class="c-tag">＃コンサルファーム</p>
+                            <p class="c-tag">＃IT</p>
+                          </div>
+                          <!-- /.c-card__tag -->
+                        </div>
+                        <!-- /.c-card__contents -->
+                      </div>
+                      <!-- /.c-card__inner -->
+                    </a>
+                    <!-- /.c-card__link -->
+                  </div>
+                  <!-- /.c-card -->
+                </li>
+                <!-- /.p-tag-all-articles__item -->
+                <li class="p-tag-all-articles__item u-hidden-sm" data-category="news">
+                  <div class="c-card">
+                    <a href="" class="c-card__link">
+                      <div class="c-card__inner">
+                        <div class="c-card__contents">
+                          <div class="c-card__img">
+                            <picture>
+                              <source srcset="./assets/img/single/img19.webp" type="image/webp">
+                              <img src="./assets/img/single/img19.png" alt="データ駆動型ビジネスの台頭：コンサルタントが企業の戦略に必要な変化を..">
+                            </picture>
+                          </div>
+                          <!-- /.c-card__img -->
+                          <div class="c-card__body">
+                            <div class="c-card__update">
+                              <data value="2024-03-20">2024.03.XX</data>
+                            </div>
+                            <!-- /.c-card__update -->
+                            <div class="c-card__lead">
+                              <h3>データ駆動型ビジネスの台頭：コンサルタントが企業の戦略に必要な変化を考える</h3>
+                            </div>
+                            <!-- /.c-card__lead -->
+                            <div class="c-card__category">
+                              <p class="c-category c-category--news">ニュース</p>
+                            </div>
+                            <!-- /.c-card__category -->
+                          </div>
+                          <!-- /.c-card__body -->
+                          <div class="c-card__tag">
+                            <p class="c-tag">＃コンサルファーム</p>
+                            <p class="c-tag">＃IT</p>
+                            <p class="c-tag">#共通</p>
+                          </div>
+                          <!-- /.c-card__tag -->
+                        </div>
+                        <!-- /.c-card__contents -->
+                      </div>
+                      <!-- /.c-card__inner -->
+                    </a>
+                    <!-- /.c-card__link -->
+                  </div>
+                  <!-- /.c-card -->
+                </li>
+                <!-- /.p-tag-all-articles__item -->
+              </ul>
               <!-- /.p-tag-all-articles__list -->
             </div>
             <!-- /.p-tag-all-articles__body -->
@@ -671,28 +513,6 @@
                 <ul class="c-pagination__list">
                   <li class="c-pagination__item">
                     <a href="" class="c-pagination__link is-active">1</a>
-                  </li>
-                  <li class="c-pagination__item">
-                    <a href="" class="c-pagination__link">2</a>
-                  </li>
-                  <li class="c-pagination__item">
-                    <a href="" class="c-pagination__link">3</a>
-                  </li>
-                  <li class="c-pagination__item">
-                    <a href="" class="c-pagination__link">4</a>
-                  </li>
-                  <li class="c-pagination__item">
-                    <a href="" class="c-pagination__link c-pagination__link--ellipsis">...</a>
-                  </li>
-                  <li class="c-pagination__item">
-                    <a href="" class="c-pagination__link">15</a>
-                  </li>
-                  <li class="c-pagination__item">
-                    <a href="" class="c-pagination__link c-pagination__link—-next">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 16">
-                        <path d="M11.3184 6.39264C12.402 7.19202 12.402 8.81213 11.3184 9.61151L3.18732 15.61C1.86693 16.5841 1.07074e-06 15.6414 1.14247e-06 14.0006L1.66687e-06 2.00358C1.73859e-06 0.362764 1.86693 -0.579939 3.18732 0.394149L11.3184 6.39264Z"/>
-                      </svg>
-                    </a>
                   </li>
                 </ul>
                 <!-- /.c-pagination__list -->

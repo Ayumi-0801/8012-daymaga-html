@@ -1,0 +1,92 @@
+@use "../../global" as global;
+
+.p-tag-all-articles {
+  padding-block: 50px 48px;
+
+  @include global.mq(lg) {
+    padding-block: 64px 64px;
+  }
+
+  &__inner {
+    padding-inline: 20px;
+
+    @include global.mq(md) {
+      padding-inline: 44px;
+    }
+
+    @include global.mq(lg) {
+      padding-inline: clamp(100px, 15vw, 215px); // 中間値：215px / 1440px * 100vw
+    }
+  }
+
+  &__contents {
+
+  }
+
+  &__lead {
+    display: flex;
+    gap: 17px;
+    padding-block: 10px 6px;
+    padding-inline: 16px 27px;
+    width: fit-content;
+    @include global.archive-tag-heading-zen(sp);
+    border-radius: 16px 16px 0 0;
+    @include global.bg-color(blue);
+
+    @include global.mq(lg) {
+      gap: 32px;
+      padding-block: 12px 8px;
+      padding-inline: 24px 40px;
+      @include global.archive-tag-heading-zen(pc);
+    }
+
+    &-select {
+
+    }
+
+    &-text {
+
+    }
+  }
+
+  &__body {
+    padding-block: 16px 24px;
+    padding-inline: 23px 23px;
+    border-radius: 0 20px 20px 20px;
+    border: 1px solid global.$border-color-archive-tag-body;
+    @include global.bg-color(archive-tag-body);
+
+    @include global.mq(lg) {
+      padding-block: 32px 32px;
+      padding-inline: 32px 32px;
+      border-radius: 0 16px 16px 16px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 11px;
+
+    @include global.mq(sm) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 19px 20px;
+    }
+
+    @include global.mq(xl) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+
+  }
+
+  &__pagination {
+    margin-top: 56px;
+
+    @include global.mq(lg) {
+      margin-top: 64px;
+    }
+  }
+}
