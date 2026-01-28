@@ -37,6 +37,7 @@ $bg-color: (
   tag: color(blue-50),
   btn: color(blue-700),
   btn-reverse: color(white),
+  pagination: color(gray-500),
   pagination-link: color(blue-300),
   swiper-navigation-btn-hover: color(white),
   swiper-navigation-btn-fv: color(blue-700),
@@ -57,7 +58,8 @@ $fill: (
   swiper-navigation-icon-single: color(blue-700),
   swiper-navigation-icon-single-hover: color(white),
   cta-icon: color(blue-500-alt),
-  cta-icon-reverse: color(white)
+  cta-icon-reverse: color(white),
+  pagination-icon: color(white)
 );
 
 $stroke: (
@@ -144,7 +146,8 @@ $letter-spacing: (
   search-heading-sp: 1.3px,
   search-heading-pc: 1.4px,
   cta-sp: 0.36px,
-  cta-pc: 0.48px
+  cta-pc: 0.48px,
+  pagination: 3px
 );
 
 // 各テキストスタイルの定義
@@ -406,7 +409,7 @@ $search-heading-styles-jp: (
     font-color: map.get($font-color, search-heading),
     font-family: map.get($font-family, jp),
     font-size: 13px,
-    font-weight: map.get($font-weight, medium),
+    font-weight: map.get($font-weight, bold),
     line-height: map.get($line-height, search),
     letter-spacing: map.get($letter-spacing, search-heading-sp)
   ),
@@ -416,6 +419,17 @@ $search-heading-styles-jp: (
     font-weight: map.get($font-weight, bold),
     line-height: map.get($line-height, search),
     letter-spacing: map.get($letter-spacing, search-heading-pc)
+  )
+) !default;
+
+$pagination-styles-zen: (
+  sp: (
+    font-color: map.get($font-color, pagination),
+    font-family: map.get($font-family, zen),
+    font-size: 20px,
+    font-weight: map.get($font-weight, bold),
+    line-height: map.get($line-height, sp),
+    letter-spacing: map.get($letter-spacing, pagination)
   )
 ) !default;
 

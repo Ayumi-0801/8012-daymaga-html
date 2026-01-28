@@ -303,6 +303,15 @@
         margin-top: 0;
       }
 
+      & a {
+        transition: opacity global.$transition-slow global.$transition-ease;
+
+        &:hover,
+        &:focus-visible {
+          opacity: 0.7;
+        }
+      }
+
       &-btn {
         display: none;
         gap: 32px;
