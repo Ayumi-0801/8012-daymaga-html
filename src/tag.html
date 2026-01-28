@@ -195,9 +195,9 @@
     <main class="l-main">
 
       <!-- すべての記事 -->
-      <section class="p-archive-all-articles">
-        <div class="l-inner p-archive-all-articles__inner">
-          <div class="c-title p-archive-all-articles__title">
+      <section class="p-tag-all-articles">
+        <div class="l-inner p-tag-all-articles__inner">
+          <div class="c-title p-tag-all-articles__title">
             <div class="c-title__img">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 23" fill="none">
                 <path d="M25.0283 22.6154C17.9581 15.7885 -2.45065 2.89667 0.243388 1.04725C7.78646 -4.13095 15.9502 10.9772 25.0283 22.6154Z" fill="#135097"/>
@@ -206,17 +206,17 @@
             </div>
             <h2 class="c-title__text">すべての記事</h2>
           </div>
-          <!-- /.c-title p-archive-all-articles__title -->
-          <div class="p-archive-all-articles__contents">
-            <div class="p-archive-all-articles__sort">
+          <!-- /.c-title p-tag-all-articles__title -->
+          <div class="p-tag-all-articles__contents">
+            <div class="p-tag-all-articles__sort">
               <div class="c-article-sort">
                 <button class="c-article-sort__btn c-article-sort__btn--latest js-article-sort is-active">新着順</button>
                 <button class="c-article-sort__btn c-article-sort__btn--popular js-article-sort">人気順</button>
               </div>
               <!-- /.c-article-sort -->
             </div>
-            <!-- /.p-archive-all-articles__sort -->
-            <div class="c-all-articles p-archive-all-articles__body">
+            <!-- /.p-tag-all-articles__sort -->
+            <div class="c-all-articles p-tag-all-articles__body">
               <fieldset class="c-category-tabs js-category-tabs" aria-label="記事カテゴリで絞り込み">
                 <ul class="c-category-tabs__list">
                   <li class="c-category-tabs__item">
@@ -274,7 +274,7 @@
                 <!-- /.c-category-tabs__list -->
               </fieldset>
               <!-- /.c-category-tabs -->
-              <div class="p-archive-all-articles__list">
+              <div class="p-tag-all-articles__list">
                 <ul class="c-article-list">
                   <li class="c-article-list__item" data-category="news">
                     <div class="c-card">
@@ -663,10 +663,10 @@
                 </ul>
                 <!-- /.c-article-list -->
               </div>
-              <!-- /.p-archive-all-articles__list -->
+              <!-- /.p-tag-all-articles__list -->
             </div>
-            <!-- /.p-archive-all-articles__body -->
-            <div class="p-archive-all-articles__pagination">
+            <!-- /.p-tag-all-articles__body -->
+            <div class="p-tag-all-articles__pagination">
               <div class="c-pagination">
                 <ul class="c-pagination__list">
                   <li class="c-pagination__item">
@@ -699,83 +699,258 @@
               </div>
               <!-- /.c-pagination -->
             </div>
-            <!-- /.c-all-articles p-archive-all-articles__pagenation -->
+            <!-- /.c-all-articles p-tag-all-articles__pagenation -->
           </div>
-          <!-- /.p-archive-all-articles__contents -->
+          <!-- /.p-tag-all-articles__contents -->
         </div>
-        <!-- /.l-inner p-archive-all-articles__inner -->
+        <!-- /.l-inner p-tag-all-articles__inner -->
       </section>
-      <!-- /.p-archive-all-articles -->
+      <!-- /.p-tag-all-articles -->
 
-      <!-- タグ検索 -->
-      <section class="p-archive-search">
-        <div class="l-inner p-archive-search__inner">
-          <div class="p-archive-search__contents">
-            <div class="c-articles-search">
-              <div class="c-articles-search__tab">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" fill="none">
-                  <path d="M15.75 15.75L11.25 11.25M2.25 7.5C2.25 8.18944 2.3858 8.87213 2.64963 9.50909C2.91347 10.146 3.30018 10.7248 3.78769 11.2123C4.2752 11.6998 4.85395 12.0865 5.49091 12.3504C6.12787 12.6142 6.81056 12.75 7.5 12.75C8.18944 12.75 8.87213 12.6142 9.50909 12.3504C10.146 12.0865 10.7248 11.6998 11.2123 11.2123C11.6998 10.7248 12.0865 10.146 12.3504 9.50909C12.6142 8.87213 12.75 8.18944 12.75 7.5C12.75 6.81056 12.6142 6.12787 12.3504 5.49091C12.0865 4.85395 11.6998 4.2752 11.2123 3.78769C10.7248 3.30018 10.146 2.91347 9.50909 2.64963C8.87213 2.3858 8.18944 2.25 7.5 2.25C6.81056 2.25 6.12787 2.3858 5.49091 2.64963C4.85395 2.91347 4.2752 3.30018 3.78769 3.78769C3.30018 4.2752 2.91347 4.85395 2.64963 5.49091C2.3858 6.12787 2.25 6.81056 2.25 7.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 関連記事 -->
+      <section class="p-tag-related-articles">
+        <div class="p-tag-related-articles__inner">
+          <div class="p-tag-related-articles__lead">
+            <div class="c-title p-tag-related-articles__title">
+              <div class="c-title__img">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 23" fill="none">
+                  <path d="M25.0283 22.5556C17.9581 15.7468 -2.45065 2.889 0.243388 1.04448C7.78646 -4.12002 15.9502 10.9482 25.0283 22.5556Z" fill="white"/>
+                  <path d="M19.8576 21.3744C25.1429 16.2844 44.082 10.0874 41.8121 8.53337C34.6879 3.65605 26.644 12.6972 19.8576 21.3744Z" fill="white"/>
                 </svg>
-                <p>キーワードで絞り込む</p>
               </div>
-              <!-- /.c-articles-search__tab -->
-              <div class="c-articles-search__body">
-                <table class="c-articles-search__table">
-                  <tbody class="c-articles-search__tbody">
-                    <tr class="c-articles-search__tr">
-                      <th class="c-articles-search__th">対象</th>
-                      <td class="c-articles-search__td">
-                        <p class="c-tag c-tag--search"><a href="tag.html">#コンサルファーム</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#クライアント</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#共通</a></p>
-                      </td>
-                    </tr>
-                    <!-- /.c-articles-search__tr -->
-                    <tr class="c-articles-search__tr">
-                      <th class="c-articles-search__th">分類</th>
-                      <td class="c-articles-search__td">
-                        <p class="c-tag c-tag--search"><a href="tag.html">#戦略</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#IT</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#業務改善</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#HR</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#M&A・事業再生</a></p>
-                      </td>
-                    </tr>
-                    <!-- /.c-articles-search__tr -->
-                    <tr class="c-articles-search__tr">
-                      <th class="c-articles-search__th">業界</th>
-                      <td class="c-articles-search__td">
-                        <p class="c-tag c-tag--search"><a href="tag.html">#IT</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#メーカー</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#商社</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#サービス</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#流通・小売</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#広告・マスコミ</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#金融・保健</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#不動産・建設・設備</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#物流</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#その他</a></p>
-                        <p class="c-tag c-tag--search"><a href="tag.html">#共通</a></p>
-                      </td>
-                    </tr>
-                    <!-- /.c-articles-search__tr -->
-                  </tbody>
-                  <!-- /.c-articles-search__tbody -->
-                </table>
-                <!-- /.c-articles-search__table -->
-              </div>
-              <!-- /.c-articles-search__body -->
+              <h2 class="c-title__text c-title__text--reverse">よく読まれている記事</h2>
             </div>
-            <!-- /.c-articles-search -->
+            <!-- /.c-title -->
+            <div class="c-articles-swiper__navigation p-tag-related-articles__swiper-navigation">
+              <button class="swiper-button-prev c-articles-swiper__btn c-articles-swiper__btn-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 15" fill="none">
+                  <path d="M0.292892 8.07106C-0.0976315 7.68054 -0.0976315 7.04737 0.292892 6.65685L6.65685 0.292885C7.04738 -0.0976396 7.68054 -0.0976396 8.07107 0.292885C8.46159 0.683409 8.46159 1.31657 8.07107 1.7071L2.41421 7.36395L8.07107 13.0208C8.46159 13.4113 8.46159 14.0445 8.07107 14.435C7.68054 14.8255 7.04738 14.8255 6.65685 14.435L0.292892 8.07106ZM17 8.36395H1V6.36395H17V8.36395Z"/>
+                </svg>
+              </button>
+              <button class="swiper-button-next c-articles-swiper__btn c-articles-swiper__btn-next">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 15" fill="none">
+                  <path d="M16.7071 8.07106C17.0976 7.68054 17.0976 7.04737 16.7071 6.65685L10.3431 0.292885C9.95262 -0.0976396 9.31946 -0.0976396 8.92893 0.292885C8.53841 0.683409 8.53841 1.31657 8.92893 1.7071L14.5858 7.36395L8.92893 13.0208C8.53841 13.4113 8.53841 14.0445 8.92893 14.435C9.31946 14.8255 9.95262 14.8255 10.3431 14.435L16.7071 8.07106ZM0 8.36395H16V6.36395H0V8.36395Z"/>
+                </svg>
+              </button>
+            </div>
+            <!-- /.c-articles-swiper__navigation p-tag-related-articles__swiper-navigation -->
           </div>
-          <!-- /.p-archive-search__contents -->
+          <!-- /.p-tag-related-articles__lead -->
+          <div class="p-tag-related-articles__contents">
+            <div class="swiper c-articles-swiper p-tag-related-articles__swiper js-swiper-articles">
+              <div class="swiper-wrapper c-articles-swiper__wrapper p-tag-related-articles__swiper-wrapper">
+                <div class="swiper-slide c-articles-swiper__slide c-card">
+                  <a href="" class="c-card__link">
+                    <div class="c-card__inner">
+                      <div class="c-card__contents">
+                        <div class="c-card__img">
+                          <picture>
+                            <source srcset="./assets/img/single/img9.webp" type="image/webp">
+                            <img src="./assets/img/single/img9.png" alt="デジタル時代におけるコンサルタントの役割と価値">
+                          </picture>
+                        </div>
+                        <!-- /.c-card__img -->
+                        <div class="c-card__body">
+                          <div class="c-card__update">
+                            <data value="2024-03-01">2024.03.XX</data>
+                          </div>
+                          <!-- /.c-card__update -->
+                          <div class="c-card__lead">
+                            <h3>デジタル時代におけるコンサルタントの役割と価値</h3>
+                          </div>
+                          <!-- /.c-card__lead -->
+                          <div class="c-card__category">
+                            <p class="c-category c-category--news">ニュース</p>
+                          </div>
+                          <!-- /.c-card__category -->
+                        </div>
+                        <!-- /.c-card__body -->
+                        <div class="c-card__tag">
+                          <p class="c-tag">＃コンサルファーム</p>
+                          <p class="c-tag">＃IT</p>
+                          <p class="c-tag">＃その他</p>
+                        </div>
+                        <!-- /.c-card__tag -->
+                      </div>
+                      <!-- /.c-card__contents -->
+                    </div>
+                    <!-- /.c-card__inner -->
+                  </a>
+                  <!-- /.c-card__link -->
+                </div>
+                <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
+                <div class="swiper-slide c-articles-swiper__slide c-card">
+                  <a href="" class="c-card__link">
+                    <div class="c-card__inner">
+                      <div class="c-card__contents">
+                        <div class="c-card__img">
+                          <picture>
+                            <source srcset="./assets/img/single/img8.webp" type="image/webp">
+                            <img src="./assets/img/single/img8.png" alt="テクノロジーの進化とコンサルティング業界の未来">
+                          </picture>
+                        </div>
+                        <!-- /.c-card__img -->
+                        <div class="c-card__body">
+                          <div class="c-card__update">
+                            <data value="2024-03-01">2024.03.XX</data>
+                          </div>
+                          <!-- /.c-card__update -->
+                          <div class="c-card__lead">
+                            <h3>テクノロジーの進化とコンサルティング業界の未来</h3>
+                          </div>
+                          <!-- /.c-card__lead -->
+                          <div class="c-card__category">
+                            <p class="c-category c-category--interview">インタビュー</p>
+                          </div>
+                          <!-- /.c-card__category -->
+                        </div>
+                        <!-- /.c-card__body -->
+                        <div class="c-card__tag">
+                          <p class="c-tag">＃コンサルファーム</p>
+                          <p class="c-tag">＃IT</p>
+                        </div>
+                        <!-- /.c-card__tag -->
+                      </div>
+                      <!-- /.c-card__contents -->
+                    </div>
+                    <!-- /.c-card__inner -->
+                  </a>
+                  <!-- /.c-card__link -->
+                </div>
+                <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
+                <div class="swiper-slide c-articles-swiper__slide c-card">
+                  <a href="" class="c-card__link">
+                    <div class="c-card__inner">
+                      <div class="c-card__contents">
+                        <div class="c-card__img">
+                          <picture>
+                            <source srcset="./assets/img/single/img16_sp.webp" type="image/webp">
+                            <img src="./assets/img/single/img16_sp.png" alt="Big Fourが新たなデジタルイノベーションラボを設立、業界に変革をもた..">
+                          </picture>
+                        </div>
+                        <!-- /.c-card__img -->
+                        <div class="c-card__body">
+                          <div class="c-card__update">
+                            <data value="2024-03-01">2024.03.XX</data>
+                          </div>
+                          <!-- /.c-card__update -->
+                          <div class="c-card__lead">
+                            <h3>Big Fourが新たなデジタルイノベーションラボを設立、業界に変革をもた..</h3>
+                          </div>
+                          <!-- /.c-card__lead -->
+                          <div class="c-card__category">
+                            <p class="c-category c-category--news">ニュース</p>
+                          </div>
+                          <!-- /.c-card__category -->
+                        </div>
+                        <!-- /.c-card__body -->
+                        <div class="c-card__tag">
+                          <p class="c-tag">＃コンサルファーム</p>
+                          <p class="c-tag">＃IT</p>
+                          <p class="c-tag">＃共通</p>
+                        </div>
+                        <!-- /.c-card__tag -->
+                      </div>
+                      <!-- /.c-card__contents -->
+                    </div>
+                    <!-- /.c-card__inner -->
+                  </a>
+                  <!-- /.c-card__link -->
+                </div>
+                <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
+                <div class="swiper-slide c-articles-swiper__slide c-card">
+                  <a href="" class="c-card__link">
+                    <div class="c-card__inner">
+                      <div class="c-card__contents">
+                        <div class="c-card__img">
+                          <picture>
+                            <source srcset="./assets/img/single/img10.webp" type="image/webp">
+                            <img src="./assets/img/single/img10.png" alt="ビジネス戦略の再構築：コンサルタントのアプローチ">
+                          </picture>
+                        </div>
+                        <!-- /.c-card__img -->
+                        <div class="c-card__body">
+                          <div class="c-card__update">
+                            <data value="2024-03-01">2024.03.XX</data>
+                          </div>
+                          <!-- /.c-card__update -->
+                          <div class="c-card__lead">
+                            <h3>ビジネス戦略の再構築：コンサルタントのアプローチ</h3>
+                          </div>
+                          <!-- /.c-card__lead -->
+                          <div class="c-card__category">
+                            <p class="c-category c-category--latest">新着情報</p>
+                          </div>
+                          <!-- /.c-card__category -->
+                        </div>
+                        <!-- /.c-card__body -->
+                        <div class="c-card__tag">
+                          <p class="c-tag">＃M&A・事業再生</p>
+                          <p class="c-tag">＃戦略</p>
+                        </div>
+                        <!-- /.c-card__tag -->
+                      </div>
+                      <!-- /.c-card__contents -->
+                    </div>
+                    <!-- /.c-card__inner -->
+                  </a>
+                  <!-- /.c-card__link -->
+                </div>
+                <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
+                 <div class="swiper-slide c-articles-swiper__slide c-card">
+                  <a href="" class="c-card__link">
+                    <div class="c-card__inner">
+                      <div class="c-card__contents">
+                        <div class="c-card__img">
+                          <picture>
+                            <source srcset="./assets/img/single/img13.webp" type="image/webp">
+                            <img src="./assets/img/single/img13.png" alt="製造業のデジタル変革：コンサルタントが提案するスマートファクトリー戦..">
+                          </picture>
+                        </div>
+                        <!-- /.c-card__img -->
+                        <div class="c-card__body">
+                          <div class="c-card__update">
+                            <data value="2024-03-01">2024.03.XX</data>
+                          </div>
+                          <!-- /.c-card__update -->
+                          <div class="c-card__lead">
+                            <h3>製造業のデジタル変革：コンサルタントが提案するスマートファクトリー戦..</h3>
+                          </div>
+                          <!-- /.c-card__lead -->
+                          <div class="c-card__category">
+                            <p class="c-category c-category--tips">TIPS</p>
+                          </div>
+                          <!-- /.c-card__category -->
+                        </div>
+                        <!-- /.c-card__body -->
+                        <div class="c-card__tag">
+                          <p class="c-tag">＃業務改善</p>
+                          <p class="c-tag">＃IT</p>
+                          <p class="c-tag">＃メーカー</p>
+                        </div>
+                        <!-- /.c-card__tag -->
+                      </div>
+                      <!-- /.c-card__contents -->
+                    </div>
+                    <!-- /.c-card__inner -->
+                  </a>
+                  <!-- /.c-card__link -->
+                </div>
+                <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
+              </div>
+              <!-- /.swiper-wrapper c-articles-swiper__wrapper -->
+              <div class="swiper-scrollbar c-articles-swiper__scrollbar"></div>
+            </div>
+            <!-- /.swiper c-articles-swiper p-tag-related-articles__swiper -->
+          </div>
+          <!-- /.p-tag-related-articles__contents -->
         </div>
-        <!-- /.l-inner p-archive-search__inner -->
+        <!-- /.p-tag-related-articles__inner -->
       </section>
-      <!-- /.p-archive-search -->
+      <!-- /.p-tag-related-articles -->
 
       <!-- CTA -->
-      <div class="c-cta p-archive-cta">
+      <div class="c-cta p-tag-cta">
         <div class="l-inner c-cta__inner">
           <div class="c-cta__contents">
             <div class="c-cta__card">
@@ -811,7 +986,7 @@
         </div>
         <!-- /.l-inner c-cta__inner -->
       </div>
-      <!-- /.c-cta p-archive-cta -->
+      <!-- /.c-cta p-tag-cta -->
 
     </main>
     <!-- /.l-main -->
