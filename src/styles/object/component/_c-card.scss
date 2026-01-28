@@ -19,13 +19,13 @@
 
   &__inner {
     padding-inline: 16px;
-    overflow: hidden;
   }
 
   &__contents {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    overflow: hidden;
   }
 
   &__img {

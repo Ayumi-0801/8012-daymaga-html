@@ -9,7 +9,7 @@
   }
 
   &__inner {
-    padding-inline: 18px 18px;
+    padding-inline: 18px;
 
     @include global.mq(lg) {
       padding-inline: clamp(100px, 14.1vw, 203px); // 中間値：203px / 1440px * 100vw
