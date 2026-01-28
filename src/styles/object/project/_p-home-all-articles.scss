@@ -42,8 +42,8 @@
     @include global.mq(xl) {
       position: absolute;
       top: 5px;
-      right: 0;
-      padding-right: 28px;
+      right: 28px;
+      padding-right: 0;
     }
   }
 

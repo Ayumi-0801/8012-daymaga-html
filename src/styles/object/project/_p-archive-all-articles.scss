@@ -2,10 +2,18 @@
 
 
 .p-archive-all-articles {
-  padding-block-start: 48px;
+  padding-block-start: 51px;
+
+  @include global.mq(lg) {
+    padding-block: 63px 32px;
+  }
 
   &__inner {
     padding-inline: 18px 18px;
+
+    @include global.mq(lg) {
+      padding-inline: clamp(100px, 14.1vw, 203px); // 中間値：203px / 1440px * 100vw
+    }
   }
 
   &__title {
@@ -13,20 +21,26 @@
   }
 
   &__contents {
+    position: relative;
     margin-top: 20px;
+
+    @include global.mq(lg) {
+      margin-top: 40px;
+    }
   }
 
   &__sort {
+    padding-right: 3px;
 
     @include global.mq(xl) {
       position: absolute;
       top: 5px;
-      right: 0;
-      padding-right: 28px;
+      right: 26px;
     }
   }
 
   &__body {
+    margin-top: 7px;
     min-height: 520px;
 
     @include global.mq(lg) {
@@ -38,7 +52,11 @@
 
   }
 
-  &__pagenation {
-    margin-top: 32px;
+  &__pagination {
+    margin-top: 28px;
+
+    @include global.mq(lg) {
+      margin-top: 56px;
+    }
   }
 }
