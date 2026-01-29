@@ -10,25 +10,11 @@
   }
 
   &__inner {
-    // max-width: auto;
+    
   }
 
   &__lead {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    padding-inline: 32px 38px;
-
-    @include global.mq(sm) {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
-    }
-
-    @include global.mq(lg) {
-      padding-inline-start: clamp(102px, 13.1vw, 188px); // 中間値：188px / 1440px * 100vw
-      padding-inline-end: clamp(110px, 14.8vw, 212px); // 中間値：212px / 1440px * 100vw
-    }
+    
   }
 
   &__title {
@@ -51,12 +37,6 @@
   }
 
   &__swiper {
-    padding-inline: 32px;
-
-    @include global.mq(lg) {
-      padding-inline-start: clamp(102px, 13.1vw, 188px); // 中間値：188px / 1440px * 100vw
-      padding-inline-end: clamp(110px, 14.8vw, 265px); // 中間値：213px / 1440px * 100vw
-    }
 
     &-navigation {
 

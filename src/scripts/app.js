@@ -127,31 +127,49 @@
   記事Swiper（よく読まれている記事、関連記事）
   ============================================== */
   const initSwiperArticles = () => {
-    const swiper = new Swiper(".js-swiper-articles", {
-      centeredSlides: false, // 左寄せ
-      slidesPerView: "auto", // CSSでスライドの幅を管理
-      loop: false, // ループ禁止
-      // rewind: true,
-      freeMode: false,
-      spaceBetween: 24,
-      breakpoints: {
-        901: {
-          spaceBetween: 32,
+    const swiperEls = document.querySelectorAll(".js-swiper-articles");
+    if (!swiperEls.length) return;
+
+    swiperEls.forEach((swiperEl) => {
+      // date属性から余白を取得
+      const spaceSp = Number(swiperEl.dataset.spaceSp || 24);
+      const spacePc = Number(swiperEl.dataset.spacePc || 32);
+
+
+      // Swiper本体、ナビゲーションボタン、スクロールバーが同居する起点の要素を指定
+      // 対となる各要素を取得するため
+      const scopeEl = swiperEl.closest(".c-articles-swiper");
+
+      const nextBtn = scopeEl.querySelector(".c-articles-swiper__btn-next");
+      const prevBtn = scopeEl.querySelector(".c-articles-swiper__btn-prev");
+      const scrollbarEl = scopeEl.querySelector(".c-articles-swiper__scrollbar");
+
+      const swiper = new Swiper(swiperEl, {
+        centeredSlides: false, // 左寄せ
+        slidesPerView: "auto", // CSSでスライドの幅を管理
+        loop: false, // ループ禁止
+        freeMode: false,
+        spaceBetween: spaceSp,
+        breakpoints: {
+          901: {
+            spaceBetween: spacePc,
+          },
         },
-      },
-      navigation: {
-        nextEl: ".c-articles-swiper__btn-next",
-        prevEl: ".c-articles-swiper__btn-prev",
-      },
-      scrollbar: {
-        el: '.c-articles-swiper__scrollbar',
-        draggable: true,
-      },
+        navigation: {
+          nextEl: nextBtn,
+          prevEl: prevBtn,
+        },
+        scrollbar: {
+          el: scrollbarEl,
+          draggable: true,
+        },
+      });
     });
   };
   window.addEventListener("load", function () {
     initSwiperArticles(); // ページ読み込み後に初期化
   });
+
   /* ==============================================
   すべての記事一覧のカテゴリ判定
   ============================================== */

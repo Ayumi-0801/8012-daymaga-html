@@ -3,6 +3,24 @@
 
 .c-articles-swiper {
 
+  &__lead {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-inline: 32px 38px;
+
+    @include global.mq(sm) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    @include global.mq(lg) {
+      padding-inline-start: clamp(102px, 13.1vw, 188px); // 中間値：188px / 1440px * 100vw
+      padding-inline-end: clamp(110px, 14.8vw, 212px); // 中間値：212px / 1440px * 100vw
+    }
+  }
+
   &__navigation {
     display: flex;
     flex-direction: row;
@@ -43,12 +61,38 @@
       transition: fill global.$transition-base global.$transition-ease;
     }
 
+    &--reverse {
+      border-color: global.$border-color-swiper-navigation-reverse;
+
+      &:hover,
+      &:focus-visible {
+        @include global.bg-color(swiper-navigation-btn-reverse-hover);
+
+        & svg {
+          @include global.fill(swiper-navigation-icon-reverse-hover);
+        }
+      }
+
+      & svg {
+        @include global.fill(swiper-navigation-icon-reverse);
+      }
+    }
+
     &-prev {
 
     }
 
     &-next {
 
+    }
+  }
+
+  &__body {
+    padding-inline: 32px 38px;
+
+    @include global.mq(lg) {
+      padding-inline-start: clamp(102px, 13.1vw, 188px); // 中間値：188px / 1440px * 100vw
+      padding-inline-end: clamp(110px, 14.8vw, 265px); // 中間値：213px / 1440px * 100vw
     }
   }
 
