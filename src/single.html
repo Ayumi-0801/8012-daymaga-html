@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <!-- レスポンシブ表示用 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- サイトアイコン -->
+    <link rel="icon" href="ファビアイコン画像を指定">
+    <!-- 検索除外 -->
+    <meta name="robots" content="noindex">
+
+    <!-- サイトタイトル -->
+    <title>DayMaga</title>
+    <meta name="description" content="サイト説明文を入力">
+
+    <!-- OGP基本設定 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DayMaga">
+    <meta property="og:description" content="ページの説明文。100文字以内推奨。">
+    <meta property="og:url" content="https://example.com/このページのURL">
+    <meta property="og:image" content="https://example.com/images/ogp.jpg">
+    <meta property="og:site_name" content="サイトの名前">
+
+    <!-- 構造化データ（JSON-LD） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          /* 会社（運営主体） */
+          "@type": "Organization",
+          "@id": "https://{YOUR-DOMAIN}/#org",
+          "name": "{会社名}",
+          "url": "https://{YOUR-DOMAIN}/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://{YOUR-DOMAIN}/assets/img/logo.png",
+            "width": 256,
+            "height": 256
+          },
+          "sameAs": [
+            "https://x.com/{アカウント}",
+            "https://www.linkedin.com/company/{会社スラッグ}"
+          ]
+        },
+        {
+          /* サイト全体 */
+          "@type": "WebSite",
+          "@id": "https://{YOUR-DOMAIN}/#website",
+          "url": "https://{YOUR-DOMAIN}/",
+          "name": "{サイト名}",
+          "publisher": { "@id": "https://{YOUR-DOMAIN}/#org" },
+          "inLanguage": "ja"
+        },
+        {
+          /* このページ */
+          "@type": "WebPage",
+          "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#webpage",
+          "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/",
+          "name": "{ページタイトル（titleと整合）}",
+          "description": "{ページ要約（meta descriptionと整合）}",
+          "isPartOf": { "@id": "https://{YOUR-DOMAIN}/#website" },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://{YOUR-DOMAIN}/assets/img/ogp/{画像ファイル}.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          "datePublished": "{YYYY-MM-DD}",
+          "dateModified": "{YYYY-MM-DD}",
+          "inLanguage": "ja",
+          "breadcrumb": { "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#breadcrumb" }
+        },
+        {
+          /* パンくず（必要な階層（パンくずがあるページだけ）だけ、このページがトップページから何番目の階層か） */
+          "@type": "BreadcrumbList",
+          "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1,
+              "name": "ホーム",
+              "item": "https://{YOUR-DOMAIN}/" },
+            { "@type": "ListItem", "position": 2,
+              "name": "{ページ名（短め）}",
+              "item": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/" }
+          ]
+        },
+        /* サービス情報（明示したい場合のみ） */
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#service",
+        "name": "{サービス名}",
+        "provider": { "@id": "https://{YOUR-DOMAIN}/#org" },
+        "serviceType": "{分類：例 Web制作・運用}",
+        "areaServed": "JP",
+        "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/",
+        "description": "{ひとことで説明}",
+        "offers": {
+          "@type": "Offer",
+          "price": "{価格のみ（数値）}",
+          "priceCurrency": "JPY",
+          "availability": "https://schema.org/InStock",
+          "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#plan"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+  </head>
+  <body>
+    <header id="header" class="c-header js-header">
+      <div class="c-header__inner">
+        <h1 class="c-header__title">
+          <a href="index.html">
+            <span class="c-header__title-logo c-header__title-logo--default">
+              <span class="c-header__title-lead">ビジネスの未来を切り拓く。</span>
+              <picture>
+                <source srcset="./assets/img/logo-header.webp" type="image/webp">
+                <img src="./assets/img/logo-header.png" alt="DayMaga">
+              </picture>
+              <span class="c-header__title-text">コンサルティングの専門情報メディア</span>
+            </span>
+            <!-- /.c-header__title-logo c-header__title-logo--default -->
+            <span class="c-header__title-logo c-header__title-logo--scroll">
+              <picture>
+                <source srcset="./assets/img/logo-header-scroll.webp" type="image/webp">
+                <img src="./assets/img/logo-header-scroll.png" alt="DayMaga">
+              </picture>
+            </span>
+            <!-- /.c-header__title-logo c-header__title-logo--scroll -->
+          </a>
+        </h1>
+        <!-- /.c-header__title -->
+        <nav id="global-nav" class="c-header__nav">
+          <ul class="c-header__nav-list">
+            <li class="c-header__nav-item">
+              <a href="archive.html">新着記事</a>
+            </li>
+            <li class="c-header__nav-item">
+              <a href="archive.html">TIPS</a>
+            </li>
+            <li class="c-header__nav-item">
+              <a href="archive.html">インタビュー</a>
+            </li>
+            <li class="c-header__nav-item">
+              <a href="archive.html">ニュース</a>
+            </li>
+            <li class="c-header__nav-item c-header__nav-item-btn">
+              <a href="" class="c-header__btn c-header__btn-01">
+                <span class="c-header__btn-lead">コンサルをお探しの企業様</span>
+                <span class="c-header__btn-body">まずは無料相談</span>
+              </a>
+              <a href=""  class="c-header__btn c-header__btn-02">
+                <span class="c-header__btn-lead">コンサルタントの方</span>
+                <span class="c-header__btn-body">案件の紹介登録</span>
+              </a>
+            </li>
+            <li class="c-header__nav-item">
+              <a href="#search" class="c-header__nav-icon">
+                <svg viewBox="0 0 28 28" fill="none">
+                  <path d="M24.5 24.5L17.5 17.5M3.5 11.6667C3.5 12.7391 3.71124 13.8011 4.12165 14.7919C4.53206 15.7827 5.13362 16.683 5.89196 17.4414C6.65031 18.1997 7.55059 18.8013 8.54142 19.2117C9.53224 19.6221 10.5942 19.8333 11.6667 19.8333C12.7391 19.8333 13.8011 19.6221 14.7919 19.2117C15.7827 18.8013 16.683 18.1997 17.4414 17.4414C18.1997 16.683 18.8013 15.7827 19.2117 14.7919C19.6221 13.8011 19.8333 12.7391 19.8333 11.6667C19.8333 10.5942 19.6221 9.53224 19.2117 8.54142C18.8013 7.55059 18.1997 6.65031 17.4414 5.89196C16.683 5.13362 15.7827 4.53206 14.7919 4.12165C13.8011 3.71124 12.7391 3.5 11.6667 3.5C10.5942 3.5 9.53224 3.71124 8.54142 4.12165C7.55059 4.53206 6.65031 5.13362 5.89196 5.89196C5.13362 6.65031 4.53206 7.55059 4.12165 8.54142C3.71124 9.53224 3.5 10.5942 3.5 11.6667Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+          <!-- /.c-header__nav-list -->
+        </nav>
+        <!-- /.c-header__nav -->
+        <div class="c-header__drawer">
+          <button
+            class="c-header__drawer-btn js-btn-drawer"
+            aria-controls="global-nav"
+            aria-expanded="false"
+          >
+            <span class="c-header__drawer-line c-header__drawer-line-01"></span>
+            <span class="c-header__drawer-line c-header__drawer-line-02"></span>
+            <span class="c-header__drawer-line c-header__drawer-line-03"></span>
+          </button>
+        </div>
+        <!-- /.c-header__drawer -->
+      </div>
+      <!-- /.c-header__inner -->
+    </header>
+    <!-- /.c-header -->
+    
+    <main class="l-main">
+
+      <!-- 記事本文 -->
+      
+
+      <!-- 関連記事 -->
+      <section class="c-articles-swiper p-tag-related-articles">
+        <div class="p-tag-related-articles__inner">
+          <div class="c-articles-swiper__lead p-tag-related-articles__lead">
+            <div class="c-title c-title--sub p-tag-related-articles__title">
+              <div class="c-title__img c-title__img--">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 23" fill="none">
+                  <path d="M25.0283 22.6154C17.9581 15.7885 -2.45065 2.89667 0.243388 1.04725C7.78646 -4.13095 15.9502 10.9772 25.0283 22.6154Z" fill="#135097"/>
+                  <path d="M19.8576 21.4311C25.1429 16.3276 44.082 10.1142 41.8121 8.55601C34.6879 3.66575 26.644 12.7308 19.8576 21.4311Z" fill="#C93A3A"/>
+                </svg>
+              </div>
+              <h2 class="c-title__text">関連記事</h2>
+            </div>
+            <!-- /.c-title c-title--sub p-tag-related-articles__title -->
+            <div class="c-articles-swiper__navigation p-tag-related-articles__swiper-navigation">
+              <button class="swiper-button-prev c-articles-swiper__btn c-articles-swiper__btn--reverse c-articles-swiper__btn-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 15" fill="none">
+                  <path d="M0.292892 8.07106C-0.0976315 7.68054 -0.0976315 7.04737 0.292892 6.65685L6.65685 0.292885C7.04738 -0.0976396 7.68054 -0.0976396 8.07107 0.292885C8.46159 0.683409 8.46159 1.31657 8.07107 1.7071L2.41421 7.36395L8.07107 13.0208C8.46159 13.4113 8.46159 14.0445 8.07107 14.435C7.68054 14.8255 7.04738 14.8255 6.65685 14.435L0.292892 8.07106ZM17 8.36395H1V6.36395H17V8.36395Z"/>
+                </svg>
+              </button>
+              <button class="swiper-button-next c-articles-swiper__btn c-articles-swiper__btn--reverse c-articles-swiper__btn-next">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 15" fill="none">
+                  <path d="M16.7071 8.07106C17.0976 7.68054 17.0976 7.04737 16.7071 6.65685L10.3431 0.292885C9.95262 -0.0976396 9.31946 -0.0976396 8.92893 0.292885C8.53841 0.683409 8.53841 1.31657 8.92893 1.7071L14.5858 7.36395L8.92893 13.0208C8.53841 13.4113 8.53841 14.0445 8.92893 14.435C9.31946 14.8255 9.95262 14.8255 10.3431 14.435L16.7071 8.07106ZM0 8.36395H16V6.36395H0V8.36395Z"/>
+                </svg>
+              </button>
+            </div>
+            <!-- /.c-articles-swiper__navigation p-tag-related-articles__swiper-navigation -->
+          </div>
+          <!-- /.p-tag-related-articles__lead -->
+          <div class="p-tag-related-articles__contents">
+            <div class="swiper c-articles-swiper__body p-tag-related-articles__swiper js-swiper-articles" data-space-sp="32" data-space-pc="32">
+              <div class="swiper-wrapper c-articles-swiper__wrapper p-tag-related-articles__swiper-wrapper">
+                <div class="swiper-slide c-articles-swiper__slide c-card">
+                  <a href="" class="c-card__link">
+                    <div class="c-card__inner">
+                      <div class="c-card__contents">
+                        <div class="c-card__img">
+                          <picture>
+                            <source srcset="./assets/img/single/img9.webp" type="image/webp">
+                            <img src="./assets/img/single/img9.png" alt="デジタル時代におけるコンサルタントの役割と価値">
+                          </picture>
+                        </div>
+                        <!-- /.c-card__img -->
+                        <div class="c-card__body">
+                          <div class="c-card__update">
+                            <data value="2024-03-01">2024.03.XX</data>
+                          </div>
+                          <!-- /.c-card__update -->
+                          <div class="c-card__lead">
+                            <h3>デジタル時代におけるコンサルタントの役割と価値</h3>
+                          </div>
+                          <!-- /.c-card__lead -->
+                          <div class="c-card__category">
+                            <p class="c-category c-category--news">ニュース</p>
+                          </div>
+                          <!-- /.c-card__category -->
+                        </div>
+                        <!-- /.c-card__body -->
+                        <div class="c-card__tag">
+                          <p class="c-tag">＃コンサルファーム</p>
+                          <p class="c-tag">＃IT</p>
+                          <p class="c-tag">＃その他</p>
+                        </div>
+                        <!-- /.c-card__tag -->
+                      </div>
+                      <!-- /.c-card__contents -->
+                    </div>
+                    <!-- /.c-card__inner -->
+                  </a>
+                  <!-- /.c-card__link -->
+                </div>
+                <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
+                <div class="swiper-slide c-articles-swiper__slide c-card">
+                  <a href="" class="c-card__link">
+                    <div class="c-card__inner">
+                      <div class="c-card__contents">
+                        <div class="c-card__img">
+                          <picture>
+                            <source srcset="./assets/img/single/img8.webp" type="image/webp">
+                            <img src="./assets/img/single/img8.png" alt="テクノロジーの進化とコンサルティング業界の未来">
+                          </picture>
+                        </div>
+                        <!-- /.c-card__img -->
+                        <div class="c-card__body">
+                          <div class="c-card__update">
+                            <data value="2024-03-01">2024.03.XX</data>
+                          </div>
+                          <!-- /.c-card__update -->
+                          <div class="c-card__lead">
+                            <h3>テクノロジーの進化とコンサルティング業界の未来</h3>
+                          </div>
+                          <!-- /.c-card__lead -->
+                          <div class="c-card__category">
+                            <p class="c-category c-category--interview">インタビュー</p>
+                          </div>
+                          <!-- /.c-card__category -->
+                        </div>
+                        <!-- /.c-card__body -->
+                        <div class="c-card__tag">
+                          <p class="c-tag">＃コンサルファーム</p>
+                          <p class="c-tag">＃IT</p>
+                        </div>
+                        <!-- /.c-card__tag -->
+                      </div>
+                      <!-- /.c-card__contents -->
+                    </div>
+                    <!-- /.c-card__inner -->
+                  </a>
+                  <!-- /.c-card__link -->
+                </div>
+                <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
+                <div class="swiper-slide c-articles-swiper__slide c-card">
+                  <a href="" class="c-card__link">
+                    <div class="c-card__inner">
+                      <div class="c-card__contents">
+                        <div class="c-card__img">
+                          <picture>
+                            <source srcset="./assets/img/single/img16_sp.webp" type="image/webp">
+                            <img src="./assets/img/single/img16_sp.png" alt="Big Fourが新たなデジタルイノベーションラボを設立、業界に変革をもた..">
+                          </picture>
+                        </div>
+                        <!-- /.c-card__img -->
+                        <div class="c-card__body">
+                          <div class="c-card__update">
+                            <data value="2024-03-01">2024.03.XX</data>
+                          </div>
+                          <!-- /.c-card__update -->
+                          <div class="c-card__lead">
+                            <h3>Big Fourが新たなデジタルイノベーションラボを設立、業界に変革をもた..</h3>
+                          </div>
+                          <!-- /.c-card__lead -->
+                          <div class="c-card__category">
+                            <p class="c-category c-category--news">ニュース</p>
+                          </div>
+                          <!-- /.c-card__category -->
+                        </div>
+                        <!-- /.c-card__body -->
+                        <div class="c-card__tag">
+                          <p class="c-tag">＃コンサルファーム</p>
+                          <p class="c-tag">＃IT</p>
+                          <p class="c-tag">＃共通</p>
+                        </div>
+                        <!-- /.c-card__tag -->
+                      </div>
+                      <!-- /.c-card__contents -->
+                    </div>
+                    <!-- /.c-card__inner -->
+                  </a>
+                  <!-- /.c-card__link -->
+                </div>
+                <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
+                <div class="swiper-slide c-articles-swiper__slide c-card">
+                  <a href="" class="c-card__link">
+                    <div class="c-card__inner">
+                      <div class="c-card__contents">
+                        <div class="c-card__img">
+                          <picture>
+                            <source srcset="./assets/img/single/img10.webp" type="image/webp">
+                            <img src="./assets/img/single/img10.png" alt="ビジネス戦略の再構築：コンサルタントのアプローチ">
+                          </picture>
+                        </div>
+                        <!-- /.c-card__img -->
+                        <div class="c-card__body">
+                          <div class="c-card__update">
+                            <data value="2024-03-01">2024.03.XX</data>
+                          </div>
+                          <!-- /.c-card__update -->
+                          <div class="c-card__lead">
+                            <h3>ビジネス戦略の再構築：コンサルタントのアプローチ</h3>
+                          </div>
+                          <!-- /.c-card__lead -->
+                          <div class="c-card__category">
+                            <p class="c-category c-category--latest">新着情報</p>
+                          </div>
+                          <!-- /.c-card__category -->
+                        </div>
+                        <!-- /.c-card__body -->
+                        <div class="c-card__tag">
+                          <p class="c-tag">＃M&A・事業再生</p>
+                          <p class="c-tag">＃戦略</p>
+                        </div>
+                        <!-- /.c-card__tag -->
+                      </div>
+                      <!-- /.c-card__contents -->
+                    </div>
+                    <!-- /.c-card__inner -->
+                  </a>
+                  <!-- /.c-card__link -->
+                </div>
+                <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
+                 <div class="swiper-slide c-articles-swiper__slide c-card">
+                  <a href="" class="c-card__link">
+                    <div class="c-card__inner">
+                      <div class="c-card__contents">
+                        <div class="c-card__img">
+                          <picture>
+                            <source srcset="./assets/img/single/img13.webp" type="image/webp">
+                            <img src="./assets/img/single/img13.png" alt="製造業のデジタル変革：コンサルタントが提案するスマートファクトリー戦..">
+                          </picture>
+                        </div>
+                        <!-- /.c-card__img -->
+                        <div class="c-card__body">
+                          <div class="c-card__update">
+                            <data value="2024-03-01">2024.03.XX</data>
+                          </div>
+                          <!-- /.c-card__update -->
+                          <div class="c-card__lead">
+                            <h3>製造業のデジタル変革：コンサルタントが提案するスマートファクトリー戦..</h3>
+                          </div>
+                          <!-- /.c-card__lead -->
+                          <div class="c-card__category">
+                            <p class="c-category c-category--tips">TIPS</p>
+                          </div>
+                          <!-- /.c-card__category -->
+                        </div>
+                        <!-- /.c-card__body -->
+                        <div class="c-card__tag">
+                          <p class="c-tag">＃業務改善</p>
+                          <p class="c-tag">＃IT</p>
+                          <p class="c-tag">＃メーカー</p>
+                        </div>
+                        <!-- /.c-card__tag -->
+                      </div>
+                      <!-- /.c-card__contents -->
+                    </div>
+                    <!-- /.c-card__inner -->
+                  </a>
+                  <!-- /.c-card__link -->
+                </div>
+                <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
+              </div>
+              <!-- /.swiper-wrapper c-articles-swiper__wrapper -->
+              <div class="swiper-scrollbar c-articles-swiper__scrollbar"></div>
+            </div>
+            <!-- /.swiper c-articles-swiper__body p-tag-related-articles__swiper -->
+          </div>
+          <!-- /.p-tag-related-articles__contents -->
+        </div>
+        <!-- /.p-tag-related-articles__inner -->
+      </section>
+      <!-- /.p-tag-related-articles -->
+
+      <!-- CTA -->
+      <div class="c-cta p-tag-cta">
+        <div class="l-inner c-cta__inner">
+          <div class="c-cta__contents">
+            <div class="c-cta__card">
+              <div class="c-cta__card-lead">
+                <p>コンサルタントをお探しの企業様へ</p>
+              </div>
+              <!-- /.c-cta__card-lead -->
+              <div class="c-cta__card-body">
+                <p>プロジェクトの相談をする</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14" fill="none">
+                  <path d="M0.667328 0.658081C0.885237 0.445487 1.23388 0.448107 1.44858 0.66394L6.39584 5.63757C6.9779 6.22271 6.9779 7.16767 6.39584 7.75281L1.44858 12.7264C1.23388 12.9423 0.885236 12.9449 0.667328 12.7323C0.441267 12.5115 0.444695 12.1468 0.67514 11.9305L4.31381 8.51941C5.36734 7.53173 5.36734 5.85866 4.31381 4.87097L0.67514 1.45984C0.444695 1.2436 0.441267 0.878887 0.667328 0.658081Z"/>
+                </svg>
+              </div>
+              <!-- /.c-cta__card-body -->
+            </div>
+            <!-- /.c-cta__card -->
+            <div class="c-cta__card c-cta__card--reverse">
+              <div class="c-cta__card-lead">
+                <p>コンサルタントの方へ</p>
+              </div>
+              <!-- /.c-cta__card-lead -->
+              <div class="c-cta__card-body">
+                <p>案件の紹介を受ける</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14" fill="none">
+                  <path d="M0.667328 0.658081C0.885237 0.445487 1.23388 0.448107 1.44858 0.66394L6.39584 5.63757C6.9779 6.22271 6.9779 7.16767 6.39584 7.75281L1.44858 12.7264C1.23388 12.9423 0.885236 12.9449 0.667328 12.7323C0.441267 12.5115 0.444695 12.1468 0.67514 11.9305L4.31381 8.51941C5.36734 7.53173 5.36734 5.85866 4.31381 4.87097L0.67514 1.45984C0.444695 1.2436 0.441267 0.878887 0.667328 0.658081Z"/>
+                </svg>
+              </div>
+              <!-- /.c-cta__card-body -->
+            </div>
+            <!-- /.c-cta__card c-cta__card—reverse -->
+          </div>
+          <!-- /.c-cta__contents -->
+        </div>
+        <!-- /.l-inner c-cta__inner -->
+      </div>
+      <!-- /.c-cta p-tag-cta -->
+
+    </main>
+    <!-- /.l-main -->
+
+    <footer class="c-footer">
+      <div class="c-footer__inner">
+        <div class="c-footer__contents">
+          <div class="c-footer__img">
+            <picture>
+              <source media="(min-width: 1201px)" srcset="./assets/img/logo-footer.png">
+              <source srcset="./assets/img/logo-footer-sp.png">
+              <img src="./assets/img/logo-footer.png" alt="DayMaga">
+            </picture>
+          </div>
+          <!-- /.c-footer__img -->
+          <nav class="c-footer__nav">
+            <ul class="c-footer__nav-list">
+              <li class="c-footer__nav-item"><a href="">新着記事</a></li>
+              <li class="c-footer__nav-item"><a href="">DayMagaについて</a></li>
+              <li class="c-footer__nav-item"><a href="">TIPS</a></li>
+              <li class="c-footer__nav-item"><a href="">運営会社</a></li>
+              <li class="c-footer__nav-item"><a href="">インタビュー</a></li>
+              <li class="c-footer__nav-item"><a href="">サイト利用規約</a></li>
+              <li class="c-footer__nav-item"><a href="">ニュース</a></li>
+            </ul>
+            <!-- /.c-footer__nav-list -->
+          </nav>
+          <!-- /.c-footer__nav -->
+        </div>
+        <!-- /.c-footer__contents -->
+
+        <small class="c-footer__copy">&copy;<span class="c-footer__copy-text">2024 Daytra Consul</span></small>
+        <!-- /.c-footer__copy -->
+        <p class="c-footer__info">
+          このサイトはCrown Cat株式会社様のご協力のもと作成したコーディング用の練習課題です。実在の人物・団体とは関係ありません。
+        </p>
+      </div>
+      <!-- /.c-footer__inner -->
+    </footer>
+    <!-- /.c-footer-->
+    
+    <!-- [使用する場合のみ]jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <!-- JavaScript -->
+    <script src="./assets/js/app.min.js" defer></script>
+  </body>
+</html>
