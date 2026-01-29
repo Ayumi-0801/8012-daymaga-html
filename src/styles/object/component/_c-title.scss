@@ -9,10 +9,6 @@
 
   &__img {
     width: 42px;
-
-    @include global.mq(lg) {
-      width: 72px;
-    }
   }
 
   &__text {
@@ -26,6 +22,26 @@
 
     &--reverse {
       @include global.font-color(title-reverse);
+    }
+  }
+
+  &--home {
+
+    & .c-title__img {
+
+      @include global.mq(lg) {
+        width: 72px;
+      }
+    }
+  }
+
+  &--sub {
+
+    & .c-title__img {
+
+      @include global.mq(lg) {
+        width: 52px;
+      }
     }
   }
 }

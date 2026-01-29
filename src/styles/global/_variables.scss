@@ -41,8 +41,7 @@ $bg-color: (
   pagination-link: color(blue-300),
   swiper-navigation-btn-hover: color(white),
   swiper-navigation-btn-fv: color(blue-700),
-  swiper-navigation-btn-single: color(white),
-  swiper-navigation-btn-single-hover: color(blue-700),
+  swiper-navigation-btn-reverse-hover: color(blue-700),
   swiper-scrollbar: color(gray-200),
   swiper-scrollbar-drag: color(blue-700),
   category-tabs: color(white),
@@ -56,8 +55,8 @@ $bg-color: (
 $fill: (
   swiper-navigation-icon: color(white),
   swiper-navigation-icon-hover: color(blue-300),
-  swiper-navigation-icon-single: color(blue-700),
-  swiper-navigation-icon-single-hover: color(white),
+  swiper-navigation-icon-reverse: color(blue-700),
+  swiper-navigation-icon-reverse-hover: color(white),
   cta-icon: color(blue-500-alt),
   cta-icon-reverse: color(white),
   pagination-icon: color(white)
@@ -70,7 +69,7 @@ $stroke: (
 
 $border-color-white: color(white);
 $border-color-swiper-navigation: color(white);
-$border-color-swiper-navigation-single: color(blue-700);
+$border-color-swiper-navigation-reverse: color(blue-700);
 $border-color-category-all: color(blue-300);
 $border-color-category-latest: color(blue-700);
 $border-color-category-tips: color(teal-400);
