@@ -22,10 +22,10 @@
 
   &__contents {
     position: relative;
-    margin-top: 20px;
+    margin-block-start: 20px;
 
     @include global.mq(lg) {
-      margin-top: 40px;
+      margin-block-start: 40px;
     }
   }
 
@@ -40,7 +40,7 @@
   }
 
   &__body {
-    margin-top: 7px;
+    margin-block-start: 7px;
     min-height: 520px;
 
     @include global.mq(lg) {
@@ -53,10 +53,10 @@
   }
 
   &__pagination {
-    margin-top: 28px;
+    margin-block-start: 28px;
 
     @include global.mq(lg) {
-      margin-top: 56px;
+      margin-block-start: 56px;
     }
   }
 }

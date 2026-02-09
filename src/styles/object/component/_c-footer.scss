@@ -71,12 +71,12 @@
   &__copy {
     display: block;
     text-align: center;
-    margin-top: 36px;
+    margin-block-start: 36px;
     @include global.font-weight(light);
 
     @include global.mq(lg) {
       padding-left: 24px;
-      margin-top: 24px;
+      margin-block-start: 24px;
     }
 
     &-text {
@@ -85,11 +85,11 @@
   }
 
   &__info {
-    margin-top: 40px;
+    margin-block-start: 40px;
     font-size: 12px;
 
     @include global.mq(lg) {
-      margin-top: 23px;
+      margin-block-start: 23px;
     }
 
     @include global.mq(xl) {

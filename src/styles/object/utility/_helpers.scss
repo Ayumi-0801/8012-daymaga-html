@@ -1,58 +1,28 @@
 @use "../../global" as global;
 
-// 表示切り替え
-.u-hidden {
+/* line-height調整 */
 
-  &-md {
-    display: none;
+.u-line-height-sp-130 {
+  line-height: 1.3;
 
-    @include global.mq("md") {
-      display: block;
-    }
-  }
-
-  &-lg {
-    display: none;
-
-    @include global.mq("lg") {
-      display: block;
-    }
-  }
-
-  &-xl {
-    display: none;
-
-    @include global.mq("xl") {
-      display: block;
-    }
+  @include global.mq(lg) {
+    line-height: inherit;
   }
 }
 
-// 非表示切り替え
-.u-visible {
+.u-line-height-sp-140 {
+  line-height: 1.4;
 
-  &-md {
-
-    @include global.mq("md") {
-      display: none;
-    }
+  @include global.mq(lg) {
+    line-height: inherit;
   }
+}
 
-  &-lg {
-
-    @include global.mq("lg") {
-      display: none;
-    }
-  }
-
-  &-xl {
-
-    @include global.mq("xl") {
-      display: none;
-    }
-  }
+/* letter-spacing調整 */
+.u-letter-spacing-normal {
+  letter-spacing: normal;
 }
 
 /* ちょい足しユーティリティ */
-.u-mt-0 { margin-top: 0 !important; }
-.u-mb-0 { margin-bottom: 0 !important; }
+.u-mt-0 { margin-block-start: 0 !important; }
+.u-mb-0 { margin-block-end: 0 !important; }

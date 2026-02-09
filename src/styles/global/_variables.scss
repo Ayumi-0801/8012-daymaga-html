@@ -49,7 +49,15 @@ $bg-color: (
   search-body: color(white),
   cta: color(blue-500),
   cta-reverse: color(white),
-  archive-tag-body: color(white)
+  single: color(white),
+  archive-tag-body: color(white),
+  single-toc-lead: color(blue-50),
+  single-table: color(white),
+  single-th-row: color(gray-100),
+  single-th-highlight: color(blue-300),
+  single-btn: color(blue-300),
+  single-faq-question: color(gray-500),
+  single-faq-answer: color(blue-300)
 );
 
 $fill: (
@@ -59,7 +67,8 @@ $fill: (
   swiper-navigation-icon-reverse-hover: color(white),
   cta-icon: color(blue-500-alt),
   cta-icon-reverse: color(white),
-  pagination-icon: color(white)
+  pagination-icon: color(white),
+  single-btn-icon: color(white)
 );
 
 $stroke: (
@@ -76,11 +85,19 @@ $border-color-category-tips: color(teal-400);
 $border-color-category-interview: color(purple-400);
 $border-color-category-news: color(violet-400);
 $border-color-btn: color(blue-700);
+$border-color-single-btn: color(white);
 $border-color-sort: color(gray-500);
 $border-color-search-body: color(blue-300);
 $border-color-search-row: color(gray-200);
 $border-color-cta: color(white);
 $border-color-archive-tag-body: color(blue-300);
+$border-color-single-heading: color(blue-300);
+$border-color-single-toc: color(blue-50);
+$border-color-single-table: color(blue-300);
+$border-color-single-faq-question: color(gray-500);
+$border-color-single-faq-answer: color(blue-300);
+$border-color-single-line: color(gray-200);
+$border-color-single-readmore: color(gray-100);
 
 // フォント
 $font-family: (
@@ -108,7 +125,12 @@ $font-color: (
   pagination-link: color(white),
   search-heading: color(blue-300),
   cta: color(white),
-  cta-reverse: color(blue-500-alt)
+  cta-reverse: color(blue-500-alt),
+  single-data: color(gray-500),
+  single-toc: color(blue-700),
+  single-th-highlight: color(white),
+  single-faq-lead: color(white),
+  single-faq-info: color(gray-500)
 );
 
 $font-weight: (
@@ -129,18 +151,33 @@ $line-height: (
   tag-pc: 1.5,
   footer: 1.2,
   heading: 1.2,
-  btn: 1.8,
+  btn-zen: 1.8,
+  btn-jp: 1.3,
   sort: 1.3,
   category-tabs-sp: 1.15,
   category-tabs-pc: 1.5,
   search: 1.5,
   cta: 1.3,
-  archive-tag: 1.5
+  archive-tag: 1.5,
+  single-data: 1.8,
+  single-base-sp: 1.8,
+  single-base-pc: 2,
+  single-title-sp: 1.5,
+  single-title-pc: 1.8,
+  single-toc: 1.6,
+  single-heading: 1.6,
+  single-table: 1.5,
+  single-faq: 2,
+  single-faq-info: 1.2,
+  single-tag: 2,
 );
 
 $letter-spacing: (
-  btn-sp: 3.6px,
-  btn-pc: 4px,
+  normal: normal,
+  btn-zen-sp: 2.8px,
+  btn-zen-pc: 4px,
+  btn-jp-sp: 1.12px,
+  btn-jp-pc: 1.92px,
   heading-sp: 4.8px,
   heading-pc: 6.4px,
   search-tab-sp: 2.25px,
@@ -151,7 +188,22 @@ $letter-spacing: (
   cta-pc: 0.48px,
   pagination: 3px,
   archive-tag-sp: 2.25px,
-  archive-tag-pc: 4.2px
+  archive-tag-pc: 4.2px,
+  single-title-sp: 2px,
+  single-title-pc: 2.8px,
+  single-base-sp: 1.4px,
+  single-base-pc: 2.25px,
+  single-toc-1-sp: 0.9px,
+  single-toc-1-pc: 1.92px,
+  single-toc-2-sp: 0.84px,
+  single-toc-2-pc: 1.8px,
+  single-heading-2-sp: 3px,
+  single-heading-2-pc: 3.6px,
+  single-heading-3: 3.2px,
+  single-faq-lead: 3px,
+  single-faq-text: 2.25px,
+  single-faq-info: 0.36px,
+  single-tag: 2.25px,
 );
 
 // 各テキストスタイルの定義
@@ -193,17 +245,34 @@ $heading-styles-zen: (
 $btn-styles-zen: (
   sp: (
     font-family: map.get($font-family, zen),
-    font-size: 18px,
+    font-size: 14px,
     font-weight: map.get($font-weight, bold),
-    line-height: map.get($line-height, btn),
-    letter-spacing: map.get($letter-spacing, btn-sp)
+    line-height: map.get($line-height, btn-zen),
+    letter-spacing: map.get($letter-spacing, btn-zen-sp)
   ),
   pc: (
     font-family: map.get($font-family, zen),
-    font-size: 20px,
+    font-size: 24px,
     font-weight: map.get($font-weight, bold),
-    line-height: map.get($line-height, btn),
-    letter-spacing: map.get($letter-spacing, btn-pc)
+    line-height: map.get($line-height, btn-zen),
+    letter-spacing: map.get($letter-spacing, btn-zen-pc)
+  )
+) !default;
+
+$btn-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 14px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, btn-jp),
+    letter-spacing: map.get($letter-spacing, btn-jp-sp)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 24px,
+    font-weight: map.get($font-weight, medium),
+    line-height: map.get($line-height, btn-jp),
+    letter-spacing: map.get($letter-spacing, btn-jp-pc)
   )
 ) !default;
 
@@ -455,33 +524,37 @@ $archive-tag-heading-styles-zen: (
   )
 ) !default;
 
-$single-heading-1-styles-jp: (
+$single-title-styles-jp: (
   sp: (
     font-family: map.get($font-family, jp),
     font-size: 20px,
     font-weight: map.get($font-weight, medium),
-    line-height: map.get($line-height, sp)
+    line-height: map.get($line-height, single-title-sp),
+    letter-spacing: map.get($letter-spacing, single-title-sp)
   ),
   pc: (
     font-family: map.get($font-family, jp),
     font-size: 28px,
     font-weight: map.get($font-weight, medium),
-    line-height: map.get($line-height, pc)
+    line-height: map.get($line-height, single-title-pc),
+    letter-spacing: map.get($letter-spacing, single-title-pc)
   )
 ) !default;
 
 $single-heading-2-styles-jp: (
   sp: (
     font-family: map.get($font-family, jp),
-    font-size: 18px,
+    font-size: 20px,
     font-weight: map.get($font-weight, medium),
-    line-height: map.get($line-height, sp)
+    line-height: map.get($line-height, single-heading),
+    letter-spacing: map.get($letter-spacing, single-heading-2-sp)
   ),
   pc: (
     font-family: map.get($font-family, jp),
     font-size: 24px,
     font-weight: map.get($font-weight, medium),
-    line-height: map.get($line-height, pc)
+    line-height: map.get($line-height, single-heading),
+    letter-spacing: map.get($letter-spacing, single-heading-2-pc)
   )
 ) !default;
 
@@ -490,58 +563,67 @@ $single-heading-3-styles-jp: (
     font-family: map.get($font-family, jp),
     font-size: 16px,
     font-weight: map.get($font-weight, medium),
-    line-height: map.get($line-height, sp)
+    line-height: map.get($line-height, single-heading),
+    letter-spacing: map.get($letter-spacing, single-heading-3)
   ),
   pc: (
     font-family: map.get($font-family, jp),
     font-size: 16px,
     font-weight: map.get($font-weight, medium),
-    line-height: map.get($line-height, pc)
+    line-height: map.get($line-height, single-heading),
+    letter-spacing: map.get($letter-spacing, single-heading-3)
   )
 ) !default;
 
 $single-toc-1-styles-jp: (
   sp: (
+    font-color: map.get($font-color, single-toc),
     font-family: map.get($font-family, jp),
     font-size: 15px,
     font-weight: map.get($font-weight, medium),
-    line-height: map.get($line-height, sp)
+    line-height: map.get($line-height, single-toc),
+    letter-spacing: map.get($letter-spacing, single-toc-1-sp)
   ),
   pc: (
     font-family: map.get($font-family, jp),
     font-size: 16px,
     font-weight: map.get($font-weight, medium),
-    line-height: map.get($line-height, pc)
+    line-height: map.get($line-height, single-toc),
+    letter-spacing: map.get($letter-spacing, single-toc-1-pc)
   )
 ) !default;
 
 $single-toc-2-styles-jp: (
   sp: (
+    font-color: map.get($font-color, single-toc),
     font-family: map.get($font-family, jp),
     font-size: 14px,
     font-weight: map.get($font-weight, regular),
-    line-height: map.get($line-height, sp)
+    line-height: map.get($line-height, single-toc),
+    letter-spacing: map.get($letter-spacing, single-toc-2-sp)
   ),
   pc: (
     font-family: map.get($font-family, jp),
     font-size: 15px,
     font-weight: map.get($font-weight, regular),
-    line-height: map.get($line-height, pc)
+    line-height: map.get($line-height, single-toc),
+    letter-spacing: map.get($letter-spacing, single-toc-2-pc)
   )
 ) !default;
 
 $single-date-styles-jp: (
   sp: (
+    font-color: map.get($font-color, single-data),
     font-family: map.get($font-family, jp),
     font-size: 14px,
     font-weight: map.get($font-weight, regular),
-    line-height: map.get($line-height, sp)
+    line-height: map.get($line-height, single-data)
   ),
   pc: (
     font-family: map.get($font-family, jp),
-    font-size: 14px,
+    font-size: 16px,
     font-weight: map.get($font-weight, regular),
-    line-height: map.get($line-height, pc)
+    line-height: map.get($line-height, single-data)
   )
 ) !default;
 
@@ -550,13 +632,82 @@ $single-base-styles-jp: (
     font-family: map.get($font-family, jp),
     font-size: 14px,
     font-weight: map.get($font-weight, regular),
-    line-height: map.get($line-height, sp)
+    line-height: map.get($line-height, single-base-sp),
+    letter-spacing: map.get($letter-spacing, single-base-sp)
   ),
   pc: (
     font-family: map.get($font-family, jp),
     font-size: 15px,
     font-weight: map.get($font-weight, regular),
-    line-height: map.get($line-height, pc)
+    line-height: map.get($line-height, single-base-pc),
+    letter-spacing: map.get($letter-spacing, single-base-pc)
+  )
+) !default;
+
+$single-table-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 13px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, single-table),
+    letter-spacing: map.get($letter-spacing, normal)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 16px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, single-table),
+    letter-spacing: map.get($letter-spacing, normal)
+  )
+) !default;
+
+$single-faq-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 15px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, single-faq)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 15px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, single-faq)
+  )
+) !default;
+
+$single-faq-info-styles-jp: (
+  sp: (
+    font-color: map.get($font-color, single-faq-info),
+    font-family: map.get($font-family, jp),
+    font-size: 12px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, single-faq-info),
+    letter-spacing: map.get($letter-spacing, single-faq-info)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 16px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, single-faq-info),
+    letter-spacing: map.get($letter-spacing, single-faq-info)
+  )
+) !default;
+
+$single-tag-styles-jp: (
+  sp: (
+    font-family: map.get($font-family, jp),
+    font-size: 15px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, single-tag),
+    letter-spacing: map.get($letter-spacing, single-tag)
+  ),
+  pc: (
+    font-family: map.get($font-family, jp),
+    font-size: 15px,
+    font-weight: map.get($font-weight, regular),
+    line-height: map.get($line-height, single-tag),
+    letter-spacing: map.get($letter-spacing, single-tag)
   )
 ) !default;
 

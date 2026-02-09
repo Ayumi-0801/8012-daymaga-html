@@ -240,4 +240,83 @@
   // 初期状態の反映（HTMLで checked にしているものを読む）
   const checked = document.querySelector('.js-category-filter:checked');
   applyState(checked ? checked.value : 'all');
+
+  /* ==============================================
+  記事一覧ページ全本文展開
+  ============================================== */
+  document.addEventListener('click', function (event) {
+    // ==============================
+    // A) 「続けて全て読む」ボタンの場合
+    // ==============================
+    const readmoreBtn = event.target.closest('.js-readmore');
+    if (readmoreBtn) {
+
+      // スコープを記事本文に限定
+      const articleA = readmoreBtn.closest('.p-single-article');
+      if (!articleA) return;
+
+      // 対となるブロック（非表示エリア）を確認
+      const controlsId = readmoreBtn.getAttribute('aria-controls');
+      if (!controlsId) return;
+
+      // 対となるブロック（非表示エリア）を取得
+      const target = articleA.querySelector('#' + controlsId);
+
+      // 非表示エリアを表示する
+      target.classList.remove('is-hidden');
+      readmoreBtn.setAttribute('aria-expanded', 'true');
+
+      // 一度表示したら閉じないため佐久穂
+      readmoreBtn.remove();
+
+      // 処理終了
+      return;
+    }
+
+    // ==============================
+    // B) 目次の場合
+    // ==============================
+    // 目次リンクを取得
+    const link = event.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    // 目次だけに限定したいため、nav要素内に絞り込む
+    if (!link.closest('.p-single-article__toc')) return;
+
+    // スコープを記事本文に限定
+    const articleB = link.closest('.p-single-article');
+    if (!articleB) return;
+
+    // href属性値を取得
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
+
+    // 飛び先の見出し取得
+    const heading = articleB.querySelector(href);
+    if (!heading) return;
+
+    // クリックされた見出しが非表示エリア内の場合、クラス「is-hidden」を外す
+    const moreBlock = heading.closest('.p-single-article__more');
+    if (moreBlock && moreBlock.classList.contains('is-hidden')) {
+      moreBlock.classList.remove('is-hidden');
+
+      // 「続けて全て読む」ボタンを整理しておく
+      const moreId = moreBlock.getAttribute('id');
+      if (moreId) {
+        const btn = articleB.querySelector('.js-readmore');
+        if (btn) {
+          btn.setAttribute('aria-expanded', 'true');
+          btn.remove();
+        }
+      }
+    }
+
+    // 非表示→表示が絡むので、デフォルトのアンカー移動は止める
+    event.preventDefault();
+
+    heading.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  })
 })();

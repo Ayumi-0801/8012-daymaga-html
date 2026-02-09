@@ -1,11 +1,12 @@
 @use "../../global" as global;
 
 .c-category {
+  display: inline-block;
   padding-block: 4px;
   padding-inline: 16px;
-  width: fit-content;
+  // width: fit-content;
   border-radius: 4px;
-  
+  @include global.card-category-jp(sp);
 
   &--latest {
     @include global.font-color(category-latest);
@@ -28,5 +29,15 @@
     @include global.font-color(category-news);
     border: 1px solid global.$border-color-category-news;
 
+  }
+
+  &--single {
+
+    @include global.mq(lg) {
+      padding-block: 3px;
+      padding-inline: 20px 18px;
+      border-radius: 6px;
+      @include global.card-category-jp(pc);
+    }
   }
 }

@@ -108,14 +108,14 @@
 
     &.swiper-scrollbar-horizontal {
       position: static;
-      margin-top: 24px;
+      margin-block-start: 24px;
       width: 100%;
       height: 8px;
       border-radius: 4px;
       @include global.bg-color(swiper-scrollbar);
 
       @include global.mq(lg) {
-        margin-top: 36px;
+        margin-block-start: 36px;
       }
     }
 

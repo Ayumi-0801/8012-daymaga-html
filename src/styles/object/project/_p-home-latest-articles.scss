@@ -28,13 +28,13 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
-    margin-top: 31px;
+    margin-block-start: 31px;
     margin-inline: auto;
     // width: 100%;
     // max-width: 986px;
 
     @include global.mq(lg) {
-      margin-top: 48px;
+      margin-block-start: 48px;
       gap: 47px;
     }
   }

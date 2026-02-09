@@ -23,4 +23,51 @@
     @include global.font-color(btn-reverse);
     @include global.bg-color(btn-reverse);
   }
+
+  &--article {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 26px;
+    padding-block: 13px;
+    padding-inline: 30px 35px;
+    @include global.btn-jp(sp);
+    border-radius: 16px;
+    border: 2px solid global.$border-color-single-btn;
+    @include global.bg-color(single-btn);
+    line-height: 1.5;
+
+    @include global.mq(lg) {
+      gap: 15px;
+      padding-block: 15px 14px;
+      padding-inline: 31px 36px;
+      line-height: 1.3;
+      @include global.btn-jp(pc);
+    }
+
+    & svg {
+      width: 11px;
+      height: 19px;
+      @include global.fill(single-btn-icon);
+    }
+  }
+
+  &--readmore {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding-block: 5px;
+    padding-inline: 19px;
+    @include global.btn-zen(sp);
+    border-radius: 0 12px 12px 12px;
+    border: 1px solid global.$border-color-single-readmore;
+    @include global.bg-color(single-btn);
+    box-shadow: 0 2px 24px 0 rgba(0, 0, 0, 0.10);
+
+    & svg {
+      width: 24px;
+      aspect-ratio: 1 / 1;
+      @include global.fill(single-btn-icon);
+    }
+  }
 }

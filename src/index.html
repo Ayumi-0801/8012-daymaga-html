@@ -27,7 +27,6 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          /* 会社（運営主体） */
           "@type": "Organization",
           "@id": "https://{YOUR-DOMAIN}/#org",
           "name": "{会社名}",
@@ -44,7 +43,6 @@
           ]
         },
         {
-          /* サイト全体 */
           "@type": "WebSite",
           "@id": "https://{YOUR-DOMAIN}/#website",
           "url": "https://{YOUR-DOMAIN}/",
@@ -53,7 +51,6 @@
           "inLanguage": "ja"
         },
         {
-          /* このページ */
           "@type": "WebPage",
           "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#webpage",
           "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/",
@@ -72,38 +69,44 @@
           "breadcrumb": { "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#breadcrumb" }
         },
         {
-          /* パンくず（必要な階層（パンくずがあるページだけ）だけ、このページがトップページから何番目の階層か） */
           "@type": "BreadcrumbList",
           "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#breadcrumb",
           "itemListElement": [
-            { "@type": "ListItem", "position": 1,
+            {
+              "@type": "ListItem",
+              "position": 1,
               "name": "ホーム",
-              "item": "https://{YOUR-DOMAIN}/" },
-            { "@type": "ListItem", "position": 2,
+              "item": "https://{YOUR-DOMAIN}/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
               "name": "{ページ名（短め）}",
-              "item": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/" }
+              "item": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/"
+            }
           ]
         },
-        /* サービス情報（明示したい場合のみ） */
-        "@context": "https://schema.org",
-        "@type": "Service",
-        "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#service",
-        "name": "{サービス名}",
-        "provider": { "@id": "https://{YOUR-DOMAIN}/#org" },
-        "serviceType": "{分類：例 Web制作・運用}",
-        "areaServed": "JP",
-        "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/",
-        "description": "{ひとことで説明}",
-        "offers": {
-          "@type": "Offer",
-          "price": "{価格のみ（数値）}",
-          "priceCurrency": "JPY",
-          "availability": "https://schema.org/InStock",
-          "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#plan"
+        {
+          "@type": "Service",
+          "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#service",
+          "name": "{サービス名}",
+          "provider": { "@id": "https://{YOUR-DOMAIN}/#org" },
+          "serviceType": "{分類：例 Web制作・運用}",
+          "areaServed": "JP",
+          "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/",
+          "description": "{ひとことで説明}",
+          "offers": {
+            "@type": "Offer",
+            "price": "{価格のみ（数値）}",
+            "priceCurrency": "JPY",
+            "availability": "https://schema.org/InStock",
+            "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#plan"
+          }
         }
       ]
     }
     </script>
+
 
     <!-- Googleフォント -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -201,7 +204,7 @@
             <div class="swiper p-home-fv__swiper js-swiper-fv">
               <div class="swiper-wrapper p-home-fv__swiper-wrapper">
                 <div class="swiper-slide p-home-fv__swiper-slide c-card c-card--fv">
-                  <a href="" class="c-card__link">
+                  <a href="single.html" class="c-card__link">
                     <div class="c-card__inner">
                       <div class="c-card__contents">
                         <div class="c-card__img">
@@ -243,7 +246,7 @@
                 </div>
                 <!-- /.swiper-slide p-home-fv__swiper-slide c-card c-card--fv" -->
                 <div class="swiper-slide p-home-fv__swiper-slide c-card c-card--fv">
-                  <a href="" class="c-card__link">
+                  <a href="single.html" class="c-card__link">
                     <div class="c-card__inner">
                       <div class="c-card__contents">
                         <div class="c-card__img">
@@ -285,7 +288,7 @@
                 </div>
                 <!-- /.swiper-slide p-home-fv__swiper-slide c-card c-card--fv" -->
                 <div class="swiper-slide p-home-fv__swiper-slide c-card c-card--fv">
-                  <a href="" class="c-card__link">
+                  <a href="single.html" class="c-card__link">
                     <div class="c-card__inner">
                       <div class="c-card__contents">
                         <div class="c-card__img">
@@ -366,7 +369,7 @@
           <div class="p-home-latest-articles__contents">
             <div class="p-home-latest-articles__body">
               <div class="c-card">
-                <a href="" class="c-card__link">
+                <a href="single.html" class="c-card__link">
                   <div class="c-card__inner">
                     <div class="c-card__contents">
                       <div class="c-card__img">
@@ -406,7 +409,7 @@
               </div>
               <!-- /.c-card -->
               <div class="c-card">
-                <a href="" class="c-card__link">
+                <a href="single.html" class="c-card__link">
                   <div class="c-card__inner">
                     <div class="c-card__contents">
                       <div class="c-card__img">
@@ -446,7 +449,7 @@
               </div>
               <!-- /.c-card -->
               <div class="c-card">
-                <a href="" class="c-card__link">
+                <a href="single.html" class="c-card__link">
                   <div class="c-card__inner">
                     <div class="c-card__contents">
                       <div class="c-card__img">
@@ -531,7 +534,7 @@
             <div class="swiper c-articles-swiper__body p-home-popular-articles__swiper js-swiper-articles" data-space-sp="24" data-space-pc="32">
               <div class="swiper-wrapper c-articles-swiper__wrapper p-home-popular-articles__swiper-wrapper">
                 <div class="swiper-slide c-articles-swiper__slide c-card">
-                  <a href="" class="c-card__link">
+                  <a href="single.html" class="c-card__link">
                     <div class="c-card__inner">
                       <div class="c-card__contents">
                         <div class="c-card__img">
@@ -571,7 +574,7 @@
                 </div>
                 <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
                 <div class="swiper-slide c-articles-swiper__slide c-card">
-                  <a href="" class="c-card__link">
+                  <a href="single.html" class="c-card__link">
                     <div class="c-card__inner">
                       <div class="c-card__contents">
                         <div class="c-card__img">
@@ -610,7 +613,7 @@
                 </div>
                 <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
                 <div class="swiper-slide c-articles-swiper__slide c-card">
-                  <a href="" class="c-card__link">
+                  <a href="single.html" class="c-card__link">
                     <div class="c-card__inner">
                       <div class="c-card__contents">
                         <div class="c-card__img">
@@ -650,7 +653,7 @@
                 </div>
                 <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
                 <div class="swiper-slide c-articles-swiper__slide c-card">
-                  <a href="" class="c-card__link">
+                  <a href="single.html" class="c-card__link">
                     <div class="c-card__inner">
                       <div class="c-card__contents">
                         <div class="c-card__img">
@@ -689,7 +692,7 @@
                 </div>
                 <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
                  <div class="swiper-slide c-articles-swiper__slide c-card">
-                  <a href="" class="c-card__link">
+                  <a href="single.html" class="c-card__link">
                     <div class="c-card__inner">
                       <div class="c-card__contents">
                         <div class="c-card__img">
@@ -824,7 +827,7 @@
                 <ul class="c-article-list">
                   <li class="c-article-list__item c-article-list--sp-hidden" data-category="news">
                     <div class="c-card">
-                      <a href="" class="c-card__link">
+                      <a href="single.html" class="c-card__link">
                         <div class="c-card__inner">
                           <div class="c-card__contents">
                             <div class="c-card__img">
@@ -867,7 +870,7 @@
                   <!-- /.c-article-list__item -->
                   <li class="c-article-list__item c-article-list--sp-hidden" data-category="interview">
                     <div class="c-card">
-                      <a href="" class="c-card__link">
+                      <a href="single.html" class="c-card__link">
                         <div class="c-card__inner">
                           <div class="c-card__contents">
                             <div class="c-card__img">
@@ -909,7 +912,7 @@
                   <!-- /.c-article-list__item -->
                   <li class="c-article-list__item c-article-list--sp-hidden" data-category="tips">
                     <div class="c-card">
-                      <a href="" class="c-card__link">
+                      <a href="single.html" class="c-card__link">
                         <div class="c-card__inner">
                           <div class="c-card__contents">
                             <div class="c-card__img">
@@ -952,7 +955,7 @@
                   <!-- /.c-article-list__item -->
                   <li class="c-article-list__item" data-category="tips">
                     <div class="c-card">
-                      <a href="" class="c-card__link">
+                      <a href="single.html" class="c-card__link">
                         <div class="c-card__inner">
                           <div class="c-card__contents">
                             <div class="c-card__img">
@@ -995,7 +998,7 @@
                   <!-- /.c-article-list__item -->
                   <li class="c-article-list__item c-article-list--sp-hidden" data-category="latest">
                     <div class="c-card">
-                      <a href="" class="c-card__link">
+                      <a href="single.html" class="c-card__link">
                         <div class="c-card__inner">
                           <div class="c-card__contents">
                             <div class="c-card__img">
@@ -1038,7 +1041,7 @@
                   <!-- /.c-article-list__item -->
                   <li class="c-article-list__item c-article-list--sp-hidden" data-category="latest">
                     <div class="c-card">
-                      <a href="" class="c-card__link">
+                      <a href="single.html" class="c-card__link">
                         <div class="c-card__inner">
                           <div class="c-card__contents">
                             <div class="c-card__img">
@@ -1080,7 +1083,7 @@
                   <!-- /.c-article-list__item -->
                   <li class="c-article-list__item" data-category="news">
                     <div class="c-card">
-                      <a href="" class="c-card__link">
+                      <a href="single.html" class="c-card__link">
                         <div class="c-card__inner">
                           <div class="c-card__contents">
                             <div class="c-card__img">
@@ -1123,7 +1126,7 @@
                   <!-- /.c-article-list__item -->
                   <li class="c-article-list__item c-article-list--sp-hidden" data-category="news">
                     <div class="c-card">
-                      <a href="" class="c-card__link">
+                      <a href="single.html" class="c-card__link">
                         <div class="c-card__inner">
                           <div class="c-card__contents">
                             <div class="c-card__img">
@@ -1166,7 +1169,7 @@
                   <!-- /.c-article-list__item -->
                   <li class="c-article-list__item" data-category="latest">
                     <div class="c-card">
-                      <a href="" class="c-card__link">
+                      <a href="single.html" class="c-card__link">
                         <div class="c-card__inner">
                           <div class="c-card__contents">
                             <div class="c-card__img">

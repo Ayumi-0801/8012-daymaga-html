@@ -47,7 +47,7 @@
       }
 
       &:last-child {
-        margin-top: auto;
+        margin-block-start: auto;
       }
     }
 
@@ -309,7 +309,7 @@
       }
 
       &:last-child {
-        margin-top: 0;
+        margin-block-start: 0;
       }
 
       & a {
