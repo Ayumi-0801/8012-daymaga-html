@@ -244,7 +244,6 @@
           & th,
           & td {
             padding-block: 3px;
-            padding-inline: 5p;
             text-align: center;
 
             @include global.mq(lg) {
