@@ -29,10 +29,10 @@
   }
 
   &__contents {
-    margin-top: 23px;
+    margin-block-start: 23px;
 
     @include global.mq(lg) {
-      margin-top: 36px;
+      margin-block-start: 36px;
     }
   }
 

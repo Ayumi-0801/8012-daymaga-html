@@ -83,10 +83,10 @@
   }
 
   &__pagination {
-    margin-top: 56px;
+    margin-block-start: 56px;
 
     @include global.mq(lg) {
-      margin-top: 64px;
+      margin-block-start: 64px;
     }
   }
 }

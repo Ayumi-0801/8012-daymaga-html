@@ -1,13 +1,13 @@
 @use "../global" as global;
 
 .l-main {
-  margin-top: global.$header-height;
+  margin-block-start: global.$header-height;
 
   &.is-scroll {
-    margin-top: global.$header-height-sp-scroll;
+    margin-block-start: global.$header-height-sp-scroll;
 
     @include global.mq(lg) {
-      margin-top: global.$header-height-pc-scroll;
+      margin-block-start: global.$header-height-pc-scroll;
     }
   }
 }

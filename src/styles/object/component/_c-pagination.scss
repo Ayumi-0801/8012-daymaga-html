@@ -45,14 +45,14 @@
     &—prev {
 
       @include global.mq(lg) {
-        margin-right: 8px;
+        margin-inline-end: 8px;
       }
     }
 
     &—next {
 
       @include global.mq(lg) {
-        margin-left: 8px;
+        margin-inline-start: 8px;
       }
     }
 

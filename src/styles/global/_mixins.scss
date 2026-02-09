@@ -49,6 +49,10 @@
   line-height: map.get(vars.$line-height, $key)
 }
 
+@mixin letter-spacing($key) {
+  letter-spacing: map.get(vars.$letter-spacing, $key)
+}
+
 // テキストスタイルのmixin（呼び出し：@include vars.catch-jp(sm);）
 @mixin base-jp($size) {
   $style: map.get(vars.$base-styles-jp, $size);
@@ -80,6 +84,20 @@
 
 @mixin btn-zen($size) {
   $style: map.get(vars.$btn-styles-zen, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
+  }
+}
+
+@mixin btn-jp($size) {
+  $style: map.get(vars.$btn-styles-jp, $size);
 
   @if $style == null {
     @warn "Undefined heading size: #{$size}";
@@ -310,8 +328,8 @@
   }
 }
 
-@mixin single-heading-1-jp($size) {
-  $style: map.get(vars.$single-heading-1-styles-jp, $size);
+@mixin single-title-jp($size) {
+  $style: map.get(vars.$single-title-styles-jp, $size);
 
   @if $style == null {
     @warn "Undefined heading size: #{$size}";
@@ -320,6 +338,7 @@
     font-size: map.get($style, font-size);
     font-weight: map.get($style, font-weight);
     line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
   }
 }
 
@@ -333,6 +352,7 @@
     font-size: map.get($style, font-size);
     font-weight: map.get($style, font-weight);
     line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
   }
 }
 
@@ -346,6 +366,7 @@
     font-size: map.get($style, font-size);
     font-weight: map.get($style, font-weight);
     line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
   }
 }
 
@@ -355,10 +376,12 @@
   @if $style == null {
     @warn "Undefined heading size: #{$size}";
   }@else {
+    color: map.get($style, font-color);
     font-family: map.get($style, font-family);
     font-size: map.get($style, font-size);
     font-weight: map.get($style, font-weight);
     line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
   }
 }
 
@@ -372,6 +395,7 @@
     font-size: map.get($style, font-size);
     font-weight: map.get($style, font-weight);
     line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
   }
 }
 
@@ -381,6 +405,7 @@
   @if $style == null {
     @warn "Undefined heading size: #{$size}";
   }@else {
+    color: map.get($style, font-color);
     font-family: map.get($style, font-family);
     font-size: map.get($style, font-size);
     font-weight: map.get($style, font-weight);
@@ -398,5 +423,62 @@
     font-size: map.get($style, font-size);
     font-weight: map.get($style, font-weight);
     line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
+  }
+}
+
+@mixin single-table-jp($size) {
+  $style: map.get(vars.$single-table-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
+  }
+}
+
+@mixin single-faq-jp($size) {
+  $style: map.get(vars.$single-faq-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+  }
+}
+
+@mixin single-faq-info-jp($size) {
+  $style: map.get(vars.$single-faq-info-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    color: map.get($style, font-color);
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
+  }
+}
+
+@mixin single-tag-jp($size) {
+  $style: map.get(vars.$single-tag-styles-jp, $size);
+
+  @if $style == null {
+    @warn "Undefined heading size: #{$size}";
+  }@else {
+    font-family: map.get($style, font-family);
+    font-size: map.get($style, font-size);
+    font-weight: map.get($style, font-weight);
+    line-height: map.get($style, line-height);
+    letter-spacing: map.get($style, letter-spacing);
   }
 }

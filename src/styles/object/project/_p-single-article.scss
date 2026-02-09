@@ -1,0 +1,495 @@
+@use "../../global" as global;
+
+.p-single-article {
+  
+  --tog-list-gap: 8px; // 目次の項目間余白
+
+
+  padding-block-start: 42px;
+  @include global.single-base-jp(sp);
+
+  @include global.mq(lg) {
+    padding-block: 64px 65px;
+    @include global.single-base-jp(pc);
+  }
+
+  &__inner {
+    margin-inline: auto;
+    max-width: 1016px;
+  }
+
+  &__contents {
+    padding-block: 21px 47px;
+    padding-inline: clamp(21px, 6.1vw, 88px); // 中間値：88px / 1440px * 100vw
+    @include global.bg-color(single);
+    box-shadow: 0 24px 64px 0 rgba(0, 0, 0, 0.05);
+
+    @include global.mq(lg) {
+      padding-block: 48px 47px;
+      border-radius: 24px;
+    }
+  }
+
+  &__meta {
+    @include global.single-date-jp(sp);
+
+    @include global.mq(lg) {
+      @include global.single-date-jp(pc);
+    }
+
+    &-text {
+
+    }
+
+    &-date {
+      margin-inline-start: 11px;
+
+      @include global.mq(lg) {
+        margin-inline-start: 12px;
+      }
+    }
+  }
+
+  &__category {
+    margin-block-start: 7px;
+
+    @include global.mq(lg) {
+      margin-block-start: 8px;
+    }
+  }
+
+  &__title {
+    margin-block-start: 10px;
+    @include global.single-title-jp(sp);
+
+    @include global.mq(lg) {
+      margin-block-start: 8px;
+      @include global.single-title-jp(pc);
+    }
+  }
+
+  &__eyecatch {
+    margin-block-start: 16px;
+    border-radius: 4.586px;
+  }
+
+  &__wrapper {
+
+    @include global.mq(lg) {
+      padding-inline-end: 19px;
+    }
+  }
+
+  &__intro {
+    margin-block-start: 20px;
+
+    @include global.mq(lg) {
+      margin-block-start: 32px;
+    }
+  }
+
+  &__toc {
+    margin-block-start: 18px;
+    width: fit-content;
+    border: 1px solid global.$border-color-single-toc;
+
+    @include global.mq(lg) {
+      margin-block-start: 31px;
+    }
+
+    &-lead {
+      display: inline-block;
+      padding-block: 5px 6px;
+      padding-inline: 14px 16px;
+      width: 100%;
+      font-size: 16px;
+      letter-spacing: 2.4px;
+      @include global.bg-color(single-toc-lead);
+
+      @include global.mq(lg) {
+        padding-inline: 15px 16px;
+        font-size: 20px;
+        letter-spacing: 3px;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--tog-list-gap);
+      padding-block: 13px 18px;
+      padding-inline: 14px 1px;
+      width: fit-content;
+      @include global.single-toc-1-jp(sp);
+
+      @include global.mq(sm) {
+        padding-inline: 14px;
+      }
+
+      @include global.mq(lg) {
+        padding-block-end: 20px;
+        padding-inline: 24px 30px;
+        @include global.single-toc-1-jp(pc);
+      }
+
+      & li {
+        display: inline-block;
+      }
+
+      & ol {
+        display: flex;
+        flex-direction: column;
+        gap: var(--tog-list-gap);
+        padding-block-start: 7px;
+        padding-inline-start: 15px;
+        @include global.single-toc-2-jp(sp);
+
+        @include global.mq(lg) {
+          padding-block-start: 8px;
+          padding-inline-start: 16px;
+          @include global.single-toc-2-jp(pc);
+        }
+
+        & li {
+          
+          & a {
+            text-decoration: underline;
+           }
+        }
+      }
+    }
+  }
+
+  &__body {
+    
+    & h2 {
+      padding-block: 16px 15px;
+      margin-block-start: 20px;
+      @include global.single-heading-2-jp(sp);
+      border-bottom: 2px solid global.$border-color-single-heading;
+
+      @include global.mq(lg) {
+        margin-block-start: 32px;
+        margin-inline-end: calc(25px - 19px);
+        padding-block: 16px 14px;
+        @include global.single-heading-2-jp(pc);
+      }
+    }
+
+    & h3 {
+      padding-inline-start: 13px;
+      margin-block-start: 20px;
+      @include global.single-heading-3-jp(sp);
+      border-left: 2px solid global.$border-color-single-heading;
+
+      @include global.mq(lg) {
+        padding-inline-start: 14px;
+        margin-block-start: 32px;
+        margin-inline-end: calc(25px - 19px);
+        @include global.single-heading-3-jp(pc);
+      }
+    }
+
+    & h2 + p {
+      margin-block-start: 12px;
+
+      @include global.mq(lg) {
+        margin-block-start: 20px;
+      }
+    }
+
+    & h3 + p {
+      margin-block-start: 20px;
+    }
+
+    & p + p {
+      margin-block-start: 28px;
+
+      @include global.mq(lg) {
+        margin-block-start: 34px;
+      }
+    }
+
+    & table {
+      margin-block-start: 20px;
+      @include global.single-table-jp(sp);
+      border: 4px solid global.$border-color-single-table;
+      @include global.bg-color(single-table);
+
+      @include global.mq(lg) {
+        margin-block-start: 24px;
+        @include global.single-table-jp(pc);
+      }
+
+      & .u-emphasis {
+        @include global.font-weight(bold);
+      }
+
+      & .u-highlight {
+        @include global.font-color(single-th-highlight);
+        @include global.bg-color(single-th-highlight);
+        border-left: 1px solid global.$border-color-single-table;
+      }
+
+      & th,
+      & td {
+        text-align: center;
+        white-space: nowrap;
+      }
+
+      & thead {
+
+        & tr {
+
+          & th,
+          & td {
+            padding-block: 3px;
+            padding-inline: 5p;
+            text-align: center;
+
+            @include global.mq(lg) {
+              padding-block: 8px;
+            }
+          }
+
+          & th {
+
+            &:nth-of-type(1) {
+              @include global.bg-color(single-th-row);
+            }
+          }
+        }
+      }
+
+      & tbody {
+
+        & tr {
+          border-top: 1px solid global.$border-color-single-table;
+
+          & th {
+            padding-inline: 2px 3px;
+            @include global.bg-color(single-th-row);
+
+            @include global.mq(lg) {
+              padding-block: 8px;
+              padding-inline: 45px;
+            }
+          }
+
+          & td {
+            border-left: 1px solid global.$border-color-single-table;
+
+            &:nth-of-type(1) {
+              padding-block: 11px 10px;
+              padding-inline: 2px;
+
+              @include global.mq(lg) {
+                padding-block: 6px;
+                padding-inline: 40px;
+              }
+            }
+
+            &:nth-of-type(2) {
+              padding-block: 3px;
+              padding-inline: 2px 3px;
+
+              @include global.mq(lg) {
+                padding-block: 8px;
+                padding-inline: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__readmore {
+    margin-block-start: 20px;
+    text-align: center;
+
+    @include global.mq(lg) {
+      display: none;
+    }
+  }
+
+  &__more {
+
+    @include global.mq(lg) {
+      display: block;
+    }
+
+    &.is-hidden {
+      display: none;
+
+      @include global.mq(lg) {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    margin-block-start: 20px;
+
+    @include global.mq(lg) {
+      justify-content: flex-start;
+      margin-block-start: 30px;
+    }
+  }
+
+  &__faq {
+    margin-block-start: 20px;
+    @include global.single-faq-jp(sp);
+
+    @include global.mq(lg) {
+      padding-inline-start: 16px;
+      margin-block-start: 19px;
+      @include global.single-faq-jp(pc);
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &-question,
+    &-answer {
+      display: flex;
+      flex-direction: column;
+
+      @include global.mq(lg) {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+
+    }
+
+    &-question {
+
+      &-label {
+        flex-shrink: 0;
+        padding-block: 4px;
+        padding-inline: 12px;
+        width: fit-content;
+        white-space: nowrap;
+        @include global.font-color(single-faq-lead);
+        @include global.letter-spacing(single-faq-lead);
+        @include global.bg-color(single-faq-question);
+
+        @include global.mq(lg) {
+          padding-block: 5px 3px;
+          padding-inline: 12px 9px;
+        }
+      }
+
+      &-text {
+        padding-block: 4px;
+        padding-inline: 12px;
+        @include global.letter-spacing(single-faq-text);
+        border: 1px solid global.$border-color-single-faq-question;
+
+        @include global.mq(lg) {
+          padding-block: 4px 2px;
+          padding-inline: 12px 9px;
+        }
+      }
+    }
+
+    &-answer {
+
+      &-label {
+        flex-shrink: 0;
+        padding-block: 4px;
+        padding-inline: 12px;
+        width: fit-content;
+        white-space: nowrap;
+        @include global.font-color(single-faq-lead);
+        @include global.letter-spacing(single-faq-lead);
+        @include global.bg-color(single-faq-answer);
+
+        @include global.mq(lg) {
+          padding-block: 5px 3px;
+          padding-inline: 12px 9px;
+        }
+      }
+
+      &-text {
+        padding-block: 4px;
+        padding-inline: 12px;
+        @include global.letter-spacing(single-faq-text);
+        border: 1px solid global.$border-color-single-faq-answer;
+
+        @include global.mq(lg) {
+          padding-block: 4px 2px;
+          padding-inline: 12px 9px;
+        }
+      }
+    }
+
+    &-info {
+      margin-block-start: 12px;
+      @include global.single-faq-info-jp(sp);
+
+      @include global.mq(lg) {
+        margin-block-start: 9px;
+        padding-inline-start: 71px;
+      }
+
+      & p + p {
+        margin-block-start: 12px;
+
+        @include global.mq(lg) {
+          margin-block-start: 16px;
+        }
+      }
+    }
+  }
+
+  &__outro {
+    padding-block-start: 27px;
+    margin-block-start: 20px;
+    line-height: 2;
+    letter-spacing: 2.1px;
+    border-top: 1px solid global.$border-color-single-line;
+
+    @include global.mq(lg) {
+      margin-block-start: 32px;
+      list-style: inherit;
+      letter-spacing: inherit;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 7px;
+    padding-block-start: 20px;
+    margin-block-start: 20px;
+    border-top: 1px solid global.$border-color-single-line;
+
+    @include global.mq(lg) {
+      flex-direction: row;
+      margin-block-start: 31px;
+      gap: 30px;
+    }
+
+    &-lead {
+      @include global.single-tag-jp(sp);
+    }
+
+    &-wrapper {
+      display: flex;
+      gap: 8px;
+    }
+  }
+}
