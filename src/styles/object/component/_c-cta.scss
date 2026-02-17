@@ -1,8 +1,8 @@
-@use "../../global" as global;
+@use "../../global/settings" as global;
 
 .c-cta {
   padding-block: 50px 49px;
-  background: url("#{global.$asset-img-path}/cta.png") no-repeat top center/cover;
+  background: url("#{global.$asset-img-path}/cta.webp") no-repeat top center/cover;
 
   @include global.mq(lg) {
     padding-block: 74px 74px;
@@ -29,6 +29,18 @@
       flex-direction: row;
       justify-content: center;
       gap: clamp(60px, 8.34vw, 120px); // 中間値：120px / 1440px * 100vw;
+    }
+  }
+
+  &__link {
+    transition:
+      transform global.$transition-base global.$transition-ease,
+      opacity global.$transition-base global.$transition-ease;
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(8px);
+      opacity: 0.8;
     }
   }
 

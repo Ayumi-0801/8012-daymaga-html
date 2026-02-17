@@ -1,4 +1,4 @@
-@use "../../global" as global;
+@use "../../global/settings" as global;
 
 .c-category-tabs {
   flex: 0 0 auto;
@@ -27,6 +27,7 @@
   &__label {
     position: relative;
     display: block;
+    cursor: pointer;
   }
 
   &__input {

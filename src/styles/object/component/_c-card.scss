@@ -1,4 +1,4 @@
-@use "../../global" as global;
+@use "../../global/settings" as global;
 
 
 .c-card {
@@ -52,8 +52,7 @@
   &__lead {
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    line-clamp:2; // 最大2行まで表示
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 2; // 最大2行まで表示
     overflow: hidden;
     @include global.card-title-jp(sp);
     letter-spacing: 0.3px;

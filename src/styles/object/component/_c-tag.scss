@@ -1,4 +1,4 @@
-@use "../../global" as global;
+@use "../../global/settings" as global;
 
 .c-tag {
   flex: 0 0 auto;
@@ -7,14 +7,14 @@
   @include global.tag-jp(sp);
   border-radius: 24px;
   @include global.bg-color(tag);
+  transition:
+    color global.$transition-slow global.$transition-ease,
+    background-color global.$transition-slow global.$transition-ease;
 
-  & a {
-    transition: opacity global.$transition-slow global.$transition-ease;
-
-    &:hover,
-    &:focus-visible {
-      opacity: 0.7;
-    }
+  &:hover,
+  &:focus-visible {
+    @include global.font-color(tag-hover);
+    @include global.bg-color(tag-hover);
   }
 
   &--search {

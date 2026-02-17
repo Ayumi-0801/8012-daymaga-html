@@ -35,6 +35,7 @@ $bg-color: (
   category-interview: color(purple-400),
   category-news: color(violet-400),
   tag: color(blue-50),
+  tag-hover: color(gray-900),
   btn: color(blue-700),
   btn-reverse: color(white),
   pagination: color(gray-500),
@@ -114,6 +115,7 @@ $font-color: (
   title-reverse: color(white),
   btn: color(white),
   btn-reverse: color(blue-700),
+  tag-hover: color(blue-50),
   sort: color(gray-500),
   sort-active: color(blue-700),
   category-tabs-active: color(white),
@@ -174,7 +176,7 @@ $line-height: (
 
 $letter-spacing: (
   normal: normal,
-  btn-zen-sp: 2.8px,
+  btn-zen-sp: 3.6px,
   btn-zen-pc: 4px,
   btn-jp-sp: 1.12px,
   btn-jp-pc: 1.92px,
@@ -245,14 +247,14 @@ $heading-styles-zen: (
 $btn-styles-zen: (
   sp: (
     font-family: map.get($font-family, zen),
-    font-size: 14px,
+    font-size: 18px,
     font-weight: map.get($font-weight, bold),
     line-height: map.get($line-height, btn-zen),
     letter-spacing: map.get($letter-spacing, btn-zen-sp)
   ),
   pc: (
     font-family: map.get($font-family, zen),
-    font-size: 24px,
+    font-size: 20px,
     font-weight: map.get($font-weight, bold),
     line-height: map.get($line-height, btn-zen),
     letter-spacing: map.get($letter-spacing, btn-zen-pc)

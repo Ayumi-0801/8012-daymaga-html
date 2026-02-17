@@ -1,7 +1,11 @@
-@use "../../global" as global;
+@use "../../../global/settings" as global;
 
 .p-home-fv {
-  
+  padding-block-end: 20px;
+
+  @include global.mq(lg) {
+    padding-block-end: 0;
+  }
 
   &__inner {
 
@@ -9,42 +13,54 @@
 
   &__contents {
     position: relative;
-    padding-block-end: 32px;
-
-    @include global.mq(lg) {
-      padding-block-end: 48px;
-    }
+    
   }
 
   &__swiper {
-    padding-block: 50px 20px;
+    padding-block: 50px 32px;
+    width: 100%;
+    min-height: calc(341px + 12px + 50px + 32px);
+    overflow: hidden;
+    visibility: hidden;
 
     @include global.mq(lg) {
-      padding-block: 23px 0;
+      padding-block: 23px 48px;
+      min-height: calc(549px + 40px + 23px + 48px);
+    }
+
+    &.is-ready {
+      visibility: visible;
     }
 
     &-wrapper {
+      display: flex;
+      padding-block-start: 12px;
+      height: auto;
 
+      @include global.mq(lg) {
+        padding-block-start: 40px;
+      }
     }
 
     &-slide {
-      margin-block-start: 12px;
+      flex-shrink: 0;
       width: 77.4vw; // 302px / 390px * 100vw
       max-width: 596px;
-      transition: margin-block-start global.$transition-base global.$transition-emphasize;
-
-      @include global.mq(lg) {
-        margin-block-start: 40px;
-      }
+      height: auto;
+      transition: transform global.$transition-base global.$transition-emphasize;
 
       &.swiper-slide-active {
-        margin-block-start: 0;
+        transform: translateY(-12px);
+        
+        @include global.mq(lg) {
+          transform: translateY(-40px);
+        }
       }
     }
 
     &-navigation {
       position: absolute;
-      top: 40.6%;
+      top: 42.6%;
       left: 50%;
       transform: translate(-50%);
       display: flex;
@@ -55,7 +71,7 @@
       z-index: 10;
 
       @include global.mq(lg) {
-        top: 43.2%;
+        top: 40.8%;
         padding-inline:0;
       }
     }

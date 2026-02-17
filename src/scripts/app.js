@@ -101,7 +101,9 @@
   ファーストビューSwiper
   ============================================== */
   const initSwiperFv = () => {
-    const swiper = new Swiper(".js-swiper-fv", {
+    const el = document.querySelector(".js-swiper-fv");
+
+    const swiper = new Swiper(el, {
       centeredSlides: true, // 中央寄せ
       slidesPerView: "auto", // CSSでスライドの幅を管理
       rewind: true,
@@ -116,6 +118,11 @@
       navigation: {
         nextEl: ".p-home-fv__swiper-btn-next",
         prevEl: ".p-home-fv__swiper-btn-prev",
+      },
+      on: {
+        init() {
+          el.classList.add("is-ready");
+        },
       },
     });
   };
