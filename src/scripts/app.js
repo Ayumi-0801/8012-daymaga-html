@@ -103,12 +103,15 @@
   const initSwiperFv = () => {
     const el = document.querySelector(".js-swiper-fv");
 
+    // 要素が存在しない場合は処理を終了
+    if (!el) return;
+
     const swiper = new Swiper(el, {
-      centeredSlides: true, // 中央寄せ
-      slidesPerView: "auto", // CSSでスライドの幅を管理
+      centeredSlides: true,
+      slidesPerView: "auto",
       rewind: true,
       freeMode: false,
-      initialSlide: 1, // 初期表示は2番目のスライドを中央に表示
+      initialSlide: 1,
       spaceBetween: 16,
       breakpoints: {
         901: {
@@ -126,8 +129,9 @@
       },
     });
   };
+
   window.addEventListener("load", function () {
-    initSwiperFv(); // ページ読み込み後に初期化
+    initSwiperFv();
   });
 
   /* ==============================================
