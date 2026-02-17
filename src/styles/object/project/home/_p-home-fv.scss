@@ -21,13 +21,19 @@
     width: 100%;
     min-height: calc(341px + 12px + 50px + 32px);
     overflow: hidden;
-    visibility: hidden;
+    visibility: visible;
 
     @include global.mq(lg) {
       padding-block: 23px 48px;
       min-height: calc(549px + 40px + 23px + 48px);
     }
 
+    // JSが「これから初期化する」時だけ一時的に隠す
+    &.is-prep {
+      visibility: hidden;
+    }
+
+    // 初期化完了で表示（明示しておく）
     &.is-ready {
       visibility: visible;
     }

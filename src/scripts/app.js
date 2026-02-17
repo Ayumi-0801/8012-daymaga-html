@@ -106,28 +106,40 @@
     // 要素が存在しない場合は処理を終了
     if (!el) return;
 
-    const swiper = new Swiper(el, {
-      centeredSlides: true,
-      slidesPerView: "auto",
-      rewind: true,
-      freeMode: false,
-      initialSlide: 1,
-      spaceBetween: 16,
-      breakpoints: {
-        901: {
-          spaceBetween: 64,
+    // Swiper CDN が読めていない場合は処理を終了（初期表示は維持される）
+    if (typeof Swiper === "undefined") return;
+
+    // 初期化前に一時的に非表示（CSS側の .is-prep で hidden）
+    el.classList.add("is-prep");
+
+    try {
+      const swiper = new Swiper(el, {
+        centeredSlides: true,
+        slidesPerView: "auto",
+        rewind: true,
+        freeMode: false,
+        initialSlide: 1,
+        spaceBetween: 16,
+        breakpoints: {
+          901: {
+            spaceBetween: 64,
+          },
         },
-      },
-      navigation: {
-        nextEl: ".p-home-fv__swiper-btn-next",
-        prevEl: ".p-home-fv__swiper-btn-prev",
-      },
-      on: {
-        init() {
-          el.classList.add("is-ready");
+        navigation: {
+          nextEl: ".p-home-fv__swiper-btn-next",
+          prevEl: ".p-home-fv__swiper-btn-prev",
         },
-      },
-    });
+        on: {
+          init() {
+            el.classList.add("is-ready");
+            el.classList.remove("is-prep");
+          },
+        },
+      });
+    } catch (e) {
+      // 例外が起きてもFVが消えっぱなしにならないよう復帰
+      el.classList.remove("is-prep");
+    }
   };
 
   window.addEventListener("load", function () {
