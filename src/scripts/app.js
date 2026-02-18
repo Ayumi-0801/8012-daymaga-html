@@ -35,6 +35,7 @@
     void nav.offsetWidth;
 
     btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'メニューを閉じる');
     header.classList.add('is-open');
 
     // クリック無効化を解除
@@ -46,6 +47,7 @@
     isLock = true; // クリック無効化
 
     btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'メニューを開く');
     header.classList.remove('is-open');
 
     // クリック無効化を解除
