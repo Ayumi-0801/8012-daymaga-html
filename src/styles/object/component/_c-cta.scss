@@ -33,6 +33,7 @@
   }
 
   &__link {
+    display: inline-block;
     transition:
       transform global.$transition-base global.$transition-ease,
       opacity global.$transition-base global.$transition-ease;
