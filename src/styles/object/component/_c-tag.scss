@@ -1,6 +1,7 @@
-@use "../../global" as global;
+@use "../../global/settings" as global;
 
 .c-tag {
+  display: inline-block;
   flex: 0 0 auto;
   padding-block: 3px 2px;
   padding-inline: 8px 12px;
@@ -8,19 +9,19 @@
   border-radius: 24px;
   @include global.bg-color(tag);
 
-  & a {
-    transition: opacity global.$transition-slow global.$transition-ease;
-
-    &:hover,
-    &:focus-visible {
-      opacity: 0.7;
-    }
-  }
-
   &--search {
+    transition:
+      color global.$transition-slow global.$transition-ease,
+      background-color global.$transition-slow global.$transition-ease;
 
     @include global.mq(lg) {
       @include global.tag-jp(pc);
+    }
+
+    &:hover,
+    &:focus-visible {
+      @include global.font-color(tag-hover);
+      @include global.bg-color(tag-hover);
     }
   }
 }

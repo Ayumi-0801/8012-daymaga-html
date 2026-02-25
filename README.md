@@ -19,7 +19,26 @@
 
 ---
 
-### **3. セットアップ手順**
+---
+
+### **3. CSS Validation**
+
+- Validator: W3C CSS Validation Service  
+- URL: https://jigsaw.w3.org/css-validator/  
+- Checked: 2026-02-18  
+- Profile: CSS Level 3 + SVG  
+- Validation Scope:
+  - 共通CSS（style.scss → style.css）
+  - ページ単位CSS（例: top.scss など）
+  - 各CSSファイル単位で個別検証
+- Result: Error なし  
+- Warnings: Vendor extensions のみ（-webkit, -moz 系）
+
+※ ローカル環境構築中のため、ファイル単位で検証を実施。
+
+---
+
+### **4. セットアップ手順**
 ```bash
 # リポジトリをクローン後
 npm i
@@ -42,14 +61,14 @@ NODE_ENV=production npx gulp build
 
 ---
 
-### **4. 公開範囲（DocumentRoot）とデモリンク / スクリーンショット**
+### **5. 公開範囲（DocumentRoot）とデモリンク / スクリーンショット**
 - 公開範囲: public/ 以下
 - デモリンク: https://your-portfolio.github.io/project-name/
 - スクリーンショット: 
 
 ---
 
-### **5. ディレクトリ構成**
+### **6. ディレクトリ構成**
 ```
 src/
 ├─ index.html
@@ -100,7 +119,7 @@ public/
 
 ---
 
-### **6. CSS設計ルール**
+### **7. CSS設計ルール**
 - FLOCSS + BEM
 	- Component: c-
 	- Project: p-
@@ -111,7 +130,7 @@ public/
 
 ---
 
-### **7. reset.cssについて**
+### **8. reset.cssについて**
 - 使用リセット: destyle.css（MIT）
 -	バージョン：v4.0.1
 - 出店URL：https://github.com/nicolas-cusan/destyle.css?tab=readme-ov-file
@@ -123,7 +142,7 @@ public/
 
 ---
 
-### **8. 開発ポートと MAMP ポートの使い分け**
+### **9. 開発ポートと MAMP ポートの使い分け**
 -	BrowserSync 側（300x ポート）
 	-	npm run dev 実行時に自動で立ち上がるポート（例: http://localhost:300x/）。
 	-	編集検知 → 自動リロードが有効。
@@ -136,20 +155,39 @@ public/
 
 ---
 
-### **9. 運用メモ**
+### **10. 運用メモ**
 -	Sass のビルド対象: src/styles/*.scss （_*.scss は対象外）
 -	追加ページ専用 CSS を作る場合は、src/styles/top.scss などを追加
 
 ---
 
-### **10. 学習ポイント / 工夫した点**
+### **11. 学習ポイント / 工夫した点**
 -	学んだこと: FLOCSS 構成の実装、Gulp による自動化
 -	工夫点: ディレクトリ設計をポートフォリオ案件に合わせて整理
 -	今後改善したい点: 画像最適化処理の追加など
 
 ---
 
-### **11. ライセンス**
+### **12. コードレビュー体制（AI活用）
+
+本プロジェクトでは、OpenAI Codex を第三者レビュワーとして活用しています。
+
+■ 活用目的
+- 構文ミスや仕様逸脱の検出
+- CSS設計（FLOCSS + BEM）の整合性確認
+- パフォーマンス改善の検討（Lighthouse対策）
+- 可読性・保守性観点の指摘
+
+■ 運用方針
+- AIの提案は必ず一次情報（MDN / W3C仕様）と照合
+- 自動生成コードの丸写しは行わない
+- Validator / Lighthouse と併用し多角的に確認
+
+AIを「補助ツール」ではなく「レビュー観点の拡張」として活用しています。
+
+---
+
+### **12. ライセンス**
 -	自作部分は MIT ライセンス**
 -	使用ライブラリ:
 	-	autoprefixer (MIT)
@@ -162,12 +200,3 @@ public/
 - Port   : 8012
 - URL    : http://localhost:8012/
 - DocRoot: /Applications/MAMP/htdocs/8012-daymaga-html/public
-
-### 使い方
-```bash
-# 開発（監視 + BrowserSync/Proxy）
-npm run dev
-
-# 本番ビルド
-npm run build
-```

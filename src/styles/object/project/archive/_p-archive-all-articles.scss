@@ -1,18 +1,15 @@
-@use "../../global" as global;
+@use "../../../global/settings" as global;
 
-.p-home-all-articles {
-  padding-block-start: 48px;
+
+.p-archive-all-articles {
+  padding-block-start: 51px;
 
   @include global.mq(lg) {
-    padding-block-start: 64px;
+    padding-block: 63px 32px;
   }
 
   &__inner {
-    padding-inline: 18px 19px;
-
-    @include global.mq(md) {
-      padding-inline: 44px;
-    }
+    padding-inline: 18px;
 
     @include global.mq(lg) {
       padding-inline: clamp(100px, 14.1vw, 203px); // 中間値：203px / 1440px * 100vw
@@ -20,11 +17,7 @@
   }
 
   &__title {
-    padding-left: 12px;
 
-    @include global.mq(lg) {
-      padding-left: 0;
-    }
   }
 
   &__contents {
@@ -32,23 +25,22 @@
     margin-block-start: 20px;
 
     @include global.mq(lg) {
-      margin-block-start: 47px;
+      margin-block-start: 40px;
     }
   }
 
   &__sort {
-    padding-right: 2px;
+    padding-right: 3px;
 
     @include global.mq(xl) {
       position: absolute;
       top: 5px;
-      right: 28px;
-      padding-right: 0;
+      right: 26px;
     }
   }
 
   &__body {
-    margin-block-start: 8px;
+    margin-block-start: 7px;
     min-height: 520px;
 
     @include global.mq(lg) {
@@ -60,13 +52,11 @@
 
   }
 
-  &__btn {
-    margin-block-start: 20px;
-    text-align: center;
+  &__pagination {
+    margin-block-start: 28px;
 
     @include global.mq(lg) {
-      margin-block-start: 32px;
-      text-align: right;
+      margin-block-start: 56px;
     }
   }
 }

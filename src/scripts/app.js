@@ -35,6 +35,7 @@
     void nav.offsetWidth;
 
     btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'メニューを閉じる');
     header.classList.add('is-open');
 
     // クリック無効化を解除
@@ -46,6 +47,7 @@
     isLock = true; // クリック無効化
 
     btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'メニューを開く');
     header.classList.remove('is-open');
 
     // クリック無効化を解除
@@ -101,26 +103,49 @@
   ファーストビューSwiper
   ============================================== */
   const initSwiperFv = () => {
-    const swiper = new Swiper(".js-swiper-fv", {
-      centeredSlides: true, // 中央寄せ
-      slidesPerView: "auto", // CSSでスライドの幅を管理
-      rewind: true,
-      freeMode: false,
-      initialSlide: 1, // 初期表示は2番目のスライドを中央に表示
-      spaceBetween: 16,
-      breakpoints: {
-        901: {
-          spaceBetween: 64,
+    const el = document.querySelector(".js-swiper-fv");
+
+    // 要素が存在しない場合は処理を終了
+    if (!el) return;
+
+    // Swiper CDN が読めていない場合は処理を終了（初期表示は維持される）
+    if (typeof Swiper === "undefined") return;
+
+    // 初期化前に一時的に非表示（CSS側の .is-prep で hidden）
+    el.classList.add("is-prep");
+
+    try {
+      const swiper = new Swiper(el, {
+        centeredSlides: true,
+        slidesPerView: "auto",
+        rewind: true,
+        freeMode: false,
+        initialSlide: 1,
+        spaceBetween: 16,
+        breakpoints: {
+          901: {
+            spaceBetween: 64,
+          },
         },
-      },
-      navigation: {
-        nextEl: ".p-home-fv__swiper-btn-next",
-        prevEl: ".p-home-fv__swiper-btn-prev",
-      },
-    });
+        navigation: {
+          nextEl: ".p-home-fv__swiper-btn-next",
+          prevEl: ".p-home-fv__swiper-btn-prev",
+        },
+        on: {
+          init() {
+            el.classList.add("is-ready");
+            el.classList.remove("is-prep");
+          },
+        },
+      });
+    } catch (e) {
+      // 例外が起きてもFVが消えっぱなしにならないよう復帰
+      el.classList.remove("is-prep");
+    }
   };
+
   window.addEventListener("load", function () {
-    initSwiperFv(); // ページ読み込み後に初期化
+    initSwiperFv();
   });
 
   /* ==============================================

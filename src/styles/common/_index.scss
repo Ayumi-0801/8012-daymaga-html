@@ -5,15 +5,14 @@
 ========================= */
 
 // Global（variables/mixins を最初に）
-@forward "./global/index";
+@forward "../global/index";
 
 // Foundation（初期化・ベース）
-@forward "./foundation/index";
+@forward "../foundation/index";
 
 // Layout（枠組み）
-@forward "./layout/index";
+@forward "../layout/index";
 
 // Object（実体）
-@forward "./object/component/index";
-@forward "./object/project/index";
-@forward "./object/utility/index";
+@forward "../object/component/index";
+@forward "../object/utility/index";
