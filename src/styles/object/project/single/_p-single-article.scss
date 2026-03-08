@@ -20,9 +20,13 @@
 
   &__contents {
     padding-block: 21px 47px;
-    padding-inline: clamp(21px, 6.1vw, 88px); // 中間値：88px / 1440px * 100vw
+    padding-inline: 21px;
     @include global.bg-color(single);
     box-shadow: 0 24px 64px 0 rgba(0, 0, 0, 0.05);
+
+    @include global.mq(md) {
+      padding-inline: clamp(50px, 6.1vw, 88px); // 中間値：88px / 1440px * 100vw
+    }
 
     @include global.mq(lg) {
       padding-block: 48px 47px;
