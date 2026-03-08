@@ -5,21 +5,26 @@
     <!-- レスポンシブ表示用 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- サイトアイコン -->
-    <link rel="icon" href="ファビアイコン画像を指定">
+    <link rel="icon" type="image/png" href="./assets/img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="./assets/img/favicon/favicon.svg">
+    <link rel="shortcut icon" href="./assets/img/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="DayMaga">
+    <link rel="manifest" href="./assets/img/favicon/site.webmanifest">
     <!-- 検索除外 -->
     <meta name="robots" content="noindex">
 
     <!-- サイトタイトル -->
-    <title>DayMaga</title>
-    <meta name="description" content="サイト説明文を入力">
+    <title>DayMaga-記事タイトル</title>
+    <meta name="description" content="コンサルプロジェクトを成功させるためのノウハウやナレッジの紹介、そして参考になる事例、コンサルにまつわる面白いニュースを取り扱う、コンサルに特化した、次の文化を創るイノベーターの方々に向けたメディア「DayMaga」の記事です。">
 
     <!-- OGP基本設定 -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="DayMaga">
-    <meta property="og:description" content="ページの説明文。100文字以内推奨。">
-    <meta property="og:url" content="https://example.com/このページのURL">
-    <meta property="og:image" content="https://example.com/images/ogp.jpg">
-    <meta property="og:site_name" content="サイトの名前">
+    <meta property="og:description" content="コンサルプロジェクトを成功させるためのノウハウやナレッジの紹介、そして参考になる事例、コンサルにまつわる面白いニュースを取り扱う、コンサルに特化した、次の文化を創るイノベーターの方々に向けたメディアです。">
+    <meta property="og:url" content="https://www.stg-ayunatsu-web.tech/8012-daymaga-html/single.html">
+    <meta property="og:image" content="https://www.stg-ayunatsu-web.tech/8012-daymaga-html/assets/img/ogp.jpg">
+    <meta property="og:site_name" content="DayMaga">
 
     <!-- 構造化データ（JSON-LD） -->
     <script type="application/ld+json">
@@ -28,89 +33,91 @@
       "@graph": [
         {
           "@type": "Organization",
-          "@id": "https://{YOUR-DOMAIN}/#org",
-          "name": "{会社名}",
-          "url": "https://{YOUR-DOMAIN}/",
+          "@id": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/#org",
+          "name": "DayMaga",
+          "url": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://{YOUR-DOMAIN}/assets/img/logo.png",
+            "url": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/assets/img/logo.png",
             "width": 256,
             "height": 256
-          },
-          "sameAs": [
-            "https://x.com/{アカウント}",
-            "https://www.linkedin.com/company/{会社スラッグ}"
-          ]
+          }
         },
         {
           "@type": "WebSite",
-          "@id": "https://{YOUR-DOMAIN}/#website",
-          "url": "https://{YOUR-DOMAIN}/",
-          "name": "{サイト名}",
-          "publisher": { "@id": "https://{YOUR-DOMAIN}/#org" },
+          "@id": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/#website",
+          "url": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/",
+          "name": "DayMaga",
+          "publisher": {
+            "@id": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/#org"
+          },
           "inLanguage": "ja"
         },
         {
           "@type": "WebPage",
-          "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#webpage",
-          "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/",
-          "name": "{ページタイトル（titleと整合）}",
-          "description": "{ページ要約（meta descriptionと整合）}",
-          "isPartOf": { "@id": "https://{YOUR-DOMAIN}/#website" },
+          "@id": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/single.html/#webpage",
+          "url": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/single.html",
+          "name": "DayMaga-記事タイトル",
+          "description": "コンサルプロジェクトを成功させるためのノウハウやナレッジの紹介、そして参考になる事例、コンサルにまつわる面白いニュースを取り扱う、コンサルに特化した、次の文化を創るイノベーターの方々に向けたメディア「DayMaga」の記事です。",
+          "isPartOf": { "@id": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/#website" },
           "primaryImageOfPage": {
             "@type": "ImageObject",
-            "url": "https://{YOUR-DOMAIN}/assets/img/ogp/{画像ファイル}.jpg",
+            "url": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/assets/img/ogp.jpg",
             "width": 1200,
             "height": 630
           },
           "datePublished": "{YYYY-MM-DD}",
           "dateModified": "{YYYY-MM-DD}",
           "inLanguage": "ja",
-          "breadcrumb": { "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#breadcrumb" }
+          "breadcrumb": { "@id": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/single.html/#breadcrumb" }
         },
         {
           "@type": "BreadcrumbList",
-          "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#breadcrumb",
+          "@id": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/single.html/#breadcrumb",
           "itemListElement": [
             {
               "@type": "ListItem",
               "position": 1,
               "name": "ホーム",
-              "item": "https://{YOUR-DOMAIN}/"
+              "item": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/"
             },
             {
               "@type": "ListItem",
               "position": 2,
-              "name": "{ページ名（短め）}",
-              "item": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/"
+              "name": "記事タイトル",
+              "item": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/single.html"
             }
           ]
         },
         {
           "@type": "Service",
-          "@id": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#service",
-          "name": "{サービス名}",
-          "provider": { "@id": "https://{YOUR-DOMAIN}/#org" },
-          "serviceType": "{分類：例 Web制作・運用}",
+          "@id": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/single.html/#service",
+          "name": "DayMaga",
+          "provider": {
+            "@id": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/#org"
+          },
+          "serviceType": "メディアサイト",
           "areaServed": "JP",
-          "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/",
-          "description": "{ひとことで説明}",
-          "offers": {
-            "@type": "Offer",
-            "price": "{価格のみ（数値）}",
-            "priceCurrency": "JPY",
-            "availability": "https://schema.org/InStock",
-            "url": "https://{YOUR-DOMAIN}/{PAGE-SLUG}/#plan"
-          }
+          "url": "https://www.stg-ayunatsu-web.tech/8012-daymaga-html/single.html",
+          "description": "コンサルティングの専門情報メディア"
         }
       ]
     }
     </script>
 
     <!-- Googleフォント -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
+    <link rel="preload"
+          as="style"
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Zen+Maru+Gothic:wght@700&display=swap"
+          onload="this.onload=null;this.rel='stylesheet'">
+
+    <noscript>
+      <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Zen+Maru+Gothic:wght@700&display=swap">
+    </noscript>
 
     <!-- Swiper -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
@@ -129,7 +136,12 @@
               <span class="c-header__title-lead">ビジネスの未来を切り拓く。</span>
               <picture>
                 <source srcset="./assets/img/logo-header.webp" type="image/webp">
-                <img src="./assets/img/logo-header.png" alt="DayMaga">
+                <img
+                  src="./assets/img/logo-header.png"
+                  alt="DayMaga"
+                  width="331" height="84"
+                  loading="lazy" decoding="async"
+                >
               </picture>
               <span class="c-header__title-text">コンサルティングの専門情報メディア</span>
             </span>
@@ -137,7 +149,12 @@
             <span class="c-header__title-logo c-header__title-logo--scroll">
               <picture>
                 <source srcset="./assets/img/logo-header-scroll.webp" type="image/webp">
-                <img src="./assets/img/logo-header-scroll.png" alt="DayMaga">
+                <img
+                  src="./assets/img/logo-header-scroll.png"
+                  alt="DayMaga"
+                  width="415"
+                  height="85"
+                >
               </picture>
             </span>
             <!-- /.c-header__title-logo c-header__title-logo--scroll -->
@@ -169,7 +186,7 @@
               </a>
             </li>
             <li class="c-header__nav-item">
-              <a href="#search" class="c-header__nav-icon" aria-label="キーワードで絞り込むに移動">
+              <a href="index.html#search" class="c-header__nav-icon" aria-label="キーワードで絞り込むに移動">
                 <svg viewBox="0 0 28 28" fill="none">
                   <path d="M24.5 24.5L17.5 17.5M3.5 11.6667C3.5 12.7391 3.71124 13.8011 4.12165 14.7919C4.53206 15.7827 5.13362 16.683 5.89196 17.4414C6.65031 18.1997 7.55059 18.8013 8.54142 19.2117C9.53224 19.6221 10.5942 19.8333 11.6667 19.8333C12.7391 19.8333 13.8011 19.6221 14.7919 19.2117C15.7827 18.8013 16.683 18.1997 17.4414 17.4414C18.1997 16.683 18.8013 15.7827 19.2117 14.7919C19.6221 13.8011 19.8333 12.7391 19.8333 11.6667C19.8333 10.5942 19.6221 9.53224 19.2117 8.54142C18.8013 7.55059 18.1997 6.65031 17.4414 5.89196C16.683 5.13362 15.7827 4.53206 14.7919 4.12165C13.8011 3.71124 12.7391 3.5 11.6667 3.5C10.5942 3.5 9.53224 3.71124 8.54142 4.12165C7.55059 4.53206 6.65031 5.13362 5.89196 5.89196C5.13362 6.65031 4.53206 7.55059 4.12165 8.54142C3.71124 9.53224 3.5 10.5942 3.5 11.6667Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -229,6 +246,8 @@
                   840px
                 "
                 alt="記事タイトルのアイキャッチ画像"
+                width="840" height="473"
+                loading="lazy" decoding="async"
               >
             </div>
             <!-- /.p-single-article__eyecatch -->
@@ -429,7 +448,8 @@
                     このように、もちろん無条件に、とはいきませんが、仕事・家庭・趣味などのバランスを自分で調整することが可能であり、なおかつ高収入を狙える点はフリーコンサルの大きな魅力です。
                   </p>
                   <div class="p-single-article__link">
-                    <a href="" class="c-btn c-btn--article">
+                    <!-- コメント：問い合わせフォームなしのため仮リンクとする -->
+                    <a href="#" class="c-btn c-btn--article">
                       <span>コンサルタント案件<br class="u-visible-md">の紹介登録をする</span>
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 19">
                         <path d="M1.55 0L0 1.55L7.95 9.5L0 17.45L1.55 19L11 9.5L1.55 0Z"/>
@@ -599,17 +619,21 @@
             <!-- /.c-articles-swiper__navigation p-single-related-articles__swiper-navigation -->
           </div>
           <!-- /.p-single-related-articles__lead -->
-          <div class="p-single-related-articles__contents">
+          <div class="c-articles-swiper__contents p-single-related-articles__contents">
             <div class="swiper c-articles-swiper__body p-single-related-articles__swiper js-swiper-articles" data-space-sp="32" data-space-pc="32">
               <div class="swiper-wrapper c-articles-swiper__wrapper p-single-related-articles__swiper-wrapper">
                 <div class="swiper-slide c-articles-swiper__slide c-card">
-                  <a href="" class="c-card__link">
+                  <a href="single.html" class="c-card__link">
                     <div class="c-card__inner">
                       <div class="c-card__contents">
                         <div class="c-card__img">
                           <picture>
                             <source srcset="./assets/img/single/img9.webp" type="image/webp">
-                            <img src="./assets/img/single/img9.png" alt="デジタル時代におけるコンサルタントの役割と価値">
+                            <img
+                              src="./assets/img/single/img9.png"
+                              alt="デジタル時代におけるコンサルタントの役割と価値"
+                              width="544" height="306"
+                              loading="lazy" decoding="async">
                           </picture>
                         </div>
                         <!-- /.c-card__img -->
@@ -643,13 +667,17 @@
                 </div>
                 <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
                 <div class="swiper-slide c-articles-swiper__slide c-card">
-                  <a href="" class="c-card__link">
+                  <a href="single.html" class="c-card__link">
                     <div class="c-card__inner">
                       <div class="c-card__contents">
                         <div class="c-card__img">
                           <picture>
                             <source srcset="./assets/img/single/img8.webp" type="image/webp">
-                            <img src="./assets/img/single/img8.png" alt="テクノロジーの進化とコンサルティング業界の未来">
+                            <img
+                              src="./assets/img/single/img8.png"
+                              alt="テクノロジーの進化とコンサルティング業界の未来"
+                              width="544" height="306"
+                              loading="lazy" decoding="async">
                           </picture>
                         </div>
                         <!-- /.c-card__img -->
@@ -682,13 +710,17 @@
                 </div>
                 <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
                 <div class="swiper-slide c-articles-swiper__slide c-card">
-                  <a href="" class="c-card__link">
+                  <a href="single.html" class="c-card__link">
                     <div class="c-card__inner">
                       <div class="c-card__contents">
                         <div class="c-card__img">
                           <picture>
                             <source srcset="./assets/img/single/img16_sp.webp" type="image/webp">
-                            <img src="./assets/img/single/img16_sp.png" alt="Big Fourが新たなデジタルイノベーションラボを設立、業界に変革をもた..">
+                            <img
+                              src="./assets/img/single/img16_sp.png"
+                              alt="Big Fourが新たなデジタルイノベーションラボを設立、業界に変革をもた.."
+                              width="544" height="306"
+                              loading="lazy" decoding="async">
                           </picture>
                         </div>
                         <!-- /.c-card__img -->
@@ -722,13 +754,17 @@
                 </div>
                 <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
                 <div class="swiper-slide c-articles-swiper__slide c-card">
-                  <a href="" class="c-card__link">
+                  <a href="single.html" class="c-card__link">
                     <div class="c-card__inner">
                       <div class="c-card__contents">
                         <div class="c-card__img">
                           <picture>
                             <source srcset="./assets/img/single/img10.webp" type="image/webp">
-                            <img src="./assets/img/single/img10.png" alt="ビジネス戦略の再構築：コンサルタントのアプローチ">
+                            <img
+                              src="./assets/img/single/img10.png"
+                              alt="ビジネス戦略の再構築：コンサルタントのアプローチ"
+                              width="544" height="306"
+                              loading="lazy" decoding="async">
                           </picture>
                         </div>
                         <!-- /.c-card__img -->
@@ -761,13 +797,17 @@
                 </div>
                 <!-- /.swiper-slide c-articles-swiper__slide c-card" -->
                  <div class="swiper-slide c-articles-swiper__slide c-card">
-                  <a href="" class="c-card__link">
+                  <a href="single.html" class="c-card__link">
                     <div class="c-card__inner">
                       <div class="c-card__contents">
                         <div class="c-card__img">
                           <picture>
                             <source srcset="./assets/img/single/img13.webp" type="image/webp">
-                            <img src="./assets/img/single/img13.png" alt="製造業のデジタル変革：コンサルタントが提案するスマートファクトリー戦..">
+                            <img
+                              src="./assets/img/single/img13.png"
+                              alt="製造業のデジタル変革：コンサルタントが提案するスマートファクトリー戦.."
+                              width="544" height="306"
+                              loading="lazy" decoding="async">
                           </picture>
                         </div>
                         <!-- /.c-card__img -->
@@ -816,34 +856,42 @@
       <div class="c-cta p-tag-cta">
         <div class="l-inner c-cta__inner">
           <div class="c-cta__contents">
-            <div class="c-cta__card">
-              <div class="c-cta__card-lead">
-                <p>コンサルタントをお探しの企業様へ</p>
+            <!-- コメント：問い合わせフォームなしのため仮リンクとする -->
+            <a href="#" class="c-cta__link">
+              <div class="c-cta__card">
+                <div class="c-cta__card-lead">
+                  <p>コンサルタントをお探しの企業様へ</p>
+                </div>
+                <!-- /.c-cta__card-lead -->
+                <div class="c-cta__card-body">
+                  <p>プロジェクトの相談をする</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14" fill="none">
+                    <path d="M0.667328 0.658081C0.885237 0.445487 1.23388 0.448107 1.44858 0.66394L6.39584 5.63757C6.9779 6.22271 6.9779 7.16767 6.39584 7.75281L1.44858 12.7264C1.23388 12.9423 0.885236 12.9449 0.667328 12.7323C0.441267 12.5115 0.444695 12.1468 0.67514 11.9305L4.31381 8.51941C5.36734 7.53173 5.36734 5.85866 4.31381 4.87097L0.67514 1.45984C0.444695 1.2436 0.441267 0.878887 0.667328 0.658081Z"/>
+                  </svg>
+                </div>
+                <!-- /.c-cta__card-body -->
               </div>
-              <!-- /.c-cta__card-lead -->
-              <div class="c-cta__card-body">
-                <p>プロジェクトの相談をする</p>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14" fill="none">
-                  <path d="M0.667328 0.658081C0.885237 0.445487 1.23388 0.448107 1.44858 0.66394L6.39584 5.63757C6.9779 6.22271 6.9779 7.16767 6.39584 7.75281L1.44858 12.7264C1.23388 12.9423 0.885236 12.9449 0.667328 12.7323C0.441267 12.5115 0.444695 12.1468 0.67514 11.9305L4.31381 8.51941C5.36734 7.53173 5.36734 5.85866 4.31381 4.87097L0.67514 1.45984C0.444695 1.2436 0.441267 0.878887 0.667328 0.658081Z"/>
-                </svg>
+              <!-- /.c-cta__card -->
+            </a>
+            <!-- /.c-cta__link -->
+            <!-- コメント：問い合わせフォームなしのため仮リンクとする -->
+            <a href="#" class="c-cta__link">
+              <div class="c-cta__card c-cta__card--reverse">
+                <div class="c-cta__card-lead">
+                  <p>コンサルタントの方へ</p>
+                </div>
+                <!-- /.c-cta__card-lead -->
+                <div class="c-cta__card-body">
+                  <p>案件の紹介を受ける</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14" fill="none">
+                    <path d="M0.667328 0.658081C0.885237 0.445487 1.23388 0.448107 1.44858 0.66394L6.39584 5.63757C6.9779 6.22271 6.9779 7.16767 6.39584 7.75281L1.44858 12.7264C1.23388 12.9423 0.885236 12.9449 0.667328 12.7323C0.441267 12.5115 0.444695 12.1468 0.67514 11.9305L4.31381 8.51941C5.36734 7.53173 5.36734 5.85866 4.31381 4.87097L0.67514 1.45984C0.444695 1.2436 0.441267 0.878887 0.667328 0.658081Z"/>
+                  </svg>
+                </div>
+                <!-- /.c-cta__card-body -->
               </div>
-              <!-- /.c-cta__card-body -->
-            </div>
-            <!-- /.c-cta__card -->
-            <div class="c-cta__card c-cta__card--reverse">
-              <div class="c-cta__card-lead">
-                <p>コンサルタントの方へ</p>
-              </div>
-              <!-- /.c-cta__card-lead -->
-              <div class="c-cta__card-body">
-                <p>案件の紹介を受ける</p>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 14" fill="none">
-                  <path d="M0.667328 0.658081C0.885237 0.445487 1.23388 0.448107 1.44858 0.66394L6.39584 5.63757C6.9779 6.22271 6.9779 7.16767 6.39584 7.75281L1.44858 12.7264C1.23388 12.9423 0.885236 12.9449 0.667328 12.7323C0.441267 12.5115 0.444695 12.1468 0.67514 11.9305L4.31381 8.51941C5.36734 7.53173 5.36734 5.85866 4.31381 4.87097L0.67514 1.45984C0.444695 1.2436 0.441267 0.878887 0.667328 0.658081Z"/>
-                </svg>
-              </div>
-              <!-- /.c-cta__card-body -->
-            </div>
-            <!-- /.c-cta__card c-cta__card—reverse -->
+              <!-- /.c-cta__card c-cta__card—reverse -->
+            </a>
+            <!-- /.c-cta__link -->
           </div>
           <!-- /.c-cta__contents -->
         </div>
@@ -858,22 +906,42 @@
       <div class="c-footer__inner">
         <div class="c-footer__contents">
           <div class="c-footer__img">
-            <picture>
-              <source media="(min-width: 1201px)" srcset="./assets/img/logo-footer.png">
-              <source srcset="./assets/img/logo-footer-sp.png">
-              <img src="./assets/img/logo-footer.png" alt="DayMaga">
-            </picture>
+            <a href="index.html">
+              <picture>
+                <source
+                  media="(min-width: 1201px)"
+                  srcset="./assets/img/logo-footer.webp"
+                  type="image/webp"
+                >
+                <source
+                  media="(min-width: 1201px)"
+                  srcset="./assets/img/logo-footer.png"
+                >
+                <source
+                  srcset="./assets/img/logo-footer-sp.webp"
+                  type="image/webp"
+                >
+                <source
+                  srcset="./assets/img/logo-footer-sp.png"
+                >
+                <img
+                  src="./assets/img/logo-footer-sp.png"
+                  alt="DayMaga"
+                  width="468" height="96"
+                  loading="lazy" decoding="async">
+              </picture>
+            </a>
           </div>
           <!-- /.c-footer__img -->
           <nav class="c-footer__nav">
             <ul class="c-footer__nav-list">
-              <li class="c-footer__nav-item"><a href="">新着記事</a></li>
+              <li class="c-footer__nav-item"><a href="archive.html">新着記事</a></li>
               <li class="c-footer__nav-item"><a href="">DayMagaについて</a></li>
-              <li class="c-footer__nav-item"><a href="">TIPS</a></li>
+              <li class="c-footer__nav-item"><a href="archive.html">TIPS</a></li>
               <li class="c-footer__nav-item"><a href="">運営会社</a></li>
-              <li class="c-footer__nav-item"><a href="">インタビュー</a></li>
+              <li class="c-footer__nav-item"><a href="archive.html">インタビュー</a></li>
               <li class="c-footer__nav-item"><a href="">サイト利用規約</a></li>
-              <li class="c-footer__nav-item"><a href="">ニュース</a></li>
+              <li class="c-footer__nav-item"><a href="archive.html">ニュース</a></li>
             </ul>
             <!-- /.c-footer__nav-list -->
           </nav>
@@ -891,10 +959,8 @@
     </footer>
     <!-- /.c-footer-->
     
-    <!-- [使用する場合のみ]jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
     <!-- Swiper -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js" defer></script>
     <!-- JavaScript -->
     <script src="./assets/js/app.min.js" defer></script>
   </body>

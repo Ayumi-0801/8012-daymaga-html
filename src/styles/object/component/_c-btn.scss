@@ -58,7 +58,9 @@
     gap: 6px;
     padding-block: 5px;
     padding-inline: 19px;
-    @include global.btn-zen(sp);
+    font-size: 14px;
+    line-height: 1.8;
+    letter-spacing: 2.8px;
     border-radius: 0 12px 12px 12px;
     border: 1px solid global.$border-color-single-readmore;
     @include global.bg-color(single-btn);

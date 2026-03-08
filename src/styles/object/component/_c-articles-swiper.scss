@@ -87,6 +87,10 @@
     }
   }
 
+  &__contents {
+    
+  }
+
   &__body {
     padding-inline: 32px 38px;
 
@@ -97,7 +101,11 @@
   }
 
   &__wrapper {
+    padding-block-start: 24px;
 
+    @include global.mq(lg) {
+      padding-block-start: 36px;
+    }
   }
 
   &__slide {

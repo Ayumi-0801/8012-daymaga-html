@@ -12,7 +12,7 @@
   }
 
   &__lead {
-    // padding-inline: 32px 38px;
+    
   }
 
   &__title {
@@ -20,17 +20,13 @@
   }
 
   &__contents {
-    margin-block-start: 24px;
-
-    @include global.mq(lg) {
-      margin-block-start: 36px;
-    }
+    
   }
 
   &__swiper {
 
     &-navigation {
-      // margin-block-start: 24px;
+      
     }
 
     &-wrapper {

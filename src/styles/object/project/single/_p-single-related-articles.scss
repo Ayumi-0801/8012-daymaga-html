@@ -20,11 +20,7 @@
   }
 
   &__contents {
-    margin-block-start: 24px;
-
-    @include global.mq(lg) {
-      margin-block-start: 36px;
-    }
+    
   }
 
   &__swiper {
