@@ -1,7 +1,7 @@
 @use "../../../global/settings" as global;
 
 .p-home-search {
-  padding-block: 64px 48px;
+  padding-block: 63px 48px;
 
   @include global.mq(lg) {
     padding-block: 48px 64px;

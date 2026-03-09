@@ -24,4 +24,22 @@
       @include global.bg-color(tag-hover);
     }
   }
+
+  &--single {
+    padding-block: 2px 3px;
+    transition:
+      color global.$transition-slow global.$transition-ease,
+      background-color global.$transition-slow global.$transition-ease;
+
+      @include global.mq(lg) {
+        padding-block: 1px 3px;
+        padding-inline-start: 9px;
+      }
+
+    &:hover,
+    &:focus-visible {
+      @include global.font-color(tag-hover);
+      @include global.bg-color(tag-hover);
+    }
+  }
 }

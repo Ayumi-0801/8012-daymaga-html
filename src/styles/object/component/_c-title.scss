@@ -9,6 +9,10 @@
 
   &__img {
     width: 42px;
+
+    @include global.mq(lg) {
+      width: 72px;
+    }
   }
 
   &__text {

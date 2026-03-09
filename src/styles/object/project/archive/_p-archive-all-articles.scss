@@ -53,10 +53,10 @@
   }
 
   &__pagination {
-    margin-block-start: 28px;
+    margin-block-start: 33px;
 
     @include global.mq(lg) {
-      margin-block-start: 56px;
+      margin-block-start: 54px;
     }
   }
 }
