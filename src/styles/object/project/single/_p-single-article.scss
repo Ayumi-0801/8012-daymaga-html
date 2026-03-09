@@ -482,6 +482,7 @@
 
     @include global.mq(lg) {
       flex-direction: row;
+      align-items: flex-start;
       margin-block-start: 31px;
       gap: 30px;
     }

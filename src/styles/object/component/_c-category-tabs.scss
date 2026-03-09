@@ -68,29 +68,59 @@
       border-width: 1px 1px 0 1px;
     }
 
+    &:hover,
+    &:focus-visible {
+      @include global.font-color(category-tabs-hover);
+    }
+
     &--all {
       @include global.font-color(category-all);
       border-color: global.$border-color-category-all;
+
+      &:hover,
+      &:focus-visible {
+        @include global.bg-color(category-all);
+      }
     }
 
     &--latest {
       @include global.font-color(category-latest);
       border-color: global.$border-color-category-latest;
+
+      &:hover,
+      &:focus-visible {
+        @include global.bg-color(category-latest);
+      }
     }
 
     &--tips {
       @include global.font-color(category-tips);
       border-color: global.$border-color-category-tips;
+
+      &:hover,
+      &:focus-visible {
+        @include global.bg-color(category-tips);
+      }
     }
 
     &--interview {
       @include global.font-color(category-interview);
       border-color: global.$border-color-category-interview;
+
+      &:hover,
+      &:focus-visible {
+        @include global.bg-color(category-interview);
+      }
     }
 
     &--news {
       @include global.font-color(category-news);
       border-color: global.$border-color-category-news;
+
+      &:hover,
+      &:focus-visible {
+        @include global.bg-color(category-news);
+      }
     }
   }
 

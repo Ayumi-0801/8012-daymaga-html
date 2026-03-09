@@ -4,13 +4,12 @@
   align-self: stretch; // 親の stretch を邪魔しないようにする
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 11px;
   padding-block: 11px;
   padding-inline: 12px;
   height: 100%;
   border-radius: 16px 0 16px 16px;
   transition: background-color global.$transition-base global.$transition-ease;
-
 
   @include global.mq(sm) {
     grid-template-columns: repeat(2, 1fr);
